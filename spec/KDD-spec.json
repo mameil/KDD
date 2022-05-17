@@ -1,0 +1,8 @@
+{
+  "library": "spring-mvc",
+  "modelPackage": "spec.swagger.model",
+  "apiPackage": "spec.swagger.api",
+  "invokerPackage": "spec.swagger.invoker",
+  "hideGenerationTimestamp": true,
+  "delegatePattern": true
+}

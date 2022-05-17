@@ -1,0 +1,65 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+
+    //swagger
+    id 'org.hidetake.swagger.generator' version '2.19.2'
+}
+
+group = 'me.kdshim'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    all{
+//        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+//        exclude group: 'com.am10', module: 'log'
+    }
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    //Swagger, GenerateSwaggerCode
+    implementation 'io.swagger:swagger-annotations:1.5.22'
+//    swaggerCodegen 'io.swagger.codegen.v3:swagger-codegen-cli:3.0.34'  // or Swagger Codegen V3
+    swaggerCodegen 'org.openapitools:openapi-generator-cli:3.3.4'     // or OpenAPI Generator
+
+    //JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    //h2
+    runtimeOnly 'com.h2database:h2'
+}
+
+//SwaggerSource Setting
+swaggerSources {
+    KDD_J {
+        inputFile = file("$rootDir/spec/kdd.yaml")
+        code {
+            language = 'spring'
+            configFile = file("$rootDir/spec/KDD-spec.json")
+            wipeOutputDir = false
+            outputDir = file("$rootDir")
+            components = ['models', 'apis']
+        }
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
