@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j.link;
+package me.kdshim.kdd_j.link.entity;
 
 import lombok.Data;
 

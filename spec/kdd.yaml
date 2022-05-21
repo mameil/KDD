@@ -2,11 +2,38 @@ openapi: 3.0.0
 info:
   version: '1.0.0'
   title: 'KDD Project'
-  description: 'KDshim Diary'
+  description: 'This project is created by kd 
+  In this project, there are some techs with I learned'
 servers:
   - url: http://localhost:8080
+tags:
+  - name: "Books"
+    description: "독서 기록"
+  - name: "Links"
+    description: "가지고 있어야 하는 링크"
 
 paths:
+
+  /links:
+    get:
+      tags:
+        - "Links"
+      summary: 저장된 모든 링크 가져오기
+      description: 모든 링크 리스트로 가져오기
+      responses:
+        200:
+          description: 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyLinkDto'
+        400:
+          description: 실패
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+
   /swaggerTest:
     get:
       summary: simple swagger test api
@@ -25,25 +52,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponseDto'
-
-  /myLinks:
-    get:
-      summary: 저장된 모든 링크 가져오기
-      description: 모든 링크를 긁어온다
-      responses:
-        200:
-          description: 성공
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MyLinkDto'
-        400:
-          description: 실패
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponseDto'
-
 
 components:
   schemas:

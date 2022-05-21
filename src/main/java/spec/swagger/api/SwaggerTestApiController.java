@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j.swagger.api;
+package spec.swagger.api;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
