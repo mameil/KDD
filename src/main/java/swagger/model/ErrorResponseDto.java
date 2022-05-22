@@ -1,18 +1,26 @@
-package spec.swagger.model;
+package swagger.model;
 
+import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.time.OffsetDateTime;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+
+import java.util.*;
+import javax.annotation.Generated;
 
 /**
  * ErrorResponseDto
  */
 
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
 public class ErrorResponseDto   {
+
   @JsonProperty("code")
   private String code;
 
@@ -28,9 +36,8 @@ public class ErrorResponseDto   {
    * Get code
    * @return code
   */
-  @ApiModelProperty(value = "")
-
-
+  
+  @Schema(name = "code", required = false)
   public String getCode() {
     return code;
   }
@@ -48,9 +55,8 @@ public class ErrorResponseDto   {
    * Get message
    * @return message
   */
-  @ApiModelProperty(value = "")
-
-
+  
+  @Schema(name = "message", required = false)
   public String getMessage() {
     return message;
   }
@@ -59,9 +65,8 @@ public class ErrorResponseDto   {
     this.message = message;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -82,7 +87,6 @@ public class ErrorResponseDto   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ErrorResponseDto {\n");
-    
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
@@ -93,7 +97,7 @@ public class ErrorResponseDto   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

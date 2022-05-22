@@ -1,13 +1,14 @@
 package me.kdshim.kdd_j.link.entity;
 
 import lombok.Data;
+import me.kdshim.kdd_j.common.BaseEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 @Data
-public class Link {
+public class Link extends BaseEntity {
     @Id
     private String url;
     private String category;

@@ -31,9 +31,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
     //Swagger, GenerateSwaggerCode
-    implementation 'io.swagger:swagger-annotations:1.6.6'
-    swaggerCodegen 'org.openapitools:openapi-generator-cli:3.3.4'     // or OpenAPI Generator
-//    swaggerCodegen 'io.swagger.codegen.v3:swagger-codegen-cli:3.0.34'  // or Swagger Codegen V3
+    implementation 'io.swagger.core.v3:swagger-annotations:2.2.0'
+    swaggerCodegen 'org.openapitools:openapi-generator-cli:5.4.0'     // or OpenAPI Generator
     implementation 'org.openapitools:jackson-databind-nullable:0.2.2'
 
     //JPA
@@ -54,7 +53,7 @@ swaggerSources {
             configFile = file("$rootDir/spec/KDD-spec.json")
             wipeOutputDir = false
             outputDir = file("$rootDir")
-            components = ['models', 'apis']
+            components = ['models', 'apis', 'apiTests', 'supportingFiles']
         }
     }
 }

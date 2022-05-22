@@ -1,19 +1,27 @@
-package spec.swagger.model;
+package swagger.model;
 
+import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.time.OffsetDateTime;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+
+import java.util.*;
+import javax.annotation.Generated;
 
 /**
  * MyLinkDto
  */
 
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
 public class MyLinkDto   {
+
   @JsonProperty("name")
   private String name;
 
@@ -41,20 +49,24 @@ public class MyLinkDto   {
       this.value = value;
     }
 
-    @Override
     @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
     public String toString() {
       return String.valueOf(value);
     }
 
     @JsonCreator
-    public static CategoryEnum fromValue(String text) {
+    public static CategoryEnum fromValue(String value) {
       for (CategoryEnum b : CategoryEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(value)) {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
   }
 
@@ -70,9 +82,8 @@ public class MyLinkDto   {
    * 해당 url 이름
    * @return name
   */
-  @ApiModelProperty(example = "Java Stream API는 왜 for-loop보다 느릴까?", value = "해당 url 이름")
-
-
+  
+  @Schema(name = "name", example = "Java Stream API는 왜 for-loop보다 느릴까?", description = "해당 url 이름", required = false)
   public String getName() {
     return name;
   }
@@ -90,9 +101,8 @@ public class MyLinkDto   {
    * 링크(raw url)
    * @return url
   */
-  @ApiModelProperty(example = "https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b", value = "링크(raw url)")
-
-
+  
+  @Schema(name = "url", example = "https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b", description = "링크(raw url)", required = false)
   public String getUrl() {
     return url;
   }
@@ -110,9 +120,8 @@ public class MyLinkDto   {
    * 해당 url 설명
    * @return desc
   */
-  @ApiModelProperty(example = "실제 예시를 통한 비교 해둔 글", value = "해당 url 설명")
-
-
+  
+  @Schema(name = "desc", example = "실제 예시를 통한 비교 해둔 글", description = "해당 url 설명", required = false)
   public String getDesc() {
     return desc;
   }
@@ -130,9 +139,8 @@ public class MyLinkDto   {
    * 글의 타입[JAVA, SPRING, FOOD, WORK]
    * @return category
   */
-  @ApiModelProperty(example = "JAVA", value = "글의 타입[JAVA, SPRING, FOOD, WORK]")
-
-
+  
+  @Schema(name = "category", example = "JAVA", description = "글의 타입[JAVA, SPRING, FOOD, WORK]", required = false)
   public CategoryEnum getCategory() {
     return category;
   }
@@ -141,9 +149,8 @@ public class MyLinkDto   {
     this.category = category;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -166,7 +173,6 @@ public class MyLinkDto   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MyLinkDto {\n");
-    
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
@@ -179,7 +185,7 @@ public class MyLinkDto   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
