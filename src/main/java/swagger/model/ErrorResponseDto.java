@@ -1,26 +1,19 @@
 package swagger.model;
 
-import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.openapitools.jackson.nullable.JsonNullable;
-import java.time.OffsetDateTime;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import io.swagger.v3.oas.annotations.media.Schema;
-
-
-import java.util.*;
-import javax.annotation.Generated;
 
 /**
  * ErrorResponseDto
  */
-
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
 public class ErrorResponseDto   {
-
   @JsonProperty("code")
   private String code;
 
@@ -36,8 +29,9 @@ public class ErrorResponseDto   {
    * Get code
    * @return code
   */
-  
-  @Schema(name = "code", required = false)
+  @ApiModelProperty(value = "")
+
+
   public String getCode() {
     return code;
   }
@@ -55,8 +49,9 @@ public class ErrorResponseDto   {
    * Get message
    * @return message
   */
-  
-  @Schema(name = "message", required = false)
+  @ApiModelProperty(value = "")
+
+
   public String getMessage() {
     return message;
   }
@@ -64,6 +59,7 @@ public class ErrorResponseDto   {
   public void setMessage(String message) {
     this.message = message;
   }
+
 
   @Override
   public boolean equals(Object o) {
@@ -87,6 +83,7 @@ public class ErrorResponseDto   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ErrorResponseDto {\n");
+    
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");

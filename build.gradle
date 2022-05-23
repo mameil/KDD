@@ -4,7 +4,7 @@ plugins {
     id 'java'
 
     //swagger
-    id 'org.hidetake.swagger.generator' version '2.19.2'
+    id 'org.hidetake.swagger.generator' version '2.18.2'
 }
 
 group = 'me.kdshim'
@@ -31,9 +31,19 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
     //Swagger, GenerateSwaggerCode
-    implementation 'io.swagger.core.v3:swagger-annotations:2.2.0'
-    swaggerCodegen 'org.openapitools:openapi-generator-cli:5.4.0'     // or OpenAPI Generator
-    implementation 'org.openapitools:jackson-databind-nullable:0.2.2'
+//    implementation 'io.swagger.core.v3:swagger-annotations:2.2.0'
+//    swaggerCodegen 'org.openapitools:openapi-generator-cli:5.4.0'     // or OpenAPI Generator
+//    implementation 'org.openapitools:jackson-databind-nullable:0.2.2'
+//
+//    implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+    //swagger common
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.0.2'
+
+    //swagger Generator
+    implementation 'io.swagger:swagger-annotations:1.5.22'
+    swaggerCodegen 'org.openapitools:openapi-generator-cli:5.3.0'
+    implementation group: 'org.openapitools', name: 'jackson-databind-nullable', version: '0.2.1'
 
     //JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'

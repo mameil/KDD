@@ -10,7 +10,7 @@ tags:
   - name: "Books"
     description: "독서 기록"
   - name: "Links"
-    description: "가지고 있어야 하는 링크"
+    description: "링크 기록"
 
 paths:
 
@@ -22,17 +22,37 @@ paths:
       description: 모든 링크 리스트로 가져오기
       responses:
         200:
-          description: 성공
+          description: SUCCESS
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MyLinkDto'
+                $ref: '#/components/schemas/PostLinkDto'
         400:
-          description: 실패
+          description: FAIL
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponseDto'
+    post:
+      tags:
+        - "Links"
+      summary: 리스트로 링크를 저장
+      description: 리스트로 링크를 저장
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/PostLinkListDto'
+      responses:
+        200:
+          description: SUCCESS
+        400:
+          description: FAIL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+
 
   /swaggerTest:
     get:
@@ -40,14 +60,14 @@ paths:
       description: simple swagger test api
       responses:
         200:
-          description: Success
+          description: SUCCESS
           content:
             application/json:
               schema:
                 type: string
                 example: responseTest
         400:
-          description: fail
+          description: FAIL
           content:
             application/json:
               schema:
@@ -55,7 +75,7 @@ paths:
 
 components:
   schemas:
-    MyLinkDto:
+    PostLinkDto:
       type: object
       properties:
         name:
@@ -79,6 +99,11 @@ components:
             - WORK
           description: 글의 타입[JAVA, SPRING, FOOD, WORK]
           example: JAVA
+
+    PostLinkListDto:
+      type: array
+      items:
+        $ref: '#/components/schemas/PostLinkDto'
 
     ErrorResponseDto:
       type: object

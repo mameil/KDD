@@ -25,4 +25,9 @@ public class LinkService {
     public void saveSingleLink(Link link) {
         linkRepositroy.save(link);
     }
+
+    public void saveLinkList(List<Link> list){
+
+        linkRepositroy.saveAll(list);
+    }
 }

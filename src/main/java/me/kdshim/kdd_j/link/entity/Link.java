@@ -9,7 +9,6 @@ import javax.persistence.Id;
 @Entity
 @Data
 public class Link extends BaseEntity {
-    @Id
     private String url;
     private String category;
     private String name;

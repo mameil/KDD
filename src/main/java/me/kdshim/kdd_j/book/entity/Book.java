@@ -11,8 +11,6 @@ import java.time.LocalDate;
 @Entity
 @Data
 public class Book extends BaseEntity {
-    @Id
-    private String id;
     private String name;
     private String url;
     private String recommender;
