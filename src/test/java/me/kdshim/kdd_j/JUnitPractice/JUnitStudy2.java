@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j.link;
+package me.kdshim.kdd_j.JUnitPractice;
 
 import me.kdshim.kdd_j.KDTest;
 import me.kdshim.kdd_j.link.entity.CATEGORY;
@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 
-public class LinkTest2 {
+public class JUnitStudy2 {
 
     @Test
     @Tag("KDS")

@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j.link;
+package me.kdshim.kdd_j.JUnitPractice;
 
 import me.kdshim.kdd_j.link.entity.CATEGORY;
 import me.kdshim.kdd_j.link.entity.Link;
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.*;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-public class LinkTest {
+public class JUnitStudy1 {
     static int cnt = 0;
 
     @BeforeAll
