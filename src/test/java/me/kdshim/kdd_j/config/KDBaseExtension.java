@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j;
+package me.kdshim.kdd_j.config;
 
 
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
@@ -22,7 +22,7 @@ public class KDBaseExtension implements BeforeTestExecutionCallback, AfterTestEx
         ExtensionContext.Store store = context.getStore(ExtensionContext.Namespace.create(className, methodName));
         StringBuilder sb = new StringBuilder();
         sb.append(context.getDisplayName() + " STARTED AT : ").append(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-        System.out.println("******************************************************");
+        System.out.println("************************ KD's Test ************************");
         System.out.println(sb);
 
         //toCheck runTime
@@ -39,7 +39,7 @@ public class KDBaseExtension implements BeforeTestExecutionCallback, AfterTestEx
         Long test_start_time = store.remove("TEST_START_TIME", long.class);
 
         System.out.println(context.getDisplayName() + " ENDED IN "+(System.currentTimeMillis() - test_start_time) + " sec");
-        System.out.println("******************************************************");
+        System.out.println("***********************************************************");
 
     }
 }

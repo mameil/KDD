@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j;
+package me.kdshim.kdd_j.config;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

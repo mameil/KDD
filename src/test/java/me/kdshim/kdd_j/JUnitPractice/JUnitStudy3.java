@@ -1,6 +1,6 @@
 package me.kdshim.kdd_j.JUnitPractice;
 
-import me.kdshim.kdd_j.KDBaseExtension;
+import me.kdshim.kdd_j.config.KDBaseExtension;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 

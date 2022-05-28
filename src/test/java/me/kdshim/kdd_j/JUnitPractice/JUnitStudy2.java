@@ -1,6 +1,6 @@
 package me.kdshim.kdd_j.JUnitPractice;
 
-import me.kdshim.kdd_j.KDTest;
+import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.link.entity.CATEGORY;
 import me.kdshim.kdd_j.link.entity.Link;
 import org.junit.jupiter.api.*;
