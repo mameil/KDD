@@ -52,6 +52,8 @@ dependencies {
 
     //h2
     runtimeOnly 'com.h2database:h2'
+
+    testImplementation('org.mockito:mockito-core:3.7.7')
 }
 
 //SwaggerSource Setting
