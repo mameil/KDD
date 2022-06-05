@@ -1,9 +1,8 @@
 {
   "library": "spring-mvc",
-  "modelPackage": "swagger.model",
-  "apiPackage": "swagger.api",
-  "invokerPackage": "swagger.invoker",
+  "modelPackage": "me.kdshim.kdd_j.swagger.model",
+  "apiPackage": "me.kdshim.kdd_j.swagger.api",
+  "invokerPackage": "me.kdshim.kdd_j.swagger.invoker",
   "hideGenerationTimestamp": true,
-  "delegatePattern": true,
-  "interfaceOnly": true
+  "delegatePattern": true
 }

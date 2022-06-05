@@ -2,48 +2,36 @@ package me.kdshim.kdd_j.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
+import org.springframework.context.annotation.Import;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.lang.reflect.Parameter;
 
-@Configuration
-@EnableWebMvc
-public class SwaggerConfig {
+public class SwaggerConfig extends WebMvcConfigurationSupport {
+//    @Bean
+//    public Docket api() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .select()
+//                .apis(RequestHandlerSelectors.basePackage("build/swagger/codegen/api"))
+//                .paths(PathSelectors.any())
+//                .build();
+//    }
 
-    private ApiInfo swaggerInfo() {
-        return new ApiInfoBuilder().title("IoT API")
-                .description("IoT API Docs").build();
-    }
+//    public ApiInfo apiInfo(){
+//        return new ApiInfoBuilder()
+//                .title("KDD's API")
+//                .version("0.0.1")
+//                .description("Swagger for KDD")
+//                .build();
+//    }
 
-    @Bean
-    public Docket swaggerApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .consumes(getConsumeContentTypes())
-                .produces(getProduceContentTypes())
-                .apiInfo(swaggerInfo()).select()
-                .apis(RequestHandlerSelectors.basePackage("com.nahwasa.iot.controller"))
-                .paths(PathSelectors.any())
-                .build()
-                .useDefaultResponseMessages(false);
-    }
-
-    private Set<String> getConsumeContentTypes() {
-        Set<String> consumes = new HashSet<>();
-        consumes.add("application/json;charset=UTF-8");
-        consumes.add("application/x-www-form-urlencoded");
-        return consumes;
-    }
-
-    private Set<String> getProduceContentTypes() {
-        Set<String> produces = new HashSet<>();
-        produces.add("application/json;charset=UTF-8");
-        return produces;
-    }
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("swagger-ui")
+//                .addResourceLocations("/spec/kdd.yaml");
+//
+//        registry.addResourceHandler("/webjars/**")
+//                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+//    }
 }
