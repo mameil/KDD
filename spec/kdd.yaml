@@ -20,13 +20,14 @@ paths:
         - "Links"
       summary: 저장된 모든 링크 가져오기
       description: 모든 링크 리스트로 가져오기
+      operationId: getAllLinks
       responses:
         200:
           description: SUCCESS
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostLinkDto'
+                $ref: '#/components/schemas/GetLinkListDto'
         400:
           description: FAIL
           content:
@@ -38,11 +39,12 @@ paths:
         - "Links"
       summary: 리스트로 링크를 저장
       description: 리스트로 링크를 저장
+      operationId: saveSingleLink
       requestBody:
         content:
           'application/json':
             schema:
-              $ref: '#/components/schemas/PostLinkListDto'
+              $ref: '#/components/schemas/PostLinkDto'
       responses:
         200:
           description: SUCCESS
@@ -100,7 +102,7 @@ components:
           description: 글의 타입[JAVA, SPRING, FOOD, WORK]
           example: JAVA
 
-    PostLinkListDto:
+    GetLinkListDto:
       type: array
       items:
         $ref: '#/components/schemas/PostLinkDto'
