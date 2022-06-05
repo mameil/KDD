@@ -22,13 +22,13 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any()) // 특정 패키지경로를 API문서화 한다. 1차 필터
-                .paths(PathSelectors.any()) // apis중에서 특정 path조건 API만 문서화 하는 2차 필터
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
                 .build()
-                .groupName("API 1.0.0") // group별 명칭을 주어야 한다.
+                .groupName("KD 1.0.0")
                 .pathMapping("/")
                 .apiInfo(apiInfo())
-                .useDefaultResponseMessages(false); // 400,404,500 .. 표기를 ui에서 삭제한다.
+                .useDefaultResponseMessages(false);
     }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
@@ -36,7 +36,6 @@ public class SwaggerConfig {
                 .description("KDD의 스웨거")
                 .version("1.0.0")
                 .termsOfServiceUrl("")
-//                .contact()
                 .license("")
                 .licenseUrl("")
                 .build()

@@ -7,9 +7,9 @@ info:
 servers:
   - url: http://localhost:8080
 tags:
-  - name: "Books"
+  - name: "독서"
     description: "독서 기록"
-  - name: "Links"
+  - name: "링크"
     description: "링크 기록"
 
 paths:
@@ -17,7 +17,7 @@ paths:
   /links:
     get:
       tags:
-        - "Links"
+        - "링크"
       summary: 저장된 모든 링크 가져오기
       description: 모든 링크 리스트로 가져오기
       operationId: getAllLinks
@@ -27,7 +27,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetLinkListDto'
+                type: array
+                items:
+                  $ref: '#/components/schemas/getLinkDto'
         400:
           description: FAIL
           content:
@@ -36,9 +38,9 @@ paths:
                 $ref: '#/components/schemas/ErrorResponseDto'
     post:
       tags:
-        - "Links"
-      summary: 리스트로 링크를 저장
-      description: 리스트로 링크를 저장
+        - "링크"
+      summary: 단일 리스트 저장
+      description: 단일 리스트 저장
       operationId: saveSingleLink
       requestBody:
         content:
@@ -48,6 +50,10 @@ paths:
       responses:
         200:
           description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getLinkDto'
         400:
           description: FAIL
           content:
@@ -55,31 +61,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponseDto'
 
-
-  /swaggerTest:
-    get:
-      summary: simple swagger test api
-      description: simple swagger test api
-      responses:
-        200:
-          description: SUCCESS
-          content:
-            application/json:
-              schema:
-                type: string
-                example: responseTest
-        400:
-          description: FAIL
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponseDto'
 
 components:
   schemas:
-    PostLinkDto:
+    getLinkDto:
       type: object
       properties:
+        id:
+          type: integer
+          description: 저장된 아이디(AUTO_INCREMENT)
+          example: 1
         name:
           type: string
           description: 해당 url 이름
@@ -88,7 +79,7 @@ components:
           type: string
           description: 링크(raw url)
           example: https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b
-        desc:
+        memo:
           type: string
           description: 해당 url 설명
           example: 실제 예시를 통한 비교 해둔 글
@@ -101,11 +92,38 @@ components:
             - WORK
           description: 글의 타입[JAVA, SPRING, FOOD, WORK]
           example: JAVA
+        created:
+          type: string
+          format: date
+          description: 엔티티 생성시간
+        update:
+          type: string
+          format: date
 
-    GetLinkListDto:
-      type: array
-      items:
-        $ref: '#/components/schemas/PostLinkDto'
+    PostLinkDto:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 해당 url 이름
+          example: Java Stream API는 왜 for-loop보다 느릴까?
+        url:
+          type: string
+          description: 링크(raw url)
+          example: https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b
+        memo:
+          type: string
+          description: 해당 url 설명
+          example: 실제 예시를 통한 비교 해둔 글
+        category:
+          type: string
+          enum:
+            - JAVA
+            - SPRING
+            - FOOD
+            - WORK
+          description: 글의 타입[JAVA, SPRING, FOOD, WORK]
+          example: JAVA
 
     ErrorResponseDto:
       type: object

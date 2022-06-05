@@ -6,6 +6,7 @@
 package me.kdshim.kdd_j.swagger.api;
 
 import me.kdshim.kdd_j.swagger.model.ErrorResponseDto;
+import me.kdshim.kdd_j.swagger.model.GetLinkDto;
 import me.kdshim.kdd_j.swagger.model.PostLinkDto;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -29,25 +30,25 @@ import java.util.Map;
 @Api(value = "links", description = "the links API")
 public interface LinksApi {
 
-    @ApiOperation(value = "저장된 모든 링크 가져오기", nickname = "linksGet", notes = "모든 링크 리스트로 가져오기", response = PostLinkDto.class, tags={ "Links", })
+    @ApiOperation(value = "저장된 모든 링크 가져오기", nickname = "getAllLinks", notes = "모든 링크 리스트로 가져오기", response = GetLinkDto.class, responseContainer = "List", tags={ "링크", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "SUCCESS", response = PostLinkDto.class),
+        @ApiResponse(code = 200, message = "SUCCESS", response = GetLinkDto.class, responseContainer = "List"),
         @ApiResponse(code = 400, message = "FAIL", response = ErrorResponseDto.class) })
     @RequestMapping(value = "/links",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<PostLinkDto> linksGet();
+    ResponseEntity<List<GetLinkDto>> getAllLinks();
 
 
-    @ApiOperation(value = "리스트로 링크를 저장", nickname = "linksPost", notes = "리스트로 링크를 저장", tags={ "Links", })
+    @ApiOperation(value = "단일 리스트 저장", nickname = "saveSingleLink", notes = "단일 리스트 저장", response = GetLinkDto.class, tags={ "링크", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "SUCCESS"),
+        @ApiResponse(code = 200, message = "SUCCESS", response = GetLinkDto.class),
         @ApiResponse(code = 400, message = "FAIL", response = ErrorResponseDto.class) })
     @RequestMapping(value = "/links",
         produces = { "application/json" }, 
         consumes = { "application/json" }, 
         method = RequestMethod.POST)
-    ResponseEntity<Void> linksPost(@ApiParam(value = "" ) @Valid @RequestBody List<PostLinkDto> body);
+    ResponseEntity<GetLinkDto> saveSingleLink(@ApiParam(value = "" ) @Valid @RequestBody PostLinkDto body);
 
 }
 

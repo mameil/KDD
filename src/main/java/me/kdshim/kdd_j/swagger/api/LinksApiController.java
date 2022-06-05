@@ -1,6 +1,7 @@
 package me.kdshim.kdd_j.swagger.api;
 
 import me.kdshim.kdd_j.swagger.model.ErrorResponseDto;
+import me.kdshim.kdd_j.swagger.model.GetLinkDto;
 import me.kdshim.kdd_j.swagger.model.PostLinkDto;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -30,12 +31,12 @@ public class LinksApiController implements LinksApi {
     public LinksApiController(LinksApiDelegate delegate) {
         this.delegate = delegate;
     }
-    public ResponseEntity<PostLinkDto> linksGet() {
-        return delegate.linksGet();
+    public ResponseEntity<List<GetLinkDto>> getAllLinks() {
+        return delegate.getAllLinks();
     }
 
-    public ResponseEntity<Void> linksPost(@ApiParam(value = "" ) @Valid @RequestBody List<PostLinkDto> body) {
-        return delegate.linksPost(body);
+    public ResponseEntity<GetLinkDto> saveSingleLink(@ApiParam(value = "" ) @Valid @RequestBody PostLinkDto body) {
+        return delegate.saveSingleLink(body);
     }
 
 }

@@ -3,8 +3,8 @@ package me.kdshim.kdd_j.link;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.kdshim.kdd_j.book.BookRepository;
-import me.kdshim.kdd_j.book.entity.Book;
 import me.kdshim.kdd_j.link.entity.Link;
+import me.kdshim.kdd_j.swagger.model.PostLinkDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,8 +25,11 @@ public class LinkService {
         return linkRepositroy.findById(url);
     }
 
-    public void saveSingleLink(Link link) {
+    public Link saveSingleLinkFromDto(PostLinkDto body) {
+        Link link = new Link();
+        link = link.fromPostDto(body);
         linkRepositroy.save(link);
+        return link;
     }
 
     public void saveLinkList(List<Link> list){

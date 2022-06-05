@@ -17,7 +17,7 @@ public class JUnitStudy2 {
     @Test
     @Tag("KDS")
     Link create_link(){
-        Link link = Link.builder().url("htttp://testset").category(CATEGORY.FOOD).desc("테스트에서 사용할 링크").name("테링").build();
+        Link link = Link.builder().url("htttp://testset").category(CATEGORY.FOOD).memo("테스트에서 사용할 링크").name("테링").build();
         System.out.println(link.toString());
         return link;
     }

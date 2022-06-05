@@ -1,5 +1,6 @@
 package me.kdshim.kdd_j.swagger.model;
 
+import java.time.LocalDate;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -11,12 +12,15 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * PostLinkDto
+ * GetLinkDto
  */
 @Validated
 
 
-public class PostLinkDto   {
+public class GetLinkDto   {
+  @JsonProperty("id")
+  private Integer id = null;
+
   @JsonProperty("name")
   private String name = null;
 
@@ -63,7 +67,32 @@ public class PostLinkDto   {
   @JsonProperty("category")
   private CategoryEnum category = null;
 
-  public PostLinkDto name(String name) {
+  @JsonProperty("created")
+  private LocalDate created = null;
+
+  @JsonProperty("update")
+  private LocalDate update = null;
+
+  public GetLinkDto id(Integer id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * 저장된 아이디(AUTO_INCREMENT)
+   * @return id
+   **/
+  @ApiModelProperty(example = "1", value = "저장된 아이디(AUTO_INCREMENT)")
+  
+    public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public GetLinkDto name(String name) {
     this.name = name;
     return this;
   }
@@ -82,7 +111,7 @@ public class PostLinkDto   {
     this.name = name;
   }
 
-  public PostLinkDto url(String url) {
+  public GetLinkDto url(String url) {
     this.url = url;
     return this;
   }
@@ -101,7 +130,7 @@ public class PostLinkDto   {
     this.url = url;
   }
 
-  public PostLinkDto memo(String memo) {
+  public GetLinkDto memo(String memo) {
     this.memo = memo;
     return this;
   }
@@ -120,7 +149,7 @@ public class PostLinkDto   {
     this.memo = memo;
   }
 
-  public PostLinkDto category(CategoryEnum category) {
+  public GetLinkDto category(CategoryEnum category) {
     this.category = category;
     return this;
   }
@@ -139,6 +168,46 @@ public class PostLinkDto   {
     this.category = category;
   }
 
+  public GetLinkDto created(LocalDate created) {
+    this.created = created;
+    return this;
+  }
+
+  /**
+   * 엔티티 생성시간
+   * @return created
+   **/
+  @ApiModelProperty(value = "엔티티 생성시간")
+  
+    @Valid
+    public LocalDate getCreated() {
+    return created;
+  }
+
+  public void setCreated(LocalDate created) {
+    this.created = created;
+  }
+
+  public GetLinkDto update(LocalDate update) {
+    this.update = update;
+    return this;
+  }
+
+  /**
+   * Get update
+   * @return update
+   **/
+  @ApiModelProperty(value = "")
+  
+    @Valid
+    public LocalDate getUpdate() {
+    return update;
+  }
+
+  public void setUpdate(LocalDate update) {
+    this.update = update;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,27 +217,33 @@ public class PostLinkDto   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PostLinkDto postLinkDto = (PostLinkDto) o;
-    return Objects.equals(this.name, postLinkDto.name) &&
-        Objects.equals(this.url, postLinkDto.url) &&
-        Objects.equals(this.memo, postLinkDto.memo) &&
-        Objects.equals(this.category, postLinkDto.category);
+    GetLinkDto getLinkDto = (GetLinkDto) o;
+    return Objects.equals(this.id, getLinkDto.id) &&
+        Objects.equals(this.name, getLinkDto.name) &&
+        Objects.equals(this.url, getLinkDto.url) &&
+        Objects.equals(this.memo, getLinkDto.memo) &&
+        Objects.equals(this.category, getLinkDto.category) &&
+        Objects.equals(this.created, getLinkDto.created) &&
+        Objects.equals(this.update, getLinkDto.update);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, url, memo, category);
+    return Objects.hash(id, name, url, memo, category, created, update);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PostLinkDto {\n");
+    sb.append("class GetLinkDto {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    memo: ").append(toIndentedString(memo)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    update: ").append(toIndentedString(update)).append("\n");
     sb.append("}");
     return sb.toString();
   }

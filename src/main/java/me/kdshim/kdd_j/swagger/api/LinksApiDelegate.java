@@ -1,6 +1,7 @@
 package me.kdshim.kdd_j.swagger.api;
 
 import me.kdshim.kdd_j.swagger.model.ErrorResponseDto;
+import me.kdshim.kdd_j.swagger.model.GetLinkDto;
 import me.kdshim.kdd_j.swagger.model.PostLinkDto;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -16,13 +17,13 @@ import java.util.Map;
 public interface LinksApiDelegate {
 
     /**
-     * @see LinksApi#linksGet
+     * @see LinksApi#getAllLinks
      */
-    ResponseEntity<PostLinkDto> linksGet();
+    ResponseEntity<List<GetLinkDto>> getAllLinks();
 
     /**
-     * @see LinksApi#linksPost
+     * @see LinksApi#saveSingleLink
      */
-    ResponseEntity<Void> linksPost( List<PostLinkDto>  body);
+    ResponseEntity<GetLinkDto> saveSingleLink( PostLinkDto  body);
 
 }
