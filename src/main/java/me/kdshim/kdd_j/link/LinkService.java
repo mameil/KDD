@@ -37,6 +37,10 @@ public class LinkService {
         linkRepositroy.saveAll(list);
     }
 
+    public void deleteAll(){
+        linkRepositroy.deleteAll();
+    }
+
     public void testSave(){
         System.out.println("CHECK THIS OUT");
     }

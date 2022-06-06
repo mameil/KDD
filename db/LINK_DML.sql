@@ -14,4 +14,4 @@ drop table link;
 
 desc link;
 
-select * from kdd.link;
+select count(*) from kdd.link;

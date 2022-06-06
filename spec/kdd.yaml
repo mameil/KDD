@@ -60,6 +60,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponseDto'
+    delete:
+      tags:
+        - "링크"
+      summary: 저장된 모든 링크 삭제
+      description: 모든 링크들 삭제
+      operationId: deleteAllLinks
+      responses:
+        200:
+          description: SUCCESS
+        400:
+          description: FAIL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
 
 
 components:
@@ -93,12 +108,10 @@ components:
           description: 글의 타입[JAVA, SPRING, FOOD, WORK]
           example: JAVA
         created:
-          type: string
-          format: date
+          type: date
           description: 엔티티 생성시간
         update:
-          type: string
-          format: date
+          type: date
 
     PostLinkDto:
       type: object

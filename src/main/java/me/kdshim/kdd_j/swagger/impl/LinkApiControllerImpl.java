@@ -37,4 +37,10 @@ public class LinkApiControllerImpl implements LinksApiDelegate {
 
         return ResponseEntity.ok(link.toGetDto(link));
     }
+
+    @Override
+    public ResponseEntity<Void> deleteAllLinks() {
+        linkService.deleteAll();
+        return ResponseEntity.ok(null);
+    }
 }

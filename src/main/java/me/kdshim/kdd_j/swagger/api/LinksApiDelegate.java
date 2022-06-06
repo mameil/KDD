@@ -17,6 +17,11 @@ import java.util.Map;
 public interface LinksApiDelegate {
 
     /**
+     * @see LinksApi#deleteAllLinks
+     */
+    ResponseEntity<Void> deleteAllLinks();
+
+    /**
      * @see LinksApi#getAllLinks
      */
     ResponseEntity<List<GetLinkDto>> getAllLinks();

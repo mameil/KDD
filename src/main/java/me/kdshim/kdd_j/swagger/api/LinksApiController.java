@@ -31,6 +31,10 @@ public class LinksApiController implements LinksApi {
     public LinksApiController(LinksApiDelegate delegate) {
         this.delegate = delegate;
     }
+    public ResponseEntity<Void> deleteAllLinks() {
+        return delegate.deleteAllLinks();
+    }
+
     public ResponseEntity<List<GetLinkDto>> getAllLinks() {
         return delegate.getAllLinks();
     }

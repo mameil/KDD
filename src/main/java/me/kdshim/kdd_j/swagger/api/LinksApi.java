@@ -30,6 +30,16 @@ import java.util.Map;
 @Api(value = "links", description = "the links API")
 public interface LinksApi {
 
+    @ApiOperation(value = "저장된 모든 링크 삭제", nickname = "deleteAllLinks", notes = "모든 링크들 삭제", tags={ "링크", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "SUCCESS"),
+        @ApiResponse(code = 400, message = "FAIL", response = ErrorResponseDto.class) })
+    @RequestMapping(value = "/links",
+        produces = { "application/json" }, 
+        method = RequestMethod.DELETE)
+    ResponseEntity<Void> deleteAllLinks();
+
+
     @ApiOperation(value = "저장된 모든 링크 가져오기", nickname = "getAllLinks", notes = "모든 링크 리스트로 가져오기", response = GetLinkDto.class, responseContainer = "List", tags={ "링크", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "SUCCESS", response = GetLinkDto.class, responseContainer = "List"),
