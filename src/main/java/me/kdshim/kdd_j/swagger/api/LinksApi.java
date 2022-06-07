@@ -30,6 +30,8 @@ import java.util.Map;
 @Api(value = "links", description = "the links API")
 public interface LinksApi {
 
+    LinksApiDelegate getDelegate();
+
     @ApiOperation(value = "저장된 모든 링크 삭제", nickname = "deleteAllLinks", notes = "모든 링크들 삭제", tags={ "링크", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "SUCCESS"),
@@ -37,7 +39,9 @@ public interface LinksApi {
     @RequestMapping(value = "/links",
         produces = { "application/json" }, 
         method = RequestMethod.DELETE)
-    ResponseEntity<Void> deleteAllLinks();
+    default ResponseEntity<Void> deleteAllLinks() {
+        return getDelegate().deleteAllLinks();
+    }
 
 
     @ApiOperation(value = "저장된 모든 링크 가져오기", nickname = "getAllLinks", notes = "모든 링크 리스트로 가져오기", response = GetLinkDto.class, responseContainer = "List", tags={ "링크", })
@@ -47,7 +51,9 @@ public interface LinksApi {
     @RequestMapping(value = "/links",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<List<GetLinkDto>> getAllLinks();
+    default ResponseEntity<List<GetLinkDto>> getAllLinks() {
+        return getDelegate().getAllLinks();
+    }
 
 
     @ApiOperation(value = "단일 리스트 저장", nickname = "saveSingleLink", notes = "단일 리스트 저장", response = GetLinkDto.class, tags={ "링크", })
@@ -58,7 +64,9 @@ public interface LinksApi {
         produces = { "application/json" }, 
         consumes = { "application/json" }, 
         method = RequestMethod.POST)
-    ResponseEntity<GetLinkDto> saveSingleLink(@ApiParam(value = "" ) @Valid @RequestBody PostLinkDto body);
+    default ResponseEntity<GetLinkDto> saveSingleLink(@ApiParam(value = "" ) @Valid @RequestBody PostLinkDto body) {
+        return getDelegate().saveSingleLink(body);
+    }
 
 }
 

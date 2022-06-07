@@ -4,5 +4,6 @@
   "apiPackage": "me.kdshim.kdd_j.swagger.api",
   "invokerPackage": "me.kdshim.kdd_j.swagger.invoker",
   "hideGenerationTimestamp": true,
-  "delegatePattern": true
+  "delegatePattern": true,
+  "dateLibrary": "java8-localdatetime"
 }

@@ -15,3 +15,4 @@ drop table link;
 desc link;
 
 select count(*) from kdd.link;
+select * from kdd.link;

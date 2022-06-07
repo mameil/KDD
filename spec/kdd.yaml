@@ -13,7 +13,6 @@ tags:
     description: "링크 기록"
 
 paths:
-
   /links:
     get:
       tags:
