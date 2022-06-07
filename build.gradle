@@ -84,7 +84,7 @@ swaggerSources {
             configFile = file("$rootDir/spec/KDD-spec.json")
             wipeOutputDir = false
             outputDir = file("$rootDir")
-            components = ['models', 'apis']
+            components = ['models', 'apis', 'apiTests']
         }
     }
 }
