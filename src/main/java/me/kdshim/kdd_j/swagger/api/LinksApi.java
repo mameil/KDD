@@ -56,16 +56,16 @@ public interface LinksApi {
     }
 
 
-    @ApiOperation(value = "단일 리스트 저장", nickname = "saveSingleLink", notes = "단일 리스트 저장", response = GetLinkDto.class, tags={ "링크", })
+    @ApiOperation(value = "리스트로 링크 저장", nickname = "saveLinkList", notes = "리스트로 링크 저장", tags={ "링크", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "SUCCESS", response = GetLinkDto.class),
+        @ApiResponse(code = 200, message = "SUCCESS"),
         @ApiResponse(code = 400, message = "FAIL", response = ErrorResponseDto.class) })
     @RequestMapping(value = "/links",
         produces = { "application/json" }, 
         consumes = { "application/json" }, 
         method = RequestMethod.POST)
-    default ResponseEntity<GetLinkDto> saveSingleLink(@ApiParam(value = "" ) @Valid @RequestBody PostLinkDto body) {
-        return getDelegate().saveSingleLink(body);
+    default ResponseEntity<Void> saveLinkList(@ApiParam(value = "" ) @Valid @RequestBody List<PostLinkDto> body) {
+        return getDelegate().saveLinkList(body);
     }
 
 }

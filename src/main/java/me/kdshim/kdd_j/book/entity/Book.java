@@ -1,9 +1,6 @@
 package me.kdshim.kdd_j.book.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import me.kdshim.kdd_j.common.BaseEntity;
 import me.kdshim.kdd_j.link.entity.Link;
 
@@ -12,6 +9,7 @@ import java.time.LocalDate;
 
 @Entity
 @Data
+@EqualsAndHashCode(callSuper = false)
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

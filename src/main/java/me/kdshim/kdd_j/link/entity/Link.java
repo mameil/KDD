@@ -1,9 +1,6 @@
 package me.kdshim.kdd_j.link.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import me.kdshim.kdd_j.common.BaseEntity;
 import me.kdshim.kdd_j.swagger.model.GetLinkDto;
 import me.kdshim.kdd_j.swagger.model.PostLinkDto;
@@ -14,6 +11,7 @@ import javax.persistence.Enumerated;
 
 @Entity
 @Data
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

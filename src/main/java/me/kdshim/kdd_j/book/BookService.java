@@ -2,7 +2,7 @@ package me.kdshim.kdd_j.book;
 
 import lombok.RequiredArgsConstructor;
 import me.kdshim.kdd_j.book.entity.Book;
-import me.kdshim.kdd_j.link.LinkRepositroy;
+import me.kdshim.kdd_j.link.LinkRepository;
 import me.kdshim.kdd_j.link.LinkService;
 import me.kdshim.kdd_j.link.entity.Link;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class BookService {
     private final BookRepository bookRepository;
-    private final LinkRepositroy linkRepositroy;
+    private final LinkRepository linkRepositroy;
 
     private LinkService linkService;
 

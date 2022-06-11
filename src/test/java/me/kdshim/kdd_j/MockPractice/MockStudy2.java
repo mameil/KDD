@@ -1,15 +1,15 @@
 package me.kdshim.kdd_j.MockPractice;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import me.kdshim.kdd_j.book.BookRepository;
 import me.kdshim.kdd_j.book.BookService;
 import me.kdshim.kdd_j.book.entity.Book;
 import me.kdshim.kdd_j.config.KDBaseExtension;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.config.MyTest;
-import me.kdshim.kdd_j.link.LinkRepositroy;
+import me.kdshim.kdd_j.link.LinkRepository;
 import me.kdshim.kdd_j.link.LinkService;
 import me.kdshim.kdd_j.recipe.RecipeService;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
@@ -31,7 +31,7 @@ public class MockStudy2 extends MyTest {
     @Mock
     BookService bookService;
     @Mock
-    LinkRepositroy linkRepositroy;
+    LinkRepository linkRepositroy;
 
     @KDTest
     void BookServiceTest(){

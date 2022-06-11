@@ -4,8 +4,9 @@ import me.kdshim.kdd_j.book.entity.Book;
 import me.kdshim.kdd_j.config.MyTest;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.book.BookService;
-import me.kdshim.kdd_j.link.LinkRepositroy;
+import me.kdshim.kdd_j.link.LinkRepository;
 import me.kdshim.kdd_j.recipe.RecipeService;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,9 +19,8 @@ import static org.mockito.Mockito.*;
 public class MockStudy1 extends MyTest {
     //Mock처리하는 방법2
     @Mock BookService bookService;
-    @Mock LinkRepositroy linkRepositroy;
+    @Mock LinkRepository linkRepositroy;
 
-    @Test
     @KDTest
     void BookServiceTest(@Mock RecipeService recipeService){
         //Mock처리하는 방법1

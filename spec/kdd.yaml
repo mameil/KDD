@@ -13,6 +13,32 @@ tags:
     description: "링크 기록"
 
 paths:
+  /link:
+    post:
+      tags:
+        - "링크"
+      summary: 단일 링크 저장
+      description: 단일 링크 저장
+      operationId: saveSingleLink
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/PostLinkDto'
+      responses:
+        200:
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getLinkDto'
+        400:
+          description: FAIL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+
   /links:
     get:
       tags:
@@ -35,30 +61,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponseDto'
+
     post:
       tags:
         - "링크"
-      summary: 단일 리스트 저장
-      description: 단일 리스트 저장
-      operationId: saveSingleLink
+      summary: 리스트로 링크 저장
+      description: 리스트로 링크 저장
+      operationId: saveLinkList
       requestBody:
         content:
           'application/json':
             schema:
-              $ref: '#/components/schemas/PostLinkDto'
+              type: array
+              items:
+                $ref: '#/components/schemas/PostLinkDto'
       responses:
         200:
           description: SUCCESS
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/getLinkDto'
         400:
           description: FAIL
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponseDto'
+
     delete:
       tags:
         - "링크"
