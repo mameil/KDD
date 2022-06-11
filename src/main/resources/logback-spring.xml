@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
+<!-- 로그파일 저장 경로 -->
+<property name="LOG_DIR" value="log"/>
+
 <!-- CONSOLE -->
 <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
     <layout class="ch.qos.logback.classic.PatternLayout">
