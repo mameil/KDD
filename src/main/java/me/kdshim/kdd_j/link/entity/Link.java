@@ -60,6 +60,7 @@ public class Link extends BaseEntity {
         link.setUrl(dto.getUrl());
         link.setName(dto.getName());
         link.setCategory(CATEGORY.valueOf(dto.getCategory().toString()));
+
         return link;
     }
 }

@@ -1,22 +1,17 @@
 package me.kdshim.kdd_j.MockPractice;
 
 import me.kdshim.kdd_j.book.entity.Book;
-import me.kdshim.kdd_j.config.MyTest;
+import me.kdshim.kdd_j.config.BaseSupport;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.book.BookService;
 import me.kdshim.kdd_j.link.LinkRepository;
 import me.kdshim.kdd_j.recipe.RecipeService;
-import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InOrder;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.Mockito.*;
 
-public class MockStudy1 extends MyTest {
+public class MockStudy1 extends BaseSupport {
     //Mock처리하는 방법2
     @Mock BookService bookService;
     @Mock LinkRepository linkRepositroy;

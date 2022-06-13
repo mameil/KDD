@@ -1,28 +1,39 @@
 package me.kdshim.kdd_j.LinkTest;
 
+import me.kdshim.kdd_j.config.KDTest;
+import me.kdshim.kdd_j.config.MyMockMvc;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.MOCK)
-@AutoConfigureMockMvc
-public class Link throws Exception{
+public class Link extends MyMockMvc {
 
-    @Autowired
-    MockMvc mvc;
+    @KDTest
+    void linkPostGet() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.post("/link")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\n" +
+                                "  \"category\": \"JAVA\",\n" +
+                                "  \"memo\": \"this is test only link\",\n" +
+                                "  \"name\": \"test link\",\n" +
+                                "  \"url\": \"localhost\"\n" +
+                                "}"))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.category").value("JAVA"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.memo").value("this is test only link"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("test link"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.url").value("localhost"))
+        ;
 
-    @Test
-    public void checkMock(){
         mvc.perform(MockMvcRequestBuilders.get("/links"))
-                .andExpect(MockMvcResultMatchers.status().is(200));
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].id").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].category").value("JAVA"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].memo").value("this is test only link"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].name").value("test link"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].url").value("localhost"))
+        ;
     }
 }

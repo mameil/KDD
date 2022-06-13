@@ -1,32 +1,19 @@
 package me.kdshim.kdd_j.MockPractice;
 
-import me.kdshim.kdd_j.book.BookRepository;
 import me.kdshim.kdd_j.book.BookService;
 import me.kdshim.kdd_j.book.entity.Book;
-import me.kdshim.kdd_j.config.KDBaseExtension;
 import me.kdshim.kdd_j.config.KDTest;
-import me.kdshim.kdd_j.config.MyTest;
+import me.kdshim.kdd_j.config.BaseSupport;
 import me.kdshim.kdd_j.link.LinkRepository;
-import me.kdshim.kdd_j.link.LinkService;
-import me.kdshim.kdd_j.recipe.RecipeService;
 import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.mockito.InOrder;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.inOrder;
 
-public class MockStudy2 extends MyTest {
+public class MockStudy2 extends BaseSupport {
     //Mock처리하는 방법2
     @Mock
     BookService bookService;

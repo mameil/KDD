@@ -1,10 +1,10 @@
 package me.kdshim.kdd_j.JUnitPractice;
 
-import me.kdshim.kdd_j.config.KDBaseExtension;
+import me.kdshim.kdd_j.config.BaseExtension;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-@ExtendWith(KDBaseExtension.class)
+@ExtendWith(BaseExtension.class)
 //기본적으로 선언된 모든 테스트들은 인스턴스가 독립적이다 클래스단위에서 선언한 값들은 각 테스트가 실행되면서 없어진다
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

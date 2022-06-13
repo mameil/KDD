@@ -3,15 +3,13 @@ package me.kdshim.kdd_j.config;
 
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.springframework.beans.factory.annotation.Value;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class KDBaseExtension implements BeforeTestExecutionCallback, AfterTestExecutionCallback {
+public class BaseExtension implements BeforeTestExecutionCallback, AfterTestExecutionCallback {
     @Value("${rootName}")
     String rootName;
 
