@@ -13,6 +13,34 @@ tags:
     description: "링크 기록"
 
 paths:
+  /link/{id}:
+    get:
+      tags:
+        - "링크"
+      summary: ID로 링크 조회(admin)
+      description: Auto increment 으로 만들어진 아이디로 단일 링크 조회
+      operationId: findSingleLinkById
+      parameters:
+        - name: id
+          in: path
+          description: Link's ID(Auto Increment generated)
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getLinkDto'
+        400:
+          description: FAIL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+
   /link:
     post:
       tags:

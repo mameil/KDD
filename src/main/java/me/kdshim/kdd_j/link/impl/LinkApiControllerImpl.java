@@ -22,4 +22,11 @@ public class LinkApiControllerImpl implements LinkApiDelegate {
 
         return ResponseEntity.ok(link.toGetDto(link));
     }
+
+    @Override
+    public ResponseEntity<GetLinkDto> findSingleLinkById(Integer id) {
+        Link singleLink = linkService.findSingleLink(id.longValue());
+
+        return ResponseEntity.ok(singleLink.toGetDto(singleLink));
+    }
 }

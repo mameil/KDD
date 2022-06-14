@@ -32,6 +32,18 @@ public interface LinkApi {
 
     LinkApiDelegate getDelegate();
 
+    @ApiOperation(value = "ID로 링크 조회(admin)", nickname = "findSingleLinkById", notes = "Auto increment 으로 만들어진 아이디로 단일 링크 조회", response = GetLinkDto.class, tags={ "링크", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "SUCCESS", response = GetLinkDto.class),
+        @ApiResponse(code = 400, message = "FAIL", response = ErrorResponseDto.class) })
+    @RequestMapping(value = "/link/{id}",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    default ResponseEntity<GetLinkDto> findSingleLinkById(@ApiParam(value = "Link's ID(Auto Increment generated)", required=true) @PathVariable("id") Integer id) {
+        return getDelegate().findSingleLinkById(id);
+    }
+
+
     @ApiOperation(value = "단일 링크 저장", nickname = "saveSingleLink", notes = "단일 링크 저장", response = GetLinkDto.class, tags={ "링크", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "SUCCESS", response = GetLinkDto.class),
