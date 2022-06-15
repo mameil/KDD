@@ -8,6 +8,7 @@ import me.kdshim.kdd_j.swagger.model.PostLinkDto;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -38,8 +39,8 @@ public class Link extends BaseEntity {
         dto.setUrl(link.getUrl());
         dto.setName(link.getName());
         dto.setMemo(link.getMemo());
-        dto.setCreated(link.getCreated());
-        dto.setUpdate(link.getUpdated());
+        dto.setCreated(LocalDate.from(link.getCreated()));
+        dto.setUpdate(LocalDate.from(link.getUpdated()));
 
         return dto;
     }
