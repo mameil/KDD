@@ -57,5 +57,7 @@ public class Link extends MyMockMvc {
                 .andExpect(MockMvcResultMatchers.status().is(400))
                 .andDo(MockMvcResultHandlers.print())
         ;
+        //CoreException extends RuntimeException -> coreExcepionData - returnCode, returnMessage, HttpStatus
+
     }
 }
