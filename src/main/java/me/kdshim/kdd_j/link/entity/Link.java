@@ -39,8 +39,8 @@ public class Link extends BaseEntity {
         dto.setUrl(link.getUrl());
         dto.setName(link.getName());
         dto.setMemo(link.getMemo());
-        dto.setCreated(LocalDate.from(link.getCreated()));
-        dto.setUpdate(LocalDate.from(link.getUpdated()));
+        dto.setCreated(link.getCreated());
+        dto.setUpdate(link.getUpdated());
 
         return dto;
     }

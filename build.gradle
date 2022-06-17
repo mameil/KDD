@@ -37,6 +37,8 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.12'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 
+    implementation 'org.modelmapper:modelmapper:2.4.2'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 
     //actuator
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
@@ -52,20 +54,16 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     runtimeOnly 'mysql:mysql-connector-java'
-//    implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:${version}")
 
     //h2
     runtimeOnly 'com.h2database:h2'
 
     //test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//            {
-//        exclude group: 'org.junit'
-//        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-//    }
-//    testImplementation('org.mockito:mockito-core:4.3.1')
-//    testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
-//    testImplementation('org.mockito:mockito-junit-jupiter:4.5.1')
+
+    //AssertJ -> Pretty TestCode
+    //https://assertj.github.io/doc/#common-types
+    testImplementation "org.assertj:assertj-core:3.20.2"
 
     //testContainers
     testImplementation 'org.testcontainers:testcontainers:1.16.2'

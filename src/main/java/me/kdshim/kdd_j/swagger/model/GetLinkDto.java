@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -68,10 +68,10 @@ public class GetLinkDto   {
   private CategoryEnum category = null;
 
   @JsonProperty("created")
-  private LocalDate created = null;
+  private LocalDateTime created = null;
 
   @JsonProperty("update")
-  private LocalDate update = null;
+  private LocalDateTime update = null;
 
   public GetLinkDto id(Integer id) {
     this.id = id;
@@ -168,7 +168,7 @@ public class GetLinkDto   {
     this.category = category;
   }
 
-  public GetLinkDto created(LocalDate created) {
+  public GetLinkDto created(LocalDateTime created) {
     this.created = created;
     return this;
   }
@@ -180,31 +180,31 @@ public class GetLinkDto   {
   @ApiModelProperty(value = "엔티티 생성시간")
   
     @Valid
-    public LocalDate getCreated() {
+    public LocalDateTime getCreated() {
     return created;
   }
 
-  public void setCreated(LocalDate created) {
+  public void setCreated(LocalDateTime created) {
     this.created = created;
   }
 
-  public GetLinkDto update(LocalDate update) {
+  public GetLinkDto update(LocalDateTime update) {
     this.update = update;
     return this;
   }
 
   /**
-   * Get update
+   * 엔티티 수정시간
    * @return update
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "엔티티 수정시간")
   
     @Valid
-    public LocalDate getUpdate() {
+    public LocalDateTime getUpdate() {
     return update;
   }
 
-  public void setUpdate(LocalDate update) {
+  public void setUpdate(LocalDateTime update) {
     this.update = update;
   }
 

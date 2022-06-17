@@ -1,14 +1,26 @@
 package me.kdshim.kdd_j.LinkTest;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.config.MyMockMvc;
+import me.kdshim.kdd_j.swagger.model.GetLinkDto;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class Link extends MyMockMvc {
+
+    ModelMapper modelMapper = new ModelMapper();
+    @Autowired
+    ObjectMapper objectMapper;
 
     @KDTest
     void linkPostGet() throws Exception {
@@ -36,6 +48,18 @@ public class Link extends MyMockMvc {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].name").value("test link"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].url").value("localhost"))
         ;
+
+        String response = mvc.perform(MockMvcRequestBuilders.get("/link/1"))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andReturn().getResponse().getContentAsString();
+        System.out.println(response);
+        GetLinkDto link = objectMapper.readValue(response, GetLinkDto.class);
+        System.out.println(link);
+
+        assertThat(link.getName())
+                .isEqualTo("test link")
+
+        ;
     }
 
     @KDTest
@@ -58,6 +82,6 @@ public class Link extends MyMockMvc {
                 .andDo(MockMvcResultHandlers.print())
         ;
         //CoreException extends RuntimeException -> coreExcepionData - returnCode, returnMessage, HttpStatus
-
     }
+
 }

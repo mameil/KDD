@@ -161,10 +161,13 @@ components:
           description: 글의 타입[JAVA, SPRING, FOOD, WORK]
           example: JAVA
         created:
-          type: date
+          type: string
+          format: date-time
           description: 엔티티 생성시간
         update:
-          type: date
+          type: string
+          format: date-time
+          description: 엔티티 수정시간
 
     PostLinkDto:
       type: object
