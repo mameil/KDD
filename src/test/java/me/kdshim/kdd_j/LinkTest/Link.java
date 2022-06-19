@@ -2,6 +2,7 @@ package me.kdshim.kdd_j.LinkTest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import me.kdshim.kdd_j.config.KDDError;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.config.MyMockMvc;
 import me.kdshim.kdd_j.swagger.model.GetLinkDto;
@@ -108,7 +109,8 @@ public class Link extends MyMockMvc {
 
         mvc.perform(MockMvcRequestBuilders.get("/link/2"))
                 .andExpect(MockMvcResultMatchers.status().is(400))
-                .andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.code").value(KDDError.LINK_NOT_FOUND.getCode()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message").value(KDDError.LINK_NOT_FOUND.getMsg()))
         ;
         //CoreException extends RuntimeException -> coreExcepionData - returnCode, returnMessage, HttpStatus
     }

@@ -1,19 +1,19 @@
 package me.kdshim.kdd_j.config;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.client.HttpClientErrorException;
 
 public enum KDDError {
-    LINK_NOT_FOUND("KDD_000_001", "링크를 찾지 못했습니다");
+    LINK_NOT_FOUND("KDD_000_001", "링크를 찾지 못했습니다", 400);
 
 
+    private final String code;
+    private final String msg;
+    private final int status;
 
-    private String code;
-    private String msg;
-
-    KDDError(String code, String msg){
+    KDDError(String code, String msg, int status){
         this.code = code;
         this.msg = msg;
+        this.status = status;
     }
 
     public String getCode(){
@@ -24,7 +24,11 @@ public enum KDDError {
         return msg;
     }
 
-    public HttpClientErrorException doThrow(){
-        throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, msg);
+//    public HttpClientErrorException doThrow(){
+//        throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, msg);
+//    }
+
+    public CoreException doThrow(){
+        throw new CoreException(new CoreExceptionData(code, msg, HttpStatus.BAD_REQUEST));
     }
 }

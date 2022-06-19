@@ -87,6 +87,22 @@ swaggerSources {
     }
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
-}
+//define fullTest Task
+//task fullTest {
+//    dependsOn allprojects.collect {
+//        proj -> proj.tasks.matching{
+//            it.name == 'test'
+//        }
+//    }
+//}
+
+//task fullTest (type: GradleBuild, dependsOn: ['test'])
+
+//grouping
+def groupName = "0.myAction"
+bootRun.group = groupName
+generateSwaggerCode.group = groupName
+build.group = groupName
+clean.group = groupName
+//fullTest.group = groupName
+
