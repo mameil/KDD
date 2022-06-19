@@ -10,6 +10,9 @@ import me.kdshim.kdd_j.swagger.model.PostLinkDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class LinkApiControllerImpl implements LinkApiDelegate {
@@ -24,9 +27,17 @@ public class LinkApiControllerImpl implements LinkApiDelegate {
     }
 
     @Override
-    public ResponseEntity<GetLinkDto> findSingleLinkById(Integer id) {
-        Link singleLink = linkService.findSingleLink(id.longValue());
+    public ResponseEntity<List<GetLinkDto>> findLinksLikeUrl(String keyword) {
+        List<Link> linkList = linkService.findAllLinksLikeKeyword(keyword);
+        List<GetLinkDto> dtoList = new ArrayList<>();
+        linkList.forEach(link -> dtoList.add(link.toGetDto(link)));
 
-        return ResponseEntity.ok(singleLink.toGetDto(singleLink));
+        return ResponseEntity.ok(dtoList);
+    }
+
+    @Override
+    public ResponseEntity<GetLinkDto> findSingleLink(String url) {
+        Link link = linkService.findSingleLink(url);
+        return ResponseEntity.ok(link.toGetDto(link));
     }
 }

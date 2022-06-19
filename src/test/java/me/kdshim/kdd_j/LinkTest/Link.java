@@ -33,7 +33,6 @@ public class Link extends MyMockMvc {
                                 "  \"url\": \"localhost\"\n" +
                                 "}"))
                 .andExpect(MockMvcResultMatchers.status().is(200))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.category").value("JAVA"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.memo").value("this is test only link"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("test link"))
@@ -42,14 +41,13 @@ public class Link extends MyMockMvc {
 
         mvc.perform(MockMvcRequestBuilders.get("/links"))
                 .andExpect(MockMvcResultMatchers.status().is(200))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].id").value(1))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].category").value("JAVA"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].memo").value("this is test only link"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].name").value("test link"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].url").value("localhost"))
         ;
 
-        String response = mvc.perform(MockMvcRequestBuilders.get("/link/1"))
+        String response = mvc.perform(MockMvcRequestBuilders.get("/link/localhost"))
                 .andExpect(MockMvcResultMatchers.status().is(200))
                 .andReturn().getResponse().getContentAsString();
         System.out.println(response);
@@ -59,6 +57,32 @@ public class Link extends MyMockMvc {
         assertThat(link.getName())
                 .isEqualTo("test link")
 
+        ;
+    }
+
+    @KDTest
+    void get_ListLink_test() throws Exception{
+        postSinlgeLink();
+        mvc.perform(MockMvcRequestBuilders.post("/link")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\n" +
+                                "  \"category\": \"WORK\",\n" +
+                                "  \"memo\": \"test memo2\",\n" +
+                                "  \"name\": \"테스트 이름2\",\n" +
+                                "  \"url\": \"0123:localhost\"\n" +
+                                "}")
+                )
+                .andExpect(MockMvcResultMatchers.status().is(200))
+        ;
+
+        mvc.perform(MockMvcRequestBuilders.get("/link/find/localhost"))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='테스트 이름2')].category").value("WORK"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='테스트 이름2')].memo").value("test memo2"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='테스트 이름2')].url").value("0123:localhost"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='테스트 이름이용')].category").value("WORK"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='테스트 이름이용')].memo").value("test memo1"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='테스트 이름이용')].url").value("localhost:1234"))
         ;
     }
 
@@ -74,7 +98,7 @@ public class Link extends MyMockMvc {
                         "}")
         )
                 .andExpect(MockMvcResultMatchers.status().is(200))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.url").value("1.2.3.4"))
         ;
 
         mvc.perform(MockMvcRequestBuilders.get("/link/2"))

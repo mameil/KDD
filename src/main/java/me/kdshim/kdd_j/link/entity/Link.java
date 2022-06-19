@@ -8,6 +8,7 @@ import me.kdshim.kdd_j.swagger.model.PostLinkDto;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
@@ -17,6 +18,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class Link extends BaseEntity {
+    @Id
     private String url;
 
     @Enumerated(EnumType.STRING)
@@ -34,9 +36,8 @@ public class Link extends BaseEntity {
 
     public GetLinkDto toGetDto(Link link){
         GetLinkDto dto = new GetLinkDto();
-        dto.setId(link.getId().intValue());
-        dto.setCategory(GetLinkDto.CategoryEnum.valueOf(link.getCategory().toString()));
         dto.setUrl(link.getUrl());
+        dto.setCategory(GetLinkDto.CategoryEnum.valueOf(link.getCategory().toString()));
         dto.setName(link.getName());
         dto.setMemo(link.getMemo());
         dto.setCreated(link.getCreated());
@@ -47,8 +48,8 @@ public class Link extends BaseEntity {
 
     public PostLinkDto toPostDto(Link link){
         PostLinkDto dto = new PostLinkDto();
-        dto.setMemo(link.getMemo());
         dto.setUrl(link.getUrl());
+        dto.setMemo(link.getMemo());
         dto.setName(link.getName());
         dto.setCategory(PostLinkDto.CategoryEnum.valueOf(link.getCategory().toString()));
 
@@ -57,8 +58,8 @@ public class Link extends BaseEntity {
 
     public Link fromPostDto(PostLinkDto dto){
         Link link = new Link();
-        link.setMemo(dto.getMemo());
         link.setUrl(dto.getUrl());
+        link.setMemo(dto.getMemo());
         link.setName(dto.getName());
         link.setCategory(CATEGORY.valueOf(dto.getCategory().toString()));
 

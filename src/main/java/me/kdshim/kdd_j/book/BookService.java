@@ -21,7 +21,7 @@ public class BookService {
     }
 
     public Book createBookWithLink(Link link, Book book) {
-        linkRepositroy.findById(link.getId()).orElseThrow(() -> new IllegalArgumentException("링크를 먼저 저장하고 책을 저장해주세요!"));
+        linkRepositroy.findByUrl(link.getUrl()).orElseThrow(() -> new IllegalArgumentException("링크를 먼저 저장하고 책을 저장해주세요!"));
         book.setLink(link);
         return bookRepository.save(book);
     }

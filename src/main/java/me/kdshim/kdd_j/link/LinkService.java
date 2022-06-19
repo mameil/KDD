@@ -20,8 +20,12 @@ public class LinkService {
         return linkRepository.findAll();
     }
 
-    public Link findSingleLink(Long id) {
-        return linkRepository.findById(id).orElseThrow(KDDError.LINK_NOT_FOUND::doThrow);
+    public Link findSingleLink(String url) {
+        return linkRepository.findByUrl(url).orElseThrow(KDDError.LINK_NOT_FOUND::doThrow);
+    }
+
+    public List<Link> findAllLinksLikeKeyword(String keyword){
+        return linkRepository.findByUrlContaining(keyword);
     }
 
     public Link saveSingleLinkFromDto(PostLinkDto body) {

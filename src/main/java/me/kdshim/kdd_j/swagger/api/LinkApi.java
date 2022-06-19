@@ -32,15 +32,27 @@ public interface LinkApi {
 
     LinkApiDelegate getDelegate();
 
-    @ApiOperation(value = "ID로 링크 조회(admin)", nickname = "findSingleLinkById", notes = "Auto increment 으로 만들어진 아이디로 단일 링크 조회", response = GetLinkDto.class, tags={ "링크", })
+    @ApiOperation(value = "입력받은 URL을 가진 링크 조회", nickname = "findLinksLikeUrl", notes = "입력값을 LIKE 키워드를 사용해 조회", response = GetLinkDto.class, responseContainer = "List", tags={ "링크", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "SUCCESS", response = GetLinkDto.class, responseContainer = "List"),
+        @ApiResponse(code = 400, message = "FAIL", response = ErrorResponseDto.class) })
+    @RequestMapping(value = "/link/find/{keyword}",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    default ResponseEntity<List<GetLinkDto>> findLinksLikeUrl(@ApiParam(value = "링크에 있는 단어를 기준으로 검색", required=true) @PathVariable("keyword") String keyword) {
+        return getDelegate().findLinksLikeUrl(keyword);
+    }
+
+
+    @ApiOperation(value = "URL으로 link 조회", nickname = "findSingleLink", notes = "URL으로 저장한 link를 조회", response = GetLinkDto.class, tags={ "링크", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "SUCCESS", response = GetLinkDto.class),
         @ApiResponse(code = 400, message = "FAIL", response = ErrorResponseDto.class) })
-    @RequestMapping(value = "/link/{id}",
+    @RequestMapping(value = "/link/{url}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    default ResponseEntity<GetLinkDto> findSingleLinkById(@ApiParam(value = "Link's ID(Auto Increment generated)", required=true) @PathVariable("id") Integer id) {
-        return getDelegate().findSingleLinkById(id);
+    default ResponseEntity<GetLinkDto> findSingleLink(@ApiParam(value = "저장해둔 링크를 URL으로 조회", required=true) @PathVariable("url") String url) {
+        return getDelegate().findSingleLink(url);
     }
 
 

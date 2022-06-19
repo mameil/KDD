@@ -6,6 +6,7 @@ import me.kdshim.kdd_j.link.LinkService;
 import me.kdshim.kdd_j.swagger.api.LinksApiDelegate;
 import me.kdshim.kdd_j.swagger.model.GetLinkDto;
 import me.kdshim.kdd_j.swagger.model.PostLinkDto;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -31,12 +32,12 @@ public class LinksApiControllerImpl implements LinksApiDelegate {
     @Override
     public ResponseEntity<Void> saveLinkList(List<PostLinkDto> body) {
         body.forEach(linkService::saveSingleLinkFromDto);
-        return ResponseEntity.ok(null);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<Void> deleteAllLinks() {
         linkService.deleteAll();
-        return ResponseEntity.ok(null);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

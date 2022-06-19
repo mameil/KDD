@@ -38,13 +38,32 @@ public interface LinkApiDelegate {
     }
 
     /**
-     * @see LinkApi#findSingleLinkById
+     * @see LinkApi#findLinksLikeUrl
      */
-    default ResponseEntity<GetLinkDto> findSingleLinkById( Integer  id) {
+    default ResponseEntity<List<GetLinkDto>> findLinksLikeUrl( String  keyword) {
         if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
             if (getAcceptHeader().get().contains("application/json")) {
                 try {
-                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"created\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"name\" : \"Java Stream API는 왜 for-loop보다 느릴까?\",\n  \"memo\" : \"실제 예시를 통한 비교 해둔 글\",\n  \"update\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"id\" : 1,\n  \"category\" : \"JAVA\",\n  \"url\" : \"https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b\"\n}", GetLinkDto.class), HttpStatus.NOT_IMPLEMENTED);
+                    return new ResponseEntity<>(getObjectMapper().get().readValue("[ {\n  \"created\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"name\" : \"Java Stream API는 왜 for-loop보다 느릴까?\",\n  \"memo\" : \"실제 예시를 통한 비교 해둔 글\",\n  \"update\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"category\" : \"JAVA\",\n  \"url\" : \"https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b\"\n}, {\n  \"created\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"name\" : \"Java Stream API는 왜 for-loop보다 느릴까?\",\n  \"memo\" : \"실제 예시를 통한 비교 해둔 글\",\n  \"update\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"category\" : \"JAVA\",\n  \"url\" : \"https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b\"\n} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
+                } catch (IOException e) {
+                    log.error("Couldn't serialize response for content type application/json", e);
+                    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+                }
+            }
+        } else {
+            log.warn("ObjectMapper or HttpServletRequest not configured in default LinkApi interface so no example is generated");
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
+    /**
+     * @see LinkApi#findSingleLink
+     */
+    default ResponseEntity<GetLinkDto> findSingleLink( String  url) {
+        if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+            if (getAcceptHeader().get().contains("application/json")) {
+                try {
+                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"created\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"name\" : \"Java Stream API는 왜 for-loop보다 느릴까?\",\n  \"memo\" : \"실제 예시를 통한 비교 해둔 글\",\n  \"update\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"category\" : \"JAVA\",\n  \"url\" : \"https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b\"\n}", GetLinkDto.class), HttpStatus.NOT_IMPLEMENTED);
                 } catch (IOException e) {
                     log.error("Couldn't serialize response for content type application/json", e);
                     return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -63,7 +82,7 @@ public interface LinkApiDelegate {
         if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
             if (getAcceptHeader().get().contains("application/json")) {
                 try {
-                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"created\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"name\" : \"Java Stream API는 왜 for-loop보다 느릴까?\",\n  \"memo\" : \"실제 예시를 통한 비교 해둔 글\",\n  \"update\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"id\" : 1,\n  \"category\" : \"JAVA\",\n  \"url\" : \"https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b\"\n}", GetLinkDto.class), HttpStatus.NOT_IMPLEMENTED);
+                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"created\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"name\" : \"Java Stream API는 왜 for-loop보다 느릴까?\",\n  \"memo\" : \"실제 예시를 통한 비교 해둔 글\",\n  \"update\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"category\" : \"JAVA\",\n  \"url\" : \"https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b\"\n}", GetLinkDto.class), HttpStatus.NOT_IMPLEMENTED);
                 } catch (IOException e) {
                     log.error("Couldn't serialize response for content type application/json", e);
                     return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

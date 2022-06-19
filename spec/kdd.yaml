@@ -13,20 +13,20 @@ tags:
     description: "링크 기록"
 
 paths:
-  /link/{id}:
+  /link/{url}:
     get:
       tags:
         - "링크"
-      summary: ID로 링크 조회(admin)
-      description: Auto increment 으로 만들어진 아이디로 단일 링크 조회
-      operationId: findSingleLinkById
+      summary: URL으로 link 조회
+      description: URL으로 저장한 link를 조회
+      operationId: findSingleLink
       parameters:
-        - name: id
+        - name: url
           in: path
-          description: Link's ID(Auto Increment generated)
+          description: 저장해둔 링크를 URL으로 조회
           required: true
           schema:
-            type: integer
+            type: string
       responses:
         200:
           description: SUCCESS
@@ -34,6 +34,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/getLinkDto'
+        400:
+          description: FAIL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+
+
+  /link/find/{keyword}:
+    get:
+      tags:
+        - "링크"
+      summary: 입력받은 URL을 가진 링크 조회
+      description: 입력값을 LIKE 키워드를 사용해 조회
+      operationId: findLinksLikeUrl
+      parameters:
+        - name: keyword
+          in: path
+          description: 링크에 있는 단어를 기준으로 검색
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/getLinkDto'
         400:
           description: FAIL
           content:
@@ -135,18 +166,15 @@ components:
     getLinkDto:
       type: object
       properties:
-        id:
-          type: integer
-          description: 저장된 아이디(AUTO_INCREMENT)
-          example: 1
+        url:
+          type: string
+          description: 링크(raw url)
+          example:
+            https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b
         name:
           type: string
           description: 해당 url 이름
           example: Java Stream API는 왜 for-loop보다 느릴까?
-        url:
-          type: string
-          description: 링크(raw url)
-          example: https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b
         memo:
           type: string
           description: 해당 url 설명

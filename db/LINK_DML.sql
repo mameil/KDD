@@ -1,13 +1,12 @@
-create table link
+create table kdd.link
 (
-    id       int(255) auto_increment unique,
-    url      varchar(255) not null,
+    url      varchar(255) not null unique ,
     category varchar(30)  not null,
     name     varchar(255),
     memo     varchar(255),
     created  DATETIME,
     updated  DATETIME,
-    PRIMARY KEY (id)
+    PRIMARY KEY (url)
 );
 
 drop table link;

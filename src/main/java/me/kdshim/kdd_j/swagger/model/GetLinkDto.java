@@ -18,14 +18,11 @@ import javax.validation.constraints.*;
 
 
 public class GetLinkDto   {
-  @JsonProperty("id")
-  private Integer id = null;
+  @JsonProperty("url")
+  private String url = null;
 
   @JsonProperty("name")
   private String name = null;
-
-  @JsonProperty("url")
-  private String url = null;
 
   @JsonProperty("memo")
   private String memo = null;
@@ -73,23 +70,23 @@ public class GetLinkDto   {
   @JsonProperty("update")
   private LocalDateTime update = null;
 
-  public GetLinkDto id(Integer id) {
-    this.id = id;
+  public GetLinkDto url(String url) {
+    this.url = url;
     return this;
   }
 
   /**
-   * 저장된 아이디(AUTO_INCREMENT)
-   * @return id
+   * 링크(raw url)
+   * @return url
    **/
-  @ApiModelProperty(example = "1", value = "저장된 아이디(AUTO_INCREMENT)")
+  @ApiModelProperty(example = "https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b", value = "링크(raw url)")
   
-    public Integer getId() {
-    return id;
+    public String getUrl() {
+    return url;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
+  public void setUrl(String url) {
+    this.url = url;
   }
 
   public GetLinkDto name(String name) {
@@ -109,25 +106,6 @@ public class GetLinkDto   {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public GetLinkDto url(String url) {
-    this.url = url;
-    return this;
-  }
-
-  /**
-   * 링크(raw url)
-   * @return url
-   **/
-  @ApiModelProperty(example = "https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b", value = "링크(raw url)")
-  
-    public String getUrl() {
-    return url;
-  }
-
-  public void setUrl(String url) {
-    this.url = url;
   }
 
   public GetLinkDto memo(String memo) {
@@ -218,9 +196,8 @@ public class GetLinkDto   {
       return false;
     }
     GetLinkDto getLinkDto = (GetLinkDto) o;
-    return Objects.equals(this.id, getLinkDto.id) &&
+    return Objects.equals(this.url, getLinkDto.url) &&
         Objects.equals(this.name, getLinkDto.name) &&
-        Objects.equals(this.url, getLinkDto.url) &&
         Objects.equals(this.memo, getLinkDto.memo) &&
         Objects.equals(this.category, getLinkDto.category) &&
         Objects.equals(this.created, getLinkDto.created) &&
@@ -229,7 +206,7 @@ public class GetLinkDto   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, url, memo, category, created, update);
+    return Objects.hash(url, name, memo, category, created, update);
   }
 
   @Override
@@ -237,9 +214,8 @@ public class GetLinkDto   {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetLinkDto {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    memo: ").append(toIndentedString(memo)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
