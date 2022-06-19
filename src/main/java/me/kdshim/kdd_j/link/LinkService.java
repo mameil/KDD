@@ -32,7 +32,7 @@ public class LinkService {
         Link link = new Link();
         link = link.fromPostDto(body);
         log.info(link.toString());
-        linkRepository.save(link);
+        link = linkRepository.save(link);
         return link;
     }
 

@@ -63,6 +63,7 @@ public class Link extends MyMockMvc {
     @KDTest
     void get_ListLink_test() throws Exception{
         postSinlgeLink();
+
         mvc.perform(MockMvcRequestBuilders.post("/link")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\n" +
@@ -73,6 +74,10 @@ public class Link extends MyMockMvc {
                                 "}")
                 )
                 .andExpect(MockMvcResultMatchers.status().is(200))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.url").value("0123:localhost"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("테스트 이름2"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.memo").value("test memo2"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.category").value("WORK"))
         ;
 
         mvc.perform(MockMvcRequestBuilders.get("/link/find/localhost"))

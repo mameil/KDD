@@ -1055,3 +1055,188 @@
 [TRACE] 2022-06-19 14:41:39.676 :       o.h.t.d.s.BasicExtractor - extracted value ([category4_1_] : [VARCHAR]) - [SPRING]
 [TRACE] 2022-06-19 14:41:39.676 :       o.h.t.d.s.BasicExtractor - extracted value ([memo5_1_] : [VARCHAR]) - [swagger.yaml을 작성할 때 참고]
 [TRACE] 2022-06-19 14:41:39.677 :       o.h.t.d.s.BasicExtractor - extracted value ([name6_1_] : [VARCHAR]) - [Swagger Official Page]
+[INFO ] 2022-06-19 14:54:53.711 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-06-19 14:54:53.714 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[INFO ] 2022-06-19 14:54:53.789 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.book.BookRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-06-19 14:54:53.797 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.link.LinkRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-06-19 14:54:53.798 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 0 JDBC repository interfaces.
+[INFO ] 2022-06-19 14:54:53.821 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-06-19 14:54:53.824 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-06-19 14:54:53.873 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+[INFO ] 2022-06-19 14:54:55.331 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-06-19 14:54:55.384 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.4.27.Final
+[INFO ] 2022-06-19 14:54:55.582 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-06-19 14:54:55.713 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[INFO ] 2022-06-19 14:54:56.551 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-06-19 14:54:56.560 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2022-06-19 14:54:57.797 : o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-06-19 14:54:58.526 : o.s.b.a.e.w.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[INFO ] 2022-06-19 14:54:58.923 : o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2022-06-19 14:54:59.436 : o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2022-06-19 14:54:59.436 : o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2022-06-19 14:54:59.437 : o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+[INFO ] 2022-06-19 14:55:00.911 : o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2022-06-19 14:55:00.919 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-06-19 14:55:00.920 : o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[INFO ] 2022-06-19 15:14:35.626 :                     i.undertow - stopping server: Undertow - 2.2.3.Final
+[INFO ] 2022-06-19 15:14:35.646 :                    i.u.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[INFO ] 2022-06-19 15:14:35.656 : o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2022-06-19 15:14:35.660 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[TRACE] 2022-06-19 15:14:35.664 : o.h.t.s.TypeConfiguration$Scope - Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@5903708d] for TypeConfiguration
+[DEBUG] 2022-06-19 15:14:35.664 : o.h.t.s.TypeConfiguration$Scope - Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@45bde550] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@5903708d]
+[INFO ] 2022-06-19 15:14:41.549 : o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2022-06-19 15:14:41.550 : o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2022-06-19 15:14:43.005 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-06-19 15:14:43.006 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[INFO ] 2022-06-19 15:14:43.048 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.book.BookRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-06-19 15:14:43.050 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.link.LinkRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-06-19 15:14:43.051 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 0 JDBC repository interfaces.
+[INFO ] 2022-06-19 15:14:43.063 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-06-19 15:14:43.064 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-06-19 15:14:43.107 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+[WARN ] 2022-06-19 15:14:43.869 :                      i.u.w.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+[INFO ] 2022-06-19 15:14:43.888 :                    i.u.servlet - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-06-19 15:14:43.889 : o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2338 ms
+[INFO ] 2022-06-19 15:14:44.400 : o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/kdd?serverTimezone=UTC&characterEncoding=UTF-8'
+[INFO ] 2022-06-19 15:14:44.600 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-06-19 15:14:44.631 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.4.27.Final
+[INFO ] 2022-06-19 15:14:44.718 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[DEBUG] 2022-06-19 15:14:44.731 :        o.h.t.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@75fd8cb9
+[DEBUG] 2022-06-19 15:14:44.732 :        o.h.t.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@75fd8cb9
+[DEBUG] 2022-06-19 15:14:44.732 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@75fd8cb9
+[DEBUG] 2022-06-19 15:14:44.732 :        o.h.t.BasicTypeRegistry - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@487b7ab9
+[DEBUG] 2022-06-19 15:14:44.732 :        o.h.t.BasicTypeRegistry - Adding type registration true_false -> org.hibernate.type.TrueFalseType@553729b6
+[DEBUG] 2022-06-19 15:14:44.734 :        o.h.t.BasicTypeRegistry - Adding type registration yes_no -> org.hibernate.type.YesNoType@79a54e83
+[DEBUG] 2022-06-19 15:14:44.735 :        o.h.t.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@33ccc5a
+[DEBUG] 2022-06-19 15:14:44.735 :        o.h.t.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@33ccc5a
+[DEBUG] 2022-06-19 15:14:44.735 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@33ccc5a
+[DEBUG] 2022-06-19 15:14:44.736 :        o.h.t.BasicTypeRegistry - Adding type registration character -> org.hibernate.type.CharacterType@1d274abf
+[DEBUG] 2022-06-19 15:14:44.736 :        o.h.t.BasicTypeRegistry - Adding type registration char -> org.hibernate.type.CharacterType@1d274abf
+[DEBUG] 2022-06-19 15:14:44.736 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@1d274abf
+[DEBUG] 2022-06-19 15:14:44.737 :        o.h.t.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@d0026bc
+[DEBUG] 2022-06-19 15:14:44.737 :        o.h.t.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@d0026bc
+[DEBUG] 2022-06-19 15:14:44.737 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@d0026bc
+[DEBUG] 2022-06-19 15:14:44.738 :        o.h.t.BasicTypeRegistry - Adding type registration integer -> org.hibernate.type.IntegerType@7d8e8757
+[DEBUG] 2022-06-19 15:14:44.738 :        o.h.t.BasicTypeRegistry - Adding type registration int -> org.hibernate.type.IntegerType@7d8e8757
+[DEBUG] 2022-06-19 15:14:44.739 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@7d8e8757
+[DEBUG] 2022-06-19 15:14:44.739 :        o.h.t.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@35ebb3b6
+[DEBUG] 2022-06-19 15:14:44.739 :        o.h.t.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@35ebb3b6
+[DEBUG] 2022-06-19 15:14:44.739 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Long -> org.hibernate.type.LongType@35ebb3b6
+[DEBUG] 2022-06-19 15:14:44.740 :        o.h.t.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@6eb64419
+[DEBUG] 2022-06-19 15:14:44.740 :        o.h.t.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@6eb64419
+[DEBUG] 2022-06-19 15:14:44.740 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@6eb64419
+[DEBUG] 2022-06-19 15:14:44.741 :        o.h.t.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@1f8f7672
+[DEBUG] 2022-06-19 15:14:44.741 :        o.h.t.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@1f8f7672
+[DEBUG] 2022-06-19 15:14:44.741 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@1f8f7672
+[DEBUG] 2022-06-19 15:14:44.742 :        o.h.t.BasicTypeRegistry - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@24a6b693
+[DEBUG] 2022-06-19 15:14:44.742 :        o.h.t.BasicTypeRegistry - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@24a6b693
+[DEBUG] 2022-06-19 15:14:44.742 :        o.h.t.BasicTypeRegistry - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@640c5b0
+[DEBUG] 2022-06-19 15:14:44.742 :        o.h.t.BasicTypeRegistry - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@640c5b0
+[DEBUG] 2022-06-19 15:14:44.743 :        o.h.t.BasicTypeRegistry - Adding type registration string -> org.hibernate.type.StringType@4cfe58d1
+[DEBUG] 2022-06-19 15:14:44.743 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.String -> org.hibernate.type.StringType@4cfe58d1
+[DEBUG] 2022-06-19 15:14:44.744 :        o.h.t.BasicTypeRegistry - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@6503c1bd
+[DEBUG] 2022-06-19 15:14:44.745 :        o.h.t.BasicTypeRegistry - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7696af08
+[DEBUG] 2022-06-19 15:14:44.745 :        o.h.t.BasicTypeRegistry - Adding type registration url -> org.hibernate.type.UrlType@7e4ecce
+[DEBUG] 2022-06-19 15:14:44.745 :        o.h.t.BasicTypeRegistry - Adding type registration java.net.URL -> org.hibernate.type.UrlType@7e4ecce
+[DEBUG] 2022-06-19 15:14:44.746 :        o.h.t.BasicTypeRegistry - Adding type registration Duration -> org.hibernate.type.DurationType@1aeea75f
+[DEBUG] 2022-06-19 15:14:44.746 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@1aeea75f
+[DEBUG] 2022-06-19 15:14:44.747 :        o.h.t.BasicTypeRegistry - Adding type registration Instant -> org.hibernate.type.InstantType@cf6f021
+[DEBUG] 2022-06-19 15:14:44.747 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@cf6f021
+[DEBUG] 2022-06-19 15:14:44.747 :        o.h.t.BasicTypeRegistry - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@6a67bb1e
+[DEBUG] 2022-06-19 15:14:44.747 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@6a67bb1e
+[DEBUG] 2022-06-19 15:14:44.748 :        o.h.t.BasicTypeRegistry - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@537c9b56
+[DEBUG] 2022-06-19 15:14:44.748 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@537c9b56
+[DEBUG] 2022-06-19 15:14:44.748 :        o.h.t.BasicTypeRegistry - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@7e4a3f36
+[DEBUG] 2022-06-19 15:14:44.748 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@7e4a3f36
+[DEBUG] 2022-06-19 15:14:44.749 :        o.h.t.BasicTypeRegistry - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@2b692f8e
+[DEBUG] 2022-06-19 15:14:44.749 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@2b692f8e
+[DEBUG] 2022-06-19 15:14:44.749 :        o.h.t.BasicTypeRegistry - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@5edf7c79
+[DEBUG] 2022-06-19 15:14:44.749 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@5edf7c79
+[DEBUG] 2022-06-19 15:14:44.750 :        o.h.t.BasicTypeRegistry - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@773e819f
+[DEBUG] 2022-06-19 15:14:44.750 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@773e819f
+[DEBUG] 2022-06-19 15:14:44.751 :        o.h.t.BasicTypeRegistry - Adding type registration date -> org.hibernate.type.DateType@4e1a854c
+[DEBUG] 2022-06-19 15:14:44.751 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.Date -> org.hibernate.type.DateType@4e1a854c
+[DEBUG] 2022-06-19 15:14:44.751 :        o.h.t.BasicTypeRegistry - Adding type registration time -> org.hibernate.type.TimeType@52b79c17
+[DEBUG] 2022-06-19 15:14:44.751 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@52b79c17
+[DEBUG] 2022-06-19 15:14:44.752 :        o.h.t.BasicTypeRegistry - Adding type registration timestamp -> org.hibernate.type.TimestampType@3c986c7d
+[DEBUG] 2022-06-19 15:14:44.752 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@3c986c7d
+[DEBUG] 2022-06-19 15:14:44.752 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@3c986c7d
+[DEBUG] 2022-06-19 15:14:44.752 :        o.h.t.BasicTypeRegistry - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@3fc68356
+[DEBUG] 2022-06-19 15:14:44.753 :        o.h.t.BasicTypeRegistry - Adding type registration calendar -> org.hibernate.type.CalendarType@168c080e
+[DEBUG] 2022-06-19 15:14:44.753 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@168c080e
+[DEBUG] 2022-06-19 15:14:44.753 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@168c080e
+[DEBUG] 2022-06-19 15:14:44.753 :        o.h.t.BasicTypeRegistry - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@7518ddf7
+[DEBUG] 2022-06-19 15:14:44.753 :        o.h.t.BasicTypeRegistry - Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@6660f2de
+[DEBUG] 2022-06-19 15:14:44.753 :        o.h.t.BasicTypeRegistry - Adding type registration locale -> org.hibernate.type.LocaleType@132ce15
+[DEBUG] 2022-06-19 15:14:44.753 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@132ce15
+[DEBUG] 2022-06-19 15:14:44.754 :        o.h.t.BasicTypeRegistry - Adding type registration currency -> org.hibernate.type.CurrencyType@5f4b8eb4
+[DEBUG] 2022-06-19 15:14:44.754 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@5f4b8eb4
+[DEBUG] 2022-06-19 15:14:44.754 :        o.h.t.BasicTypeRegistry - Adding type registration timezone -> org.hibernate.type.TimeZoneType@1ce71f9f
+[DEBUG] 2022-06-19 15:14:44.754 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@1ce71f9f
+[DEBUG] 2022-06-19 15:14:44.755 :        o.h.t.BasicTypeRegistry - Adding type registration class -> org.hibernate.type.ClassType@6fc7f23b
+[DEBUG] 2022-06-19 15:14:44.755 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@6fc7f23b
+[DEBUG] 2022-06-19 15:14:44.755 :        o.h.t.BasicTypeRegistry - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@1f05bfb6
+[DEBUG] 2022-06-19 15:14:44.755 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@1f05bfb6
+[DEBUG] 2022-06-19 15:14:44.755 :        o.h.t.BasicTypeRegistry - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5852fbeb
+[DEBUG] 2022-06-19 15:14:44.756 :        o.h.t.BasicTypeRegistry - Adding type registration binary -> org.hibernate.type.BinaryType@2589516e
+[DEBUG] 2022-06-19 15:14:44.757 :        o.h.t.BasicTypeRegistry - Adding type registration byte[] -> org.hibernate.type.BinaryType@2589516e
+[DEBUG] 2022-06-19 15:14:44.757 :        o.h.t.BasicTypeRegistry - Adding type registration [B -> org.hibernate.type.BinaryType@2589516e
+[DEBUG] 2022-06-19 15:14:44.758 :        o.h.t.BasicTypeRegistry - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@6454f31e
+[DEBUG] 2022-06-19 15:14:44.758 :        o.h.t.BasicTypeRegistry - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@6454f31e
+[DEBUG] 2022-06-19 15:14:44.759 :        o.h.t.BasicTypeRegistry - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@6454f31e
+[DEBUG] 2022-06-19 15:14:44.759 :        o.h.t.BasicTypeRegistry - Adding type registration row_version -> org.hibernate.type.RowVersionType@33a043de
+[DEBUG] 2022-06-19 15:14:44.759 :        o.h.t.BasicTypeRegistry - Adding type registration image -> org.hibernate.type.ImageType@f74acb6
+[DEBUG] 2022-06-19 15:14:44.760 :        o.h.t.BasicTypeRegistry - Adding type registration characters -> org.hibernate.type.CharArrayType@531ad4fa
+[DEBUG] 2022-06-19 15:14:44.762 :        o.h.t.BasicTypeRegistry - Adding type registration char[] -> org.hibernate.type.CharArrayType@531ad4fa
+[DEBUG] 2022-06-19 15:14:44.762 :        o.h.t.BasicTypeRegistry - Adding type registration [C -> org.hibernate.type.CharArrayType@531ad4fa
+[DEBUG] 2022-06-19 15:14:44.762 :        o.h.t.BasicTypeRegistry - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@176fd12d
+[DEBUG] 2022-06-19 15:14:44.762 :        o.h.t.BasicTypeRegistry - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@176fd12d
+[DEBUG] 2022-06-19 15:14:44.763 :        o.h.t.BasicTypeRegistry - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@176fd12d
+[DEBUG] 2022-06-19 15:14:44.763 :        o.h.t.BasicTypeRegistry - Adding type registration text -> org.hibernate.type.TextType@5f59a416
+[DEBUG] 2022-06-19 15:14:44.763 :        o.h.t.BasicTypeRegistry - Adding type registration ntext -> org.hibernate.type.NTextType@50887350
+[DEBUG] 2022-06-19 15:14:44.763 :        o.h.t.BasicTypeRegistry - Adding type registration blob -> org.hibernate.type.BlobType@7f5ed5e1
+[DEBUG] 2022-06-19 15:14:44.764 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@7f5ed5e1
+[DEBUG] 2022-06-19 15:14:44.764 :        o.h.t.BasicTypeRegistry - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@7cabe841
+[DEBUG] 2022-06-19 15:14:44.764 :        o.h.t.BasicTypeRegistry - Adding type registration clob -> org.hibernate.type.ClobType@1c6ccb19
+[DEBUG] 2022-06-19 15:14:44.764 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@1c6ccb19
+[DEBUG] 2022-06-19 15:14:44.765 :        o.h.t.BasicTypeRegistry - Adding type registration nclob -> org.hibernate.type.NClobType@2ec17eb
+[DEBUG] 2022-06-19 15:14:44.765 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@2ec17eb
+[DEBUG] 2022-06-19 15:14:44.765 :        o.h.t.BasicTypeRegistry - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@73cf017f
+[DEBUG] 2022-06-19 15:14:44.766 :        o.h.t.BasicTypeRegistry - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@2f113355
+[DEBUG] 2022-06-19 15:14:44.767 :        o.h.t.BasicTypeRegistry - Adding type registration serializable -> org.hibernate.type.SerializableType@614f3d72
+[DEBUG] 2022-06-19 15:14:44.769 :        o.h.t.BasicTypeRegistry - Adding type registration object -> org.hibernate.type.ObjectType@20d1a8a2
+[DEBUG] 2022-06-19 15:14:44.774 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@20d1a8a2
+[DEBUG] 2022-06-19 15:14:44.774 :        o.h.t.BasicTypeRegistry - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@47a4e73e
+[DEBUG] 2022-06-19 15:14:44.774 :        o.h.t.BasicTypeRegistry - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@356a1ed
+[DEBUG] 2022-06-19 15:14:44.775 :        o.h.t.BasicTypeRegistry - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@165ac1ac
+[DEBUG] 2022-06-19 15:14:44.775 :        o.h.t.BasicTypeRegistry - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@12f013fe
+[DEBUG] 2022-06-19 15:14:44.775 :        o.h.t.BasicTypeRegistry - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@720d8b89
+[DEBUG] 2022-06-19 15:14:44.775 :        o.h.t.BasicTypeRegistry - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@44e205ec
+[DEBUG] 2022-06-19 15:14:44.776 :        o.h.t.BasicTypeRegistry - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@475fb7d
+[DEBUG] 2022-06-19 15:14:44.780 :        o.h.t.BasicTypeRegistry - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@160867ee
+[INFO ] 2022-06-19 15:14:44.809 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[DEBUG] 2022-06-19 15:14:44.922 : o.h.t.s.TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@43a30aae] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@43ccf580]
+[DEBUG] 2022-06-19 15:14:45.009 :                 o.h.t.EnumType - Using NAMED-based conversion for Enum me.kdshim.kdd_j.link.entity.CATEGORY
+[DEBUG] 2022-06-19 15:14:45.074 : o.h.t.s.TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@43a30aae] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@6dbd2701]
+[INFO ] 2022-06-19 15:14:45.303 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[TRACE] 2022-06-19 15:14:45.307 : o.h.t.s.TypeConfiguration$Scope - Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@6dbd2701] for TypeConfiguration
+[INFO ] 2022-06-19 15:14:45.308 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2022-06-19 15:14:46.002 : o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-06-19 15:14:46.404 : o.s.b.a.e.w.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[INFO ] 2022-06-19 15:14:46.541 : o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2022-06-19 15:14:46.573 : o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2022-06-19 15:14:46.920 :                     i.undertow - starting server: Undertow - 2.2.3.Final
+[INFO ] 2022-06-19 15:14:46.927 :                         o.xnio - XNIO version 3.8.0.Final
+[INFO ] 2022-06-19 15:14:46.932 :                        o.x.nio - XNIO NIO Implementation Version 3.8.0.Final
+[INFO ] 2022-06-19 15:14:46.957 :                    o.j.threads - JBoss Threads version 3.1.0.Final
+[INFO ] 2022-06-19 15:14:46.999 :  o.s.b.w.e.u.UndertowWebServer - Undertow started on port(s) 8080 (http)
+[INFO ] 2022-06-19 15:14:47.641 :                    i.u.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2022-06-19 15:14:47.643 :      o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2022-06-19 15:14:47.645 :      o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+[TRACE] 2022-06-19 15:15:58.459 :          o.h.t.d.s.BasicBinder - binding parameter [1] as [VARCHAR] - [https://cowhacker.tistory.com/87]
+[TRACE] 2022-06-19 15:15:58.547 :          o.h.t.d.s.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2022-06-19T15:15:58.534138]
+[TRACE] 2022-06-19 15:15:58.550 :          o.h.t.d.s.BasicBinder - binding parameter [2] as [TIMESTAMP] - [2022-06-19T15:15:58.534138]
+[TRACE] 2022-06-19 15:15:58.551 :          o.h.t.d.s.BasicBinder - binding parameter [3] as [VARCHAR] - [WORK]
+[TRACE] 2022-06-19 15:15:58.551 :          o.h.t.d.s.BasicBinder - binding parameter [4] as [VARCHAR] - [안쓰는 노트북으로 서버 만드는 방법]
+[TRACE] 2022-06-19 15:15:58.551 :          o.h.t.d.s.BasicBinder - binding parameter [5] as [VARCHAR] - [집에서 서버 구축하기]
+[TRACE] 2022-06-19 15:15:58.552 :          o.h.t.d.s.BasicBinder - binding parameter [6] as [VARCHAR] - [https://cowhacker.tistory.com/87]
