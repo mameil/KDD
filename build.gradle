@@ -5,6 +5,9 @@ plugins {
 
     //swagger
     id 'org.hidetake.swagger.generator' version '2.19.2'
+
+    //jacoco
+    id 'jacoco'
 }
 
 group = 'me.kdshim'
@@ -73,6 +76,10 @@ dependencies {
 
 }
 
+jacoco{
+    toolVersion = "0.8.5"
+}
+
 //SwaggerSource Setting
 swaggerSources {
     KDD_J {
@@ -90,26 +97,33 @@ swaggerSources {
 //define fullTest Task
 //TODO 어떻게 하면 gradle 테스크를 만들고
 //TODO 해당 테스크를 어디 기준으로 스캔해서 진행할 것인지, 그룹핑은 성공했으니까 해당 2건만
-task fullTest {
-    tasks.findAll {
-        task -> task.name.startsWith('test')
+//task fullTest {
+//    tasks.findAll {
+//        task -> task.name.startsWith('test')
+//    }
+//}
+
+task fullTest(type: Test, group: "0.myaction"){
+    jacoco{
+        append = false
+        destinationFile = file("$buildDir}/jacoco/jacocoTest.exec")
     }
 }
 
 
-//sourceSets{
-//    fullTest{
-//        java{
-//            srcDir file('src/test/java')
-//        }
-//        groovy{
-//            srcDir file('src/test/java')
-//        }
-//        resources{
-//            srcDir file('src/test/resources')
-//        }
-//    }
-//}
+sourceSets{
+    fullTest{
+        java{
+            srcDir file('src/test/java')
+        }
+        groovy{
+            srcDir file('src/test/java')
+        }
+        resources{
+            srcDir file('src/test/resources')
+        }
+    }
+}
 
 
 
