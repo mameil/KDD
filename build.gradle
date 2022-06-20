@@ -88,15 +88,30 @@ swaggerSources {
 }
 
 //define fullTest Task
-//task fullTest {
-//    dependsOn allprojects.collect {
-//        proj -> proj.tasks.matching{
-//            it.name == 'test'
+//TODO 어떻게 하면 gradle 테스크를 만들고
+//TODO 해당 테스크를 어디 기준으로 스캔해서 진행할 것인지, 그룹핑은 성공했으니까 해당 2건만
+task fullTest {
+    tasks.findAll {
+        task -> task.name.startsWith('test')
+    }
+}
+
+
+//sourceSets{
+//    fullTest{
+//        java{
+//            srcDir file('src/test/java')
+//        }
+//        groovy{
+//            srcDir file('src/test/java')
+//        }
+//        resources{
+//            srcDir file('src/test/resources')
 //        }
 //    }
 //}
 
-//task fullTest (type: GradleBuild, dependsOn: ['test'])
+
 
 //grouping
 def groupName = "0.myAction"
@@ -104,5 +119,5 @@ bootRun.group = groupName
 generateSwaggerCode.group = groupName
 build.group = groupName
 clean.group = groupName
-//fullTest.group = groupName
+fullTest.group = groupName
 
