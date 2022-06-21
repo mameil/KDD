@@ -123,6 +123,11 @@ sourceSets{
             srcDir file('src/test/resources')
         }
     }
+    test{
+        java{
+            srcDir file('src/test/java')
+        }
+    }
 }
 
 
