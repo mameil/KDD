@@ -28,7 +28,7 @@ public class GetLinkDto   {
   private String memo = null;
 
   /**
-   * 글의 타입[JAVA, SPRING, FOOD, WORK]
+   * 글의 타입[JAVA, SPRING, FOOD, WORK, KOTLIN]
    */
   public enum CategoryEnum {
     JAVA("JAVA"),
@@ -37,7 +37,9 @@ public class GetLinkDto   {
     
     FOOD("FOOD"),
     
-    WORK("WORK");
+    WORK("WORK"),
+    
+    KOTLIN("KOTLIN");
 
     private String value;
 
@@ -133,10 +135,10 @@ public class GetLinkDto   {
   }
 
   /**
-   * 글의 타입[JAVA, SPRING, FOOD, WORK]
+   * 글의 타입[JAVA, SPRING, FOOD, WORK, KOTLIN]
    * @return category
    **/
-  @ApiModelProperty(example = "JAVA", value = "글의 타입[JAVA, SPRING, FOOD, WORK]")
+  @ApiModelProperty(example = "JAVA", value = "글의 타입[JAVA, SPRING, FOOD, WORK, KOTLIN]")
   
     public CategoryEnum getCategory() {
     return category;

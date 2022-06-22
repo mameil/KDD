@@ -127,7 +127,7 @@ public class Link extends MyMockMvc {
                         "      \"url\": \"https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b\"\n" +
                         "    },\n" +
                         "    {\n" +
-                        "      \"category\": \"JAVA\",\n" +
+                        "      \"category\": \"KOTLIN\",\n" +
                         "      \"memo\": \"ddd\",\n" +
                         "      \"name\": \"qqq\",\n" +
                         "      \"url\": \"qwer\"\n" +
@@ -139,7 +139,7 @@ public class Link extends MyMockMvc {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='Java Stream API는 왜 for-loop보다 느릴까?')].category").value("JAVA"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='Java Stream API는 왜 for-loop보다 느릴까?')].memo").value("실제 예시를 통한 비교 해둔 글"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='Java Stream API는 왜 for-loop보다 느릴까?')].url").value("https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='qqq')].category").value("JAVA"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='qqq')].category").value("KOTLIN"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='qqq')].memo").value("ddd"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='qqq')].url").value("qwer"))
                 ;

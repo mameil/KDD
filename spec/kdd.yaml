@@ -192,7 +192,8 @@ components:
             - SPRING
             - FOOD
             - WORK
-          description: 글의 타입[JAVA, SPRING, FOOD, WORK]
+            - KOTLIN
+          description: 글의 타입[JAVA, SPRING, FOOD, WORK, KOTLIN]
           example: JAVA
         created:
           type: string
@@ -225,7 +226,8 @@ components:
             - SPRING
             - FOOD
             - WORK
-          description: 글의 타입[JAVA, SPRING, FOOD, WORK]
+            - KOTLIN
+          description: 글의 타입[JAVA, SPRING, FOOD, WORK, KOTLIN]
           example: JAVA
 
     ErrorResponseDto:
