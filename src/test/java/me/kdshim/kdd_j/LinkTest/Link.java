@@ -112,7 +112,38 @@ public class Link extends MyMockMvc {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.code").value(KDDError.LINK_NOT_FOUND.getCode()))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.message").value(KDDError.LINK_NOT_FOUND.getMsg()))
         ;
-        //CoreException extends RuntimeException -> coreExcepionData - returnCode, returnMessage, HttpStatus
+    }
+
+    @KDTest
+    void listLink_post_response_check_test() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.post("/links")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(
+                        "[\n" +
+                                "    {\n" +
+                                "      \"category\": \"JAVA\",\n" +
+                                "      \"memo\": \"실제 예시를 통한 비교 해둔 글\",\n" +
+                        "      \"name\": \"Java Stream API는 왜 for-loop보다 느릴까?\",\n" +
+                        "      \"url\": \"https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b\"\n" +
+                        "    },\n" +
+                        "    {\n" +
+                        "      \"category\": \"JAVA\",\n" +
+                        "      \"memo\": \"ddd\",\n" +
+                        "      \"name\": \"qqq\",\n" +
+                        "      \"url\": \"qwer\"\n" +
+                        "    }\n" +
+                                "  ]\n"
+                )
+                )
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='Java Stream API는 왜 for-loop보다 느릴까?')].category").value("JAVA"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='Java Stream API는 왜 for-loop보다 느릴까?')].memo").value("실제 예시를 통한 비교 해둔 글"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='Java Stream API는 왜 for-loop보다 느릴까?')].url").value("https://jypthemiracle.medium.com/java-stream-api는-왜-for-loop보다-느릴까-50dec4b9974b"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='qqq')].category").value("JAVA"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='qqq')].memo").value("ddd"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='qqq')].url").value("qwer"))
+                ;
+
     }
 
 }
