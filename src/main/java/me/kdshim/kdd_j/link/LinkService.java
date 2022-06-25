@@ -8,7 +8,6 @@ import me.kdshim.kdd_j.swagger.model.PostLinkDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Service
@@ -29,8 +28,7 @@ public class LinkService {
     }
 
     public Link saveSingleLinkFromDto(PostLinkDto body) {
-        Link link = new Link();
-        link = link.fromPostDto(body);
+        Link link = Link.from(body);
         log.info(link.toString());
         link = linkRepository.save(link);
         return link;

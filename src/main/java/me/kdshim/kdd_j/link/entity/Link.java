@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import java.time.LocalDate;
 
 @Entity
 @Data
@@ -56,7 +55,7 @@ public class Link extends BaseEntity {
         return dto;
     }
 
-    public Link fromPostDto(PostLinkDto dto){
+    public static Link from(PostLinkDto dto){
         Link link = new Link();
         link.setUrl(dto.getUrl());
         link.setMemo(dto.getMemo());

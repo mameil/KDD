@@ -35,8 +35,7 @@ public class LinksApiControllerImpl implements LinksApiDelegate {
         body.forEach(linkService::saveSingleLinkFromDto);
         List<GetLinkDto> list = new ArrayList<>();
         body.forEach(postLinkDto -> {
-            Link link = new Link();
-            link = link.fromPostDto(postLinkDto);
+            Link link = Link.from(postLinkDto);
             list.add(link.toGetDto(link));
         });
         return ResponseEntity.ok(list);
