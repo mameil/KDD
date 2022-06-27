@@ -13,6 +13,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class LinkService {
+    //TODO Strict하게 Repository에서만 무조건 DB에 접근해야한다 하고 일부러 로직이 없는데도 굳이굳이 service를 거치려고하지말고 바로 사용할 수 있는건 바로 사용하자
     private final LinkRepository linkRepository;
 
     public List<Link> findAllLinks() {

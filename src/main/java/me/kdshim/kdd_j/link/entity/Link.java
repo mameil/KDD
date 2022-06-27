@@ -27,13 +27,21 @@ public class Link extends BaseEntity {
 
     private String memo;
 
+    public Link(String url, String memo, String name, CATEGORY category){
+        this.url = url;
+        this.memo = memo;
+        this.name = name;
+        this.category = category;
+    }
+
     public boolean checkCoke(String name){
         if(name.equals("나는콜라가좋아"))
             throw new IllegalArgumentException("콜라는 안돼요!");
         return true;
     }
 
-    public GetLinkDto toGetDto(Link link){
+    //static으로 빼긴 뺐는데... 생성자도 한꺼번에 처리해버리고 싶지만 dto같은 경우에는 generator를 사용하기 때문에 이거쓰면 엔티티 전용으로밖애 못만들구나
+    public static GetLinkDto toGetDto(Link link){
         GetLinkDto dto = new GetLinkDto();
         dto.setUrl(link.getUrl());
         dto.setCategory(GetLinkDto.CategoryEnum.valueOf(link.getCategory().toString()));
@@ -45,7 +53,7 @@ public class Link extends BaseEntity {
         return dto;
     }
 
-    public PostLinkDto toPostDto(Link link){
+    public static PostLinkDto toPostDto(Link link){
         PostLinkDto dto = new PostLinkDto();
         dto.setUrl(link.getUrl());
         dto.setMemo(link.getMemo());
@@ -56,12 +64,6 @@ public class Link extends BaseEntity {
     }
 
     public static Link from(PostLinkDto dto){
-        Link link = new Link();
-        link.setUrl(dto.getUrl());
-        link.setMemo(dto.getMemo());
-        link.setName(dto.getName());
-        link.setCategory(CATEGORY.valueOf(dto.getCategory().toString()));
-
-        return link;
+        return new Link(dto.getUrl(), dto.getMemo(), dto.getName(), CATEGORY.valueOf(dto.getCategory().toString()));
     }
 }

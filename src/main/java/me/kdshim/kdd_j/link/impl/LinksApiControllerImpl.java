@@ -24,7 +24,7 @@ public class LinksApiControllerImpl implements LinksApiDelegate {
     public ResponseEntity<List<GetLinkDto>> getAllLinks() {
         List<GetLinkDto> list = new ArrayList<>();
         linkService.findAllLinks().forEach(link -> {
-            list.add(link.toGetDto(link));
+            list.add(Link.toGetDto(link));
         });
 
         return ResponseEntity.ok(list);
