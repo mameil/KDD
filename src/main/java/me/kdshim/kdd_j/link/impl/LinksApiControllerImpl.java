@@ -2,6 +2,7 @@ package me.kdshim.kdd_j.link.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import me.kdshim.kdd_j.link.LinkRepository;
 import me.kdshim.kdd_j.link.LinkService;
 import me.kdshim.kdd_j.link.entity.Link;
 import me.kdshim.kdd_j.swagger.api.LinksApiDelegate;
@@ -19,11 +20,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LinksApiControllerImpl implements LinksApiDelegate {
     private final LinkService linkService;
+    private final LinkRepository linkRepository;
 
     @Override
     public ResponseEntity<List<GetLinkDto>> getAllLinks() {
         List<GetLinkDto> list = new ArrayList<>();
-        linkService.findAllLinks().forEach(link -> {
+        linkRepository.findAll().forEach(link -> {
             list.add(Link.toGetDto(link));
         });
 
@@ -43,7 +45,7 @@ public class LinksApiControllerImpl implements LinksApiDelegate {
 
     @Override
     public ResponseEntity<Void> deleteAllLinks() {
-        linkService.deleteAll();
+        linkRepository.deleteAll();
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

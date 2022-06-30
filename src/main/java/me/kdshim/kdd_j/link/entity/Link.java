@@ -64,6 +64,6 @@ public class Link extends BaseEntity {
     }
 
     public static Link from(PostLinkDto dto){
-        return new Link(dto.getUrl(), dto.getMemo(), dto.getName(), CATEGORY.valueOf(dto.getCategory().toString()));
+        return new Link(dto.getUrl(), dto.getMemo(), dto.getName(), CATEGORY.fromValue(dto.getCategory().toString()));
     }
 }

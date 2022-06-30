@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j.kona;
+package me.kdshim.kdd_j.checking;
 
 import lombok.Builder;
 import lombok.Data;
