@@ -11,6 +11,8 @@ tags:
     description: "독서 기록"
   - name: "링크"
     description: "링크 기록"
+  - name: "회원관리"
+    description: "회원 관리"
 
 paths:
   /link/{url}:
@@ -166,6 +168,32 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponseDto'
 
+  /member:
+    post:
+      tags:
+        - "회원"
+      summary: 회원 등록
+      description: 회원 등록
+      operationId: postMember
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/PostMemberDto'
+      responses:
+        200:
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMemberDto'
+        400:
+          description: FAIL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+
 
 components:
   schemas:
@@ -229,6 +257,116 @@ components:
             - KOTLIN
           description: 글의 타입[JAVA, SPRING, FOOD, WORK, KOTLIN]
           example: JAVA
+
+    PostMemberDto:
+      type: object
+      properties:
+        loginId:
+          type: string
+          description: 로그인시 받는 아이디
+          example: playggg
+        password:
+          type: string
+          description: 로그인시 저장되는 아이디
+          example: rbeh!234
+        role:
+          type: string
+          enum:
+            - ADMIN
+            - USER
+          description: 사용자의 타입
+          example: USER
+        name:
+          type: string
+          description: 이름
+          example: kdshim
+        birthDateYYYYMMDD:
+          type: string
+          description: 생년월일
+          example: 19970329
+        married:
+          type: boolean
+          description: 결혼 여부
+          example: false
+        email:
+          type: string
+          description: 이메일
+          example: kyudo97@naver.com
+        oldAddr:
+          type: string
+          description: 지번주소
+          example: 경기도 고양시 일산서구 주엽동 84
+        addr:
+          type: string
+          description: 도로명주소
+          example: 경기도 고양시 일산서구 강선로 30
+        addrDetail:
+          type: string
+          description: 상세주소
+          example: 1504동 1501호
+        zipCode:
+          type: integer
+          description: 우편번호
+          example: 10365
+
+    GetMemberDto:
+      type: object
+      properties:
+        loginId:
+          type: string
+          description: 로그인시 받는 아이디
+          example: playggg
+        password:
+          type: string
+          description: 로그인시 저장되는 아이디
+          example: rbeh!234
+        role:
+          type: string
+          enum:
+            - ADMIN
+            - USER
+          description: 사용자의 타입
+          example: USER
+        name:
+          type: string
+          description: 이름
+          example: kdshim
+        birthDateYYYYMMDD:
+          type: string
+          description: 생년월일
+          example: 19970329
+        married:
+          type: boolean
+          description: 결혼 여부
+          example: false
+        email:
+          type: string
+          description: 이메일
+          example: kyudo97@naver.com
+        oldAddr:
+          type: string
+          description: 지번주소
+          example: 경기도 고양시 일산서구 주엽동 84
+        addr:
+          type: string
+          description: 도로명주소
+          example: 경기도 고양시 일산서구 강선로 30
+        addrDetail:
+          type: string
+          description: 상세주소
+          example: 1504동 1501호
+        zipCode:
+          type: integer
+          description: 우편번호
+          example: 10365
+        created:
+          type: string
+          format: date-time
+          description: 엔티티 생성시간
+        update:
+          type: string
+          format: date-time
+          description: 엔티티 수정시간
 
     ErrorResponseDto:
       type: object
