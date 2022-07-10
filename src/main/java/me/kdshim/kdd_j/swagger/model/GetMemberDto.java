@@ -79,7 +79,7 @@ public class GetMemberDto   {
   private String addrDetail = null;
 
   @JsonProperty("zipCode")
-  private Integer zipCode = null;
+  private String zipCode = null;
 
   @JsonProperty("created")
   private LocalDateTime created = null;
@@ -277,7 +277,7 @@ public class GetMemberDto   {
     this.addrDetail = addrDetail;
   }
 
-  public GetMemberDto zipCode(Integer zipCode) {
+  public GetMemberDto zipCode(String zipCode) {
     this.zipCode = zipCode;
     return this;
   }
@@ -288,11 +288,11 @@ public class GetMemberDto   {
    **/
   @ApiModelProperty(example = "10365", value = "우편번호")
   
-    public Integer getZipCode() {
+    public String getZipCode() {
     return zipCode;
   }
 
-  public void setZipCode(Integer zipCode) {
+  public void setZipCode(String zipCode) {
     this.zipCode = zipCode;
   }
 

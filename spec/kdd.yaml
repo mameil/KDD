@@ -305,7 +305,7 @@ components:
           description: 상세주소
           example: 1504동 1501호
         zipCode:
-          type: integer
+          type: string
           description: 우편번호
           example: 10365
 
@@ -356,7 +356,7 @@ components:
           description: 상세주소
           example: 1504동 1501호
         zipCode:
-          type: integer
+          type: string
           description: 우편번호
           example: 10365
         created:

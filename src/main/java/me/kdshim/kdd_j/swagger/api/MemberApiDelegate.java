@@ -44,7 +44,7 @@ public interface MemberApiDelegate {
         if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
             if (getAcceptHeader().get().contains("application/json")) {
                 try {
-                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"zipCode\" : 10365,\n  \"loginId\" : \"playggg\",\n  \"role\" : \"USER\",\n  \"created\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"oldAddr\" : \"경기도 고양시 일산서구 주엽동 84\",\n  \"birthDateYYYYMMDD\" : \"19970329\",\n  \"update\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"password\" : \"rbeh!234\",\n  \"name\" : \"kdshim\",\n  \"addrDetail\" : \"1504동 1501호\",\n  \"addr\" : \"경기도 고양시 일산서구 강선로 30\",\n  \"married\" : false,\n  \"email\" : \"kyudo97@naver.com\"\n}", GetMemberDto.class), HttpStatus.NOT_IMPLEMENTED);
+                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"zipCode\" : \"10365\",\n  \"loginId\" : \"playggg\",\n  \"role\" : \"USER\",\n  \"created\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"oldAddr\" : \"경기도 고양시 일산서구 주엽동 84\",\n  \"birthDateYYYYMMDD\" : \"19970329\",\n  \"update\" : \"2000-01-23T04:56:07.000+00:00\",\n  \"password\" : \"rbeh!234\",\n  \"name\" : \"kdshim\",\n  \"addrDetail\" : \"1504동 1501호\",\n  \"addr\" : \"경기도 고양시 일산서구 강선로 30\",\n  \"married\" : false,\n  \"email\" : \"kyudo97@naver.com\"\n}", GetMemberDto.class), HttpStatus.NOT_IMPLEMENTED);
                 } catch (IOException e) {
                     log.error("Couldn't serialize response for content type application/json", e);
                     return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

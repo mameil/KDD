@@ -78,7 +78,7 @@ public class PostMemberDto   {
   private String addrDetail = null;
 
   @JsonProperty("zipCode")
-  private Integer zipCode = null;
+  private String zipCode = null;
 
   public PostMemberDto loginId(String loginId) {
     this.loginId = loginId;
@@ -270,7 +270,7 @@ public class PostMemberDto   {
     this.addrDetail = addrDetail;
   }
 
-  public PostMemberDto zipCode(Integer zipCode) {
+  public PostMemberDto zipCode(String zipCode) {
     this.zipCode = zipCode;
     return this;
   }
@@ -281,11 +281,11 @@ public class PostMemberDto   {
    **/
   @ApiModelProperty(example = "10365", value = "우편번호")
   
-    public Integer getZipCode() {
+    public String getZipCode() {
     return zipCode;
   }
 
-  public void setZipCode(Integer zipCode) {
+  public void setZipCode(String zipCode) {
     this.zipCode = zipCode;
   }
 

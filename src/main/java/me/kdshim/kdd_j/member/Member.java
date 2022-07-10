@@ -1,45 +1,42 @@
 package me.kdshim.kdd_j.member;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import me.kdshim.kdd_j.common.BaseEntity;
 import me.kdshim.kdd_j.swagger.model.GetMemberDto;
+import me.kdshim.kdd_j.swagger.model.PostMemberDto;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Member extends BaseEntity {
+@EqualsAndHashCode(callSuper=false)
+public class Member extends BaseEntity implements Serializable {
     //LoginInfo
     @Id
-    String loginId;
+    private String loginId;
 
-    String password;
+    private String password;
 
-    @Embedded
-    ROLE role;
-
+    @Enumerated(EnumType.STRING)
+    private ROLE role;
 
     //UserInfo
-    String name;
+    private String name;
 
-    String birthDateYYYYMMDD;
+    private String birthDateYYYYMMDD;
 
-    boolean married;
+    private boolean married;
 
-    String email;
+    private String email;
 
     @Embedded
-    Address address;
+    private Address address;
 
-    public static Member from(GetMemberDto dto){
+    public static Member fromDto(PostMemberDto dto){
         return Member.builder()
                 .loginId(dto.getLoginId())
                 .password(dto.getPassword())
@@ -48,6 +45,23 @@ public class Member extends BaseEntity {
                 .birthDateYYYYMMDD(dto.getBirthDateYYYYMMDD())
                 .married(dto.isMarried())
                 .email(dto.getEmail())
+                .address(new Address(dto.getOldAddr(), dto.getAddr(), dto.getAddrDetail(), dto.getZipCode()))
                 .build();
+    }
+
+    public static GetMemberDto toDto(Member member){
+        GetMemberDto dto = new GetMemberDto();
+        dto.setLoginId(member.getLoginId());
+        dto.setPassword(member.getPassword());
+        dto.setRole(ROLE.toDto(member.getRole()));
+        dto.setName(member.getName());
+        dto.setBirthDateYYYYMMDD(member.getBirthDateYYYYMMDD());
+        dto.setMarried(member.isMarried());
+        dto.setEmail(member.getEmail());
+        dto.setAddr(member.getAddress().getAddr());
+        dto.setOldAddr(member.getAddress().getOldAddr());
+        dto.setAddrDetail(member.getAddress().getAddrDetail());
+        dto.setZipCode(member.getAddress().getZipCode());
+        return dto;
     }
 }

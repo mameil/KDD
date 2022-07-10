@@ -1,14 +1,22 @@
 package me.kdshim.kdd_j.member;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import me.kdshim.kdd_j.swagger.model.GetMemberDto;
 
 @Getter
-@RequiredArgsConstructor
 public enum ROLE {
-    ADMIN("ROLE_ADMIN", "바로 이몸이지!"),
-    USER("ROLE_USER", "나는야 선량한 유저");
+    ADMIN("ADMIN", "어드민전용"),
+    USER("USER", "일반 사용자");
 
-    private final String key;
-    private final String comment;
+    private String name;
+    private String memo;
+    ROLE(String name, String memo) {
+        this.name = name;
+        this.memo = memo;
+    }
+
+    public static GetMemberDto.RoleEnum toDto(ROLE role){
+        return GetMemberDto.RoleEnum.fromValue(role.toString());
+    }
+
 }

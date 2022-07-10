@@ -1,6 +1,5 @@
 package me.kdshim.kdd_j.link.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import me.kdshim.kdd_j.link.LinkService;
 import me.kdshim.kdd_j.link.entity.Link;
@@ -16,7 +15,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class LinkApiControllerImpl implements LinkApiDelegate {
-    private final ObjectMapper objectMapper;
     private final LinkService linkService;
 
     @Override
