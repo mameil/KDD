@@ -40,6 +40,9 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.12'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 
+    //view
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
     //obj Mapping
     implementation 'org.modelmapper:modelmapper:2.4.2'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
