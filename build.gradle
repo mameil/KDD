@@ -44,7 +44,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
     //obj Mapping
-    implementation 'org.modelmapper:modelmapper:2.4.2'
+    implementation 'org.modelmapper:modelmapper:3.1.0'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 
     //actuator
