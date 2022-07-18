@@ -5,7 +5,7 @@ import me.kdshim.kdd_j.config.BaseSupport;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.book.BookService;
 import me.kdshim.kdd_j.link.LinkRepository;
-import me.kdshim.kdd_j.recipe.RecipeService;
+import me.kdshim.kdd_j.todo.MockTestService;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mock;
 
@@ -17,7 +17,7 @@ public class MockStudy1 extends BaseSupport {
     @Mock LinkRepository linkRepositroy;
 
     @KDTest
-    void BookServiceTest(@Mock RecipeService recipeService){
+    void BookServiceTest(@Mock MockTestService recipeService){
         //Mock처리하는 방법1
 //        BookService bookService = mock(BookService.class);
 //        LinkRepositroy linkRepositroy = mock(LinkRepositroy.class);
