@@ -13,8 +13,37 @@ tags:
     description: "링크 기록"
   - name: "회원관리"
     description: "회원 관리"
+  - name: "TODO"
+    description: "해야할 일 관리"
 
 paths:
+  /todo:
+    post:
+      tags:
+        - "TODO"
+      summary: my TODO 등록
+      description: my TODO 등록
+      operationId: postTODO
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/postTODODto'
+      responses:
+        200:
+          description: 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getTODODto'
+        400:
+          description: 실패
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+
+
   /link/{url}:
     get:
       tags:
@@ -197,6 +226,46 @@ paths:
 
 components:
   schemas:
+    getTODODto:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: TODO ID
+          example: 1
+        todo:
+          type: string
+          description: TODO 내용
+          example: DO SOMETHING!
+        status:
+          type: string
+          description: TODO 상태
+          example: TODO
+        endDate:
+          type: string
+          description: TODO 끝낸 시간
+          example: 20220721120908
+        created:
+          type: string
+          description: TODO 생성날짜
+          example: 20220721200908
+        updated:
+          type: string
+          description: TODO 변경날짜
+          example: 20220721200908
+
+    postTODODto:
+      type: object
+      properties:
+        todo:
+          type: string
+          description: TODO 내용
+          example: DO SOMETHING!
+        endDate:
+          type: string
+          description: TODO's endDate(yyyymmddHH24MISS)
+          example: 2022072100908
+
     getLinkDto:
       type: object
       properties:

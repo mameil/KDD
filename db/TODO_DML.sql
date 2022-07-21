@@ -1,11 +1,11 @@
 create table kdd.todo
 (
-    id           number(255) not null unique,
-    todo        varchar(255) not null,
-    status         varchar(20),
-    dont_date_string varchar(20),
-    created            DATETIME,
-    updated            DATETIME,
+    id               integer(255) not null unique,
+    todo             varchar(255) not null,
+    status           varchar(20),
+    endDate varchar(20),
+    created          DATETIME,
+    updated          DATETIME,
     primary key (id)
 
 );
