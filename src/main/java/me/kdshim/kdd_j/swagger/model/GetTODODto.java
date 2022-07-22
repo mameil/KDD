@@ -24,12 +24,12 @@ public class GetTODODto   {
   private String todo = null;
 
   /**
-   * TODO 상태 [DONE, TODO, DOING]
+   * TODO 상태 [DONE, UNDONE, DOING]
    */
   public enum StatusEnum {
     DONE("DONE"),
     
-    TODO("TODO"),
+    UNDONE("UNDONE"),
     
     DOING("DOING");
 
@@ -111,10 +111,10 @@ public class GetTODODto   {
   }
 
   /**
-   * TODO 상태 [DONE, TODO, DOING]
+   * TODO 상태 [DONE, UNDONE, DOING]
    * @return status
    **/
-  @ApiModelProperty(example = "TODO", value = "TODO 상태 [DONE, TODO, DOING]")
+  @ApiModelProperty(example = "TODO", value = "TODO 상태 [DONE, UNDONE, DOING]")
   
     public StatusEnum getStatus() {
     return status;
@@ -130,10 +130,10 @@ public class GetTODODto   {
   }
 
   /**
-   * TODO 끝낸 시간
+   * TODO 끝낸 시간(YYYYMMDD)
    * @return endDate
    **/
-  @ApiModelProperty(example = "20220721120908", value = "TODO 끝낸 시간")
+  @ApiModelProperty(example = "20220721", value = "TODO 끝낸 시간(YYYYMMDD)")
   
     public String getEndDate() {
     return endDate;

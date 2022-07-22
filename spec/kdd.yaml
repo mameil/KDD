@@ -43,6 +43,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponseDto'
 
+  /todo/undone:
+    get:
+      tags:
+        - "TODO"
+      summary: Get UNDONE TODO
+      description: 상태가 UNDONE인 TODO를 모두 가져온다
+      operationId: getUndoneTodo
+      responses:
+        200:
+          description: 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getUndoneTodoDtoList'
+
 
   /link/{url}:
     get:
@@ -241,14 +256,14 @@ components:
           type: string
           enum:
             - DONE
-            - TODO
+            - UNDONE
             - DOING
-          description: TODO 상태 [DONE, TODO, DOING]
+          description: TODO 상태 [DONE, UNDONE, DOING]
           example: TODO
         endDate:
           type: string
-          description: TODO 끝낸 시간
-          example: 20220721120908
+          description: TODO 끝낸 시간(YYYYMMDD)
+          example: 20220721
         created:
           type: string
           description: TODO 생성날짜
@@ -257,6 +272,15 @@ components:
           type: string
           description: TODO 변경날짜
           example: 20220721200908
+
+    getUndoneTodoDtoList:
+      type: object
+      description: UNDONE todo 리스트 조회
+      properties:
+        dtoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/getTODODto'
 
     postTODODto:
       type: object

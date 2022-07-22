@@ -44,4 +44,28 @@ public class TodoTest extends MyMockMvc {
         Assertions.assertEquals(testM.getTodo(), "do something");
         Assertions.assertEquals(testM.getEndDate(), "20220731");
     }
+
+    @SneakyThrows
+    @KDTest
+    @DisplayName("UNDONE 인 TODO 모두 조회 테스트")
+    public void UNDONETodoGetTest(){
+        mvc.perform(MockMvcRequestBuilders.post("/todo")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\n" +
+                        "  \"todo\": \"do something\",\n" +
+                        "  \"endDate\": \"20220731\"\n" +
+                        "}")
+        )
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                ;
+
+        String getTodoList = mvc.perform(MockMvcRequestBuilders.get("/todo/undone"))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+
+                .andReturn().getResponse().getContentAsString();
+
+        System.out.println("==============================================");
+        System.out.println(getTodoList);
+        System.out.println("==============================================");
+    }
 }

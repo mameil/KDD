@@ -3,6 +3,7 @@ package me.kdshim.kdd_j.todo.impl;
 import lombok.RequiredArgsConstructor;
 import me.kdshim.kdd_j.swagger.api.TodoApiDelegate;
 import me.kdshim.kdd_j.swagger.model.GetTODODto;
+import me.kdshim.kdd_j.swagger.model.GetUndoneTodoDtoList;
 import me.kdshim.kdd_j.swagger.model.PostTODODto;
 import me.kdshim.kdd_j.todo.TodoService;
 import org.springframework.http.HttpStatus;
@@ -16,5 +17,12 @@ public class TodoApiControllerImpl implements TodoApiDelegate {
     @Override
     public ResponseEntity<GetTODODto> postTODO(PostTODODto body) {
         return new ResponseEntity<>(todoService.postTodo(body), HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<GetUndoneTodoDtoList> getUndoneTodo() {
+        GetUndoneTodoDtoList returnList = new GetUndoneTodoDtoList();
+        returnList.setDtoList(todoService.getUndoneTodo());
+        return new ResponseEntity<>(returnList, HttpStatus.OK);
     }
 }

@@ -24,7 +24,7 @@ public class Todo extends BaseEntity {
     private String todo;
 
     @Builder.Default
-    private TodoStatus status = TodoStatus.TODO;
+    private TodoStatus status = TodoStatus.UNDONE;
 
     private String endDate;
 
