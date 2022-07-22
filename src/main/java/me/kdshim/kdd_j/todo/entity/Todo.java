@@ -1,10 +1,9 @@
 package me.kdshim.kdd_j.todo.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import me.kdshim.kdd_j.common.BaseEntity;
+import me.kdshim.kdd_j.swagger.model.GetTODODto;
+import me.kdshim.kdd_j.swagger.model.PostTODODto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +15,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class Todo extends BaseEntity {
     @Id
     @GeneratedValue
@@ -28,4 +28,21 @@ public class Todo extends BaseEntity {
 
     private String endDate;
 
+    public static Todo fromDto(PostTODODto dto){
+        return Todo.builder()
+                .todo(dto.getTodo())
+                .endDate(dto.getEndDate())
+                .build();
+    }
+
+    public static GetTODODto toDto(Todo entity){
+        GetTODODto dto = new GetTODODto();
+        dto.setId(Math.toIntExact(entity.getId()));
+        dto.setTodo(entity.getTodo());
+        dto.setEndDate(entity.getEndDate());
+        dto.setStatus(GetTODODto.StatusEnum.valueOf(entity.getStatus().toString()));
+        dto.setCreated(entity.getCreated().toString());
+        dto.setUpdated(entity.getUpdated().toString());
+        return dto;
+    }
 }

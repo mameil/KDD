@@ -3,6 +3,7 @@ package me.kdshim.kdd_j.swagger.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
@@ -22,8 +23,40 @@ public class GetTODODto   {
   @JsonProperty("todo")
   private String todo = null;
 
+  /**
+   * TODO 상태 [DONE, TODO, DOING]
+   */
+  public enum StatusEnum {
+    DONE("DONE"),
+    
+    TODO("TODO"),
+    
+    DOING("DOING");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static StatusEnum fromValue(String text) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
   @JsonProperty("status")
-  private String status = null;
+  private StatusEnum status = null;
 
   @JsonProperty("endDate")
   private String endDate = null;
@@ -72,22 +105,22 @@ public class GetTODODto   {
     this.todo = todo;
   }
 
-  public GetTODODto status(String status) {
+  public GetTODODto status(StatusEnum status) {
     this.status = status;
     return this;
   }
 
   /**
-   * TODO 상태
+   * TODO 상태 [DONE, TODO, DOING]
    * @return status
    **/
-  @ApiModelProperty(example = "TODO", value = "TODO 상태")
+  @ApiModelProperty(example = "TODO", value = "TODO 상태 [DONE, TODO, DOING]")
   
-    public String getStatus() {
+    public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(StatusEnum status) {
     this.status = status;
   }
 

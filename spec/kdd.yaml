@@ -239,7 +239,11 @@ components:
           example: DO SOMETHING!
         status:
           type: string
-          description: TODO 상태
+          enum:
+            - DONE
+            - TODO
+            - DOING
+          description: TODO 상태 [DONE, TODO, DOING]
           example: TODO
         endDate:
           type: string

@@ -41,5 +41,7 @@ public class TodoTest extends MyMockMvc {
                 ;
 
         Todo testM = getObjectMapper().readValue(plainString, Todo.class);
+        Assertions.assertEquals(testM.getTodo(), "do something");
+        Assertions.assertEquals(testM.getEndDate(), "20220731");
     }
 }

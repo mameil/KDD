@@ -14,20 +14,11 @@ public class TodoService {
     private final TodoRepository todoRepository;
 
     public GetTODODto postTodo(PostTODODto dto){
-        Todo todo = Todo.builder()
-                .todo(dto.getTodo())
-                .endDate(dto.getEndDate())
-                .build();
+
+        Todo todo = Todo.fromDto(dto);
         log.info(todo.toString());
         Todo saved = todoRepository.save(todo);
-        GetTODODto fromEntity = new GetTODODto();
-        fromEntity.setTodo(saved.getTodo());
-        fromEntity.setId(saved.getId().intValue());
-        fromEntity.setStatus(saved.getStatus().toString());
-        fromEntity.setEndDate(saved.getEndDate());
-        fromEntity.setCreated(saved.getCreated().toString());
-        fromEntity.setUpdated(saved.getUpdated().toString());
 
-        return fromEntity;
+        return Todo.toDto(saved);
     }
 }

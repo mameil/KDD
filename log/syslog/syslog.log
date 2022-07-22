@@ -1,125 +1,205 @@
-[INFO ] 2022-07-21 21:56:27.755 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-[INFO ] 2022-07-21 21:56:27.759 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[INFO ] 2022-07-21 21:56:27.852 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.book.BookRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:56:27.857 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.link.LinkRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:56:27.861 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.member.MemberRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:56:27.863 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.todo.TodoRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:56:27.864 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 0 JDBC repository interfaces.
-[INFO ] 2022-07-21 21:56:27.889 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-[INFO ] 2022-07-21 21:56:27.894 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[INFO ] 2022-07-21 21:56:27.957 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
-[INFO ] 2022-07-21 21:56:29.503 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[INFO ] 2022-07-21 21:56:29.560 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.4.27.Final
-[INFO ] 2022-07-21 21:56:29.723 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-[INFO ] 2022-07-21 21:56:29.866 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-[INFO ] 2022-07-21 21:56:30.841 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[INFO ] 2022-07-21 21:56:30.850 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[WARN ] 2022-07-21 21:56:32.212 : o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[INFO ] 2022-07-21 21:56:32.876 : o.s.b.a.e.w.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
-[INFO ] 2022-07-21 21:56:33.279 : o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-[INFO ] 2022-07-21 21:56:33.855 : o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
-[INFO ] 2022-07-21 21:56:33.856 : o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
-[INFO ] 2022-07-21 21:56:33.857 : o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
-[INFO ] 2022-07-21 21:56:35.263 : o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-[INFO ] 2022-07-21 21:56:35.275 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[INFO ] 2022-07-21 21:56:35.277 : o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-[INFO ] 2022-07-21 21:57:20.630 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-[INFO ] 2022-07-21 21:57:20.633 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[INFO ] 2022-07-21 21:57:20.711 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.book.BookRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:57:20.714 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.link.LinkRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:57:20.717 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.member.MemberRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:57:20.720 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.todo.TodoRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:57:20.721 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 0 JDBC repository interfaces.
-[INFO ] 2022-07-21 21:57:20.748 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-[INFO ] 2022-07-21 21:57:20.752 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[INFO ] 2022-07-21 21:57:20.805 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
-[INFO ] 2022-07-21 21:57:22.299 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[INFO ] 2022-07-21 21:57:22.351 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.4.27.Final
-[INFO ] 2022-07-21 21:57:22.495 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-[INFO ] 2022-07-21 21:57:22.618 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-[INFO ] 2022-07-21 21:57:23.592 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[INFO ] 2022-07-21 21:57:23.601 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[WARN ] 2022-07-21 21:57:24.860 : o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[INFO ] 2022-07-21 21:57:25.564 : o.s.b.a.e.w.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
-[INFO ] 2022-07-21 21:57:26.006 : o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-[INFO ] 2022-07-21 21:57:26.584 : o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
-[INFO ] 2022-07-21 21:57:26.585 : o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
-[INFO ] 2022-07-21 21:57:26.586 : o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
-[INFO ] 2022-07-21 21:57:27.943 : o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-[INFO ] 2022-07-21 21:57:27.956 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[INFO ] 2022-07-21 21:57:27.958 : o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-[INFO ] 2022-07-21 21:58:55.918 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-[INFO ] 2022-07-21 21:58:55.921 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[INFO ] 2022-07-21 21:58:56.013 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.book.BookRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:58:56.017 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.link.LinkRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:58:56.021 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.member.MemberRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:58:56.025 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.todo.TodoRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:58:56.026 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 0 JDBC repository interfaces.
-[INFO ] 2022-07-21 21:58:56.054 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-[INFO ] 2022-07-21 21:58:56.059 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[INFO ] 2022-07-21 21:58:56.120 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 4 JPA repository interfaces.
-[INFO ] 2022-07-21 21:58:57.640 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[INFO ] 2022-07-21 21:58:57.701 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.4.27.Final
-[INFO ] 2022-07-21 21:58:57.858 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-[INFO ] 2022-07-21 21:58:57.988 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-[INFO ] 2022-07-21 21:58:58.972 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[INFO ] 2022-07-21 21:58:58.981 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[WARN ] 2022-07-21 21:59:00.331 : o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[INFO ] 2022-07-21 21:59:01.078 : o.s.b.a.e.w.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
-[INFO ] 2022-07-21 21:59:01.562 : o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-[INFO ] 2022-07-21 21:59:02.129 : o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
-[INFO ] 2022-07-21 21:59:02.129 : o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
-[INFO ] 2022-07-21 21:59:02.131 : o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
-[INFO ] 2022-07-21 21:59:03.563 : o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-[INFO ] 2022-07-21 21:59:03.578 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[INFO ] 2022-07-21 21:59:03.582 : o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-[INFO ] 2022-07-21 21:59:33.054 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-[INFO ] 2022-07-21 21:59:33.058 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[INFO ] 2022-07-21 21:59:33.130 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.book.BookRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:59:33.132 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.link.LinkRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:59:33.137 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.member.MemberRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:59:33.141 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.todo.TodoRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 21:59:33.141 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 0 JDBC repository interfaces.
-[INFO ] 2022-07-21 21:59:33.167 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-[INFO ] 2022-07-21 21:59:33.171 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[INFO ] 2022-07-21 21:59:33.229 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
-[INFO ] 2022-07-21 21:59:34.700 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[INFO ] 2022-07-21 21:59:34.758 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.4.27.Final
-[INFO ] 2022-07-21 21:59:34.931 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-[INFO ] 2022-07-21 21:59:35.056 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-[INFO ] 2022-07-21 21:59:35.998 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[INFO ] 2022-07-21 21:59:36.008 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[WARN ] 2022-07-21 21:59:37.291 : o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[INFO ] 2022-07-21 21:59:37.986 : o.s.b.a.e.w.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
-[INFO ] 2022-07-21 21:59:38.467 : o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-[INFO ] 2022-07-21 21:59:39.072 : o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
-[INFO ] 2022-07-21 21:59:39.072 : o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
-[INFO ] 2022-07-21 21:59:39.073 : o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
-[INFO ] 2022-07-21 21:59:40.422 : o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-[INFO ] 2022-07-21 21:59:40.434 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[INFO ] 2022-07-21 21:59:40.435 : o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-[INFO ] 2022-07-21 22:01:41.088 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-[INFO ] 2022-07-21 22:01:41.091 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-[INFO ] 2022-07-21 22:01:41.194 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.book.BookRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 22:01:41.196 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.link.LinkRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 22:01:41.199 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.member.MemberRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 22:01:41.201 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.todo.TodoRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-[INFO ] 2022-07-21 22:01:41.202 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 106 ms. Found 0 JDBC repository interfaces.
-[INFO ] 2022-07-21 22:01:41.226 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-[INFO ] 2022-07-21 22:01:41.231 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[INFO ] 2022-07-21 22:01:41.290 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
-[INFO ] 2022-07-21 22:01:42.924 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-[INFO ] 2022-07-21 22:01:42.980 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.4.27.Final
-[INFO ] 2022-07-21 22:01:43.137 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-[INFO ] 2022-07-21 22:01:43.256 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-[INFO ] 2022-07-21 22:01:44.186 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[INFO ] 2022-07-21 22:01:44.194 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[WARN ] 2022-07-21 22:01:45.491 : o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[INFO ] 2022-07-21 22:01:46.143 : o.s.b.a.e.w.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
-[INFO ] 2022-07-21 22:01:46.530 : o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-[INFO ] 2022-07-21 22:01:47.109 : o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
-[INFO ] 2022-07-21 22:01:47.109 : o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
-[INFO ] 2022-07-21 22:01:47.111 : o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
-[INFO ] 2022-07-21 22:01:48.447 : o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-[INFO ] 2022-07-21 22:01:48.460 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[INFO ] 2022-07-21 22:01:48.461 : o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[INFO ] 2022-07-22 21:33:57.830 : o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2022-07-22 21:33:57.832 : o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2022-07-22 21:33:59.463 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-07-22 21:33:59.464 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[INFO ] 2022-07-22 21:33:59.559 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.book.BookRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 21:33:59.563 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.link.LinkRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 21:33:59.566 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.member.MemberRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 21:33:59.569 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.todo.TodoRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 21:33:59.570 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 102 ms. Found 0 JDBC repository interfaces.
+[INFO ] 2022-07-22 21:33:59.587 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-07-22 21:33:59.587 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-07-22 21:33:59.639 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 4 JPA repository interfaces.
+[WARN ] 2022-07-22 21:34:00.486 :                      i.u.w.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+[INFO ] 2022-07-22 21:34:00.500 :                    i.u.servlet - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-07-22 21:34:00.500 : o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2667 ms
+[INFO ] 2022-07-22 21:34:01.376 : o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/kdd?serverTimezone=UTC&characterEncoding=UTF-8'
+[INFO ] 2022-07-22 21:34:01.655 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-07-22 21:34:01.699 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.4.27.Final
+[INFO ] 2022-07-22 21:34:01.838 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[DEBUG] 2022-07-22 21:34:01.860 :        o.h.t.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@398befb1
+[DEBUG] 2022-07-22 21:34:01.860 :        o.h.t.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@398befb1
+[DEBUG] 2022-07-22 21:34:01.861 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@398befb1
+[DEBUG] 2022-07-22 21:34:01.862 :        o.h.t.BasicTypeRegistry - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@53b0df21
+[DEBUG] 2022-07-22 21:34:01.871 :        o.h.t.BasicTypeRegistry - Adding type registration true_false -> org.hibernate.type.TrueFalseType@363c4259
+[DEBUG] 2022-07-22 21:34:01.872 :        o.h.t.BasicTypeRegistry - Adding type registration yes_no -> org.hibernate.type.YesNoType@282a6769
+[DEBUG] 2022-07-22 21:34:01.873 :        o.h.t.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@c235f79
+[DEBUG] 2022-07-22 21:34:01.873 :        o.h.t.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@c235f79
+[DEBUG] 2022-07-22 21:34:01.873 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@c235f79
+[DEBUG] 2022-07-22 21:34:01.874 :        o.h.t.BasicTypeRegistry - Adding type registration character -> org.hibernate.type.CharacterType@11e8bffd
+[DEBUG] 2022-07-22 21:34:01.874 :        o.h.t.BasicTypeRegistry - Adding type registration char -> org.hibernate.type.CharacterType@11e8bffd
+[DEBUG] 2022-07-22 21:34:01.874 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@11e8bffd
+[DEBUG] 2022-07-22 21:34:01.875 :        o.h.t.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@1cb8ad40
+[DEBUG] 2022-07-22 21:34:01.876 :        o.h.t.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@1cb8ad40
+[DEBUG] 2022-07-22 21:34:01.876 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@1cb8ad40
+[DEBUG] 2022-07-22 21:34:01.877 :        o.h.t.BasicTypeRegistry - Adding type registration integer -> org.hibernate.type.IntegerType@57a90e16
+[DEBUG] 2022-07-22 21:34:01.877 :        o.h.t.BasicTypeRegistry - Adding type registration int -> org.hibernate.type.IntegerType@57a90e16
+[DEBUG] 2022-07-22 21:34:01.878 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@57a90e16
+[DEBUG] 2022-07-22 21:34:01.879 :        o.h.t.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@3db4c6d7
+[DEBUG] 2022-07-22 21:34:01.879 :        o.h.t.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@3db4c6d7
+[DEBUG] 2022-07-22 21:34:01.879 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Long -> org.hibernate.type.LongType@3db4c6d7
+[DEBUG] 2022-07-22 21:34:01.881 :        o.h.t.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@22935f06
+[DEBUG] 2022-07-22 21:34:01.881 :        o.h.t.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@22935f06
+[DEBUG] 2022-07-22 21:34:01.881 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@22935f06
+[DEBUG] 2022-07-22 21:34:01.884 :        o.h.t.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@76cd9927
+[DEBUG] 2022-07-22 21:34:01.885 :        o.h.t.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@76cd9927
+[DEBUG] 2022-07-22 21:34:01.886 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@76cd9927
+[DEBUG] 2022-07-22 21:34:01.887 :        o.h.t.BasicTypeRegistry - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@21ac2451
+[DEBUG] 2022-07-22 21:34:01.887 :        o.h.t.BasicTypeRegistry - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@21ac2451
+[DEBUG] 2022-07-22 21:34:01.888 :        o.h.t.BasicTypeRegistry - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@54419057
+[DEBUG] 2022-07-22 21:34:01.888 :        o.h.t.BasicTypeRegistry - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@54419057
+[DEBUG] 2022-07-22 21:34:01.888 :        o.h.t.BasicTypeRegistry - Adding type registration string -> org.hibernate.type.StringType@2cdcfa61
+[DEBUG] 2022-07-22 21:34:01.888 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.String -> org.hibernate.type.StringType@2cdcfa61
+[DEBUG] 2022-07-22 21:34:01.889 :        o.h.t.BasicTypeRegistry - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@2333f1c
+[DEBUG] 2022-07-22 21:34:01.890 :        o.h.t.BasicTypeRegistry - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@713f4873
+[DEBUG] 2022-07-22 21:34:01.891 :        o.h.t.BasicTypeRegistry - Adding type registration url -> org.hibernate.type.UrlType@db7df61
+[DEBUG] 2022-07-22 21:34:01.891 :        o.h.t.BasicTypeRegistry - Adding type registration java.net.URL -> org.hibernate.type.UrlType@db7df61
+[DEBUG] 2022-07-22 21:34:01.893 :        o.h.t.BasicTypeRegistry - Adding type registration Duration -> org.hibernate.type.DurationType@5c2ebc58
+[DEBUG] 2022-07-22 21:34:01.893 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@5c2ebc58
+[DEBUG] 2022-07-22 21:34:01.894 :        o.h.t.BasicTypeRegistry - Adding type registration Instant -> org.hibernate.type.InstantType@248e57e
+[DEBUG] 2022-07-22 21:34:01.894 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@248e57e
+[DEBUG] 2022-07-22 21:34:01.896 :        o.h.t.BasicTypeRegistry - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@5ca2f63a
+[DEBUG] 2022-07-22 21:34:01.897 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@5ca2f63a
+[DEBUG] 2022-07-22 21:34:01.898 :        o.h.t.BasicTypeRegistry - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@799bc6c1
+[DEBUG] 2022-07-22 21:34:01.899 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@799bc6c1
+[DEBUG] 2022-07-22 21:34:01.900 :        o.h.t.BasicTypeRegistry - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@40e2988
+[DEBUG] 2022-07-22 21:34:01.901 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@40e2988
+[DEBUG] 2022-07-22 21:34:01.902 :        o.h.t.BasicTypeRegistry - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@665b4945
+[DEBUG] 2022-07-22 21:34:01.903 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@665b4945
+[DEBUG] 2022-07-22 21:34:01.904 :        o.h.t.BasicTypeRegistry - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@463cb8cd
+[DEBUG] 2022-07-22 21:34:01.906 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@463cb8cd
+[DEBUG] 2022-07-22 21:34:01.907 :        o.h.t.BasicTypeRegistry - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@3bdba87e
+[DEBUG] 2022-07-22 21:34:01.907 :        o.h.t.BasicTypeRegistry - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@3bdba87e
+[DEBUG] 2022-07-22 21:34:01.908 :        o.h.t.BasicTypeRegistry - Adding type registration date -> org.hibernate.type.DateType@3d5c1442
+[DEBUG] 2022-07-22 21:34:01.911 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.Date -> org.hibernate.type.DateType@3d5c1442
+[DEBUG] 2022-07-22 21:34:01.911 :        o.h.t.BasicTypeRegistry - Adding type registration time -> org.hibernate.type.TimeType@7191866b
+[DEBUG] 2022-07-22 21:34:01.911 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@7191866b
+[DEBUG] 2022-07-22 21:34:01.912 :        o.h.t.BasicTypeRegistry - Adding type registration timestamp -> org.hibernate.type.TimestampType@190e8b91
+[DEBUG] 2022-07-22 21:34:01.912 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@190e8b91
+[DEBUG] 2022-07-22 21:34:01.912 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@190e8b91
+[DEBUG] 2022-07-22 21:34:01.913 :        o.h.t.BasicTypeRegistry - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@1723203f
+[DEBUG] 2022-07-22 21:34:01.914 :        o.h.t.BasicTypeRegistry - Adding type registration calendar -> org.hibernate.type.CalendarType@37ea58c6
+[DEBUG] 2022-07-22 21:34:01.914 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@37ea58c6
+[DEBUG] 2022-07-22 21:34:01.914 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@37ea58c6
+[DEBUG] 2022-07-22 21:34:01.915 :        o.h.t.BasicTypeRegistry - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@6d6aa3ab
+[DEBUG] 2022-07-22 21:34:01.916 :        o.h.t.BasicTypeRegistry - Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@1a6dabe3
+[DEBUG] 2022-07-22 21:34:01.921 :        o.h.t.BasicTypeRegistry - Adding type registration locale -> org.hibernate.type.LocaleType@18e1f5d
+[DEBUG] 2022-07-22 21:34:01.921 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@18e1f5d
+[DEBUG] 2022-07-22 21:34:01.921 :        o.h.t.BasicTypeRegistry - Adding type registration currency -> org.hibernate.type.CurrencyType@20c5a70f
+[DEBUG] 2022-07-22 21:34:01.921 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@20c5a70f
+[DEBUG] 2022-07-22 21:34:01.922 :        o.h.t.BasicTypeRegistry - Adding type registration timezone -> org.hibernate.type.TimeZoneType@29597a42
+[DEBUG] 2022-07-22 21:34:01.922 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@29597a42
+[DEBUG] 2022-07-22 21:34:01.922 :        o.h.t.BasicTypeRegistry - Adding type registration class -> org.hibernate.type.ClassType@7c9a7034
+[DEBUG] 2022-07-22 21:34:01.923 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@7c9a7034
+[DEBUG] 2022-07-22 21:34:01.923 :        o.h.t.BasicTypeRegistry - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@3d8720a0
+[DEBUG] 2022-07-22 21:34:01.923 :        o.h.t.BasicTypeRegistry - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@3d8720a0
+[DEBUG] 2022-07-22 21:34:01.923 :        o.h.t.BasicTypeRegistry - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@18fbb2a0
+[DEBUG] 2022-07-22 21:34:01.924 :        o.h.t.BasicTypeRegistry - Adding type registration binary -> org.hibernate.type.BinaryType@4e230
+[DEBUG] 2022-07-22 21:34:01.928 :        o.h.t.BasicTypeRegistry - Adding type registration byte[] -> org.hibernate.type.BinaryType@4e230
+[DEBUG] 2022-07-22 21:34:01.928 :        o.h.t.BasicTypeRegistry - Adding type registration [B -> org.hibernate.type.BinaryType@4e230
+[DEBUG] 2022-07-22 21:34:01.929 :        o.h.t.BasicTypeRegistry - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@557b000f
+[DEBUG] 2022-07-22 21:34:01.930 :        o.h.t.BasicTypeRegistry - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@557b000f
+[DEBUG] 2022-07-22 21:34:01.930 :        o.h.t.BasicTypeRegistry - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@557b000f
+[DEBUG] 2022-07-22 21:34:01.932 :        o.h.t.BasicTypeRegistry - Adding type registration row_version -> org.hibernate.type.RowVersionType@26769f52
+[DEBUG] 2022-07-22 21:34:01.933 :        o.h.t.BasicTypeRegistry - Adding type registration image -> org.hibernate.type.ImageType@710ccea3
+[DEBUG] 2022-07-22 21:34:01.937 :        o.h.t.BasicTypeRegistry - Adding type registration characters -> org.hibernate.type.CharArrayType@31d263b1
+[DEBUG] 2022-07-22 21:34:01.938 :        o.h.t.BasicTypeRegistry - Adding type registration char[] -> org.hibernate.type.CharArrayType@31d263b1
+[DEBUG] 2022-07-22 21:34:01.938 :        o.h.t.BasicTypeRegistry - Adding type registration [C -> org.hibernate.type.CharArrayType@31d263b1
+[DEBUG] 2022-07-22 21:34:01.939 :        o.h.t.BasicTypeRegistry - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@2af3ebcf
+[DEBUG] 2022-07-22 21:34:01.939 :        o.h.t.BasicTypeRegistry - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@2af3ebcf
+[DEBUG] 2022-07-22 21:34:01.939 :        o.h.t.BasicTypeRegistry - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@2af3ebcf
+[DEBUG] 2022-07-22 21:34:01.940 :        o.h.t.BasicTypeRegistry - Adding type registration text -> org.hibernate.type.TextType@46f4410c
+[DEBUG] 2022-07-22 21:34:01.940 :        o.h.t.BasicTypeRegistry - Adding type registration ntext -> org.hibernate.type.NTextType@6f2521ce
+[DEBUG] 2022-07-22 21:34:01.943 :        o.h.t.BasicTypeRegistry - Adding type registration blob -> org.hibernate.type.BlobType@1ab90c7f
+[DEBUG] 2022-07-22 21:34:01.945 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@1ab90c7f
+[DEBUG] 2022-07-22 21:34:01.945 :        o.h.t.BasicTypeRegistry - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@26500585
+[DEBUG] 2022-07-22 21:34:01.947 :        o.h.t.BasicTypeRegistry - Adding type registration clob -> org.hibernate.type.ClobType@563bfb9b
+[DEBUG] 2022-07-22 21:34:01.947 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@563bfb9b
+[DEBUG] 2022-07-22 21:34:01.948 :        o.h.t.BasicTypeRegistry - Adding type registration nclob -> org.hibernate.type.NClobType@4b11c715
+[DEBUG] 2022-07-22 21:34:01.949 :        o.h.t.BasicTypeRegistry - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@4b11c715
+[DEBUG] 2022-07-22 21:34:01.951 :        o.h.t.BasicTypeRegistry - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@31c0815a
+[DEBUG] 2022-07-22 21:34:01.956 :        o.h.t.BasicTypeRegistry - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@19f68d7d
+[DEBUG] 2022-07-22 21:34:01.958 :        o.h.t.BasicTypeRegistry - Adding type registration serializable -> org.hibernate.type.SerializableType@65adf61
+[DEBUG] 2022-07-22 21:34:01.962 :        o.h.t.BasicTypeRegistry - Adding type registration object -> org.hibernate.type.ObjectType@6ab7edc8
+[DEBUG] 2022-07-22 21:34:01.963 :        o.h.t.BasicTypeRegistry - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@6ab7edc8
+[DEBUG] 2022-07-22 21:34:01.963 :        o.h.t.BasicTypeRegistry - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@69d4e0fa
+[DEBUG] 2022-07-22 21:34:01.965 :        o.h.t.BasicTypeRegistry - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@a3d5f76
+[DEBUG] 2022-07-22 21:34:01.967 :        o.h.t.BasicTypeRegistry - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@28676ff2
+[DEBUG] 2022-07-22 21:34:01.967 :        o.h.t.BasicTypeRegistry - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@50df0959
+[DEBUG] 2022-07-22 21:34:01.968 :        o.h.t.BasicTypeRegistry - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@1ec2e088
+[DEBUG] 2022-07-22 21:34:01.968 :        o.h.t.BasicTypeRegistry - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@7ee4dac9
+[DEBUG] 2022-07-22 21:34:01.968 :        o.h.t.BasicTypeRegistry - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@6def3218
+[DEBUG] 2022-07-22 21:34:01.968 :        o.h.t.BasicTypeRegistry - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@45d26b3d
+[INFO ] 2022-07-22 21:34:02.016 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[DEBUG] 2022-07-22 21:34:02.124 : o.h.t.s.TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@6cb5699b] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@4bf37b30]
+[DEBUG] 2022-07-22 21:34:02.257 :                 o.h.t.EnumType - Using NAMED-based conversion for Enum me.kdshim.kdd_j.member.ROLE
+[DEBUG] 2022-07-22 21:34:02.258 :                 o.h.t.EnumType - Using ORDINAL-based conversion for Enum me.kdshim.kdd_j.todo.entity.TodoStatus
+[DEBUG] 2022-07-22 21:34:02.259 :                 o.h.t.EnumType - Using NAMED-based conversion for Enum me.kdshim.kdd_j.link.entity.CATEGORY
+[DEBUG] 2022-07-22 21:34:02.335 : o.h.t.s.TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@6cb5699b] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@34c57322]
+[INFO ] 2022-07-22 21:34:02.641 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[TRACE] 2022-07-22 21:34:02.646 : o.h.t.s.TypeConfiguration$Scope - Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@34c57322] for TypeConfiguration
+[INFO ] 2022-07-22 21:34:02.647 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2022-07-22 21:34:03.866 : o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-07-22 21:34:04.127 : o.s.b.a.e.w.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[INFO ] 2022-07-22 21:34:04.291 : o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2022-07-22 21:34:04.311 : o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2022-07-22 21:34:04.697 :                     i.undertow - starting server: Undertow - 2.2.3.Final
+[INFO ] 2022-07-22 21:34:04.703 :                         o.xnio - XNIO version 3.8.0.Final
+[INFO ] 2022-07-22 21:34:04.712 :                        o.x.nio - XNIO NIO Implementation Version 3.8.0.Final
+[INFO ] 2022-07-22 21:34:04.816 :                    o.j.threads - JBoss Threads version 3.1.0.Final
+[INFO ] 2022-07-22 21:34:04.855 :  o.s.b.w.e.u.UndertowWebServer - Undertow started on port(s) 8080 (http)
+[INFO ] 2022-07-22 21:36:22.144 :                    i.u.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2022-07-22 21:36:22.148 :      o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2022-07-22 21:36:22.157 :      o.s.w.s.DispatcherServlet - Completed initialization in 8 ms
+[ERROR] 2022-07-22 21:37:48.279 : s.d.s.m.ReferenceModelSpecificationToPropertyConverter - Unable to find a model that matches key ModelKey{qualifiedModelName=ModelName{namespace='java.lang', name='Void'}, viewDiscriminator=null, validationGroupDiscriminators=[], isResponse=true}
+[ERROR] 2022-07-22 21:37:56.776 : s.d.s.m.ReferenceModelSpecificationToPropertyConverter - Unable to find a model that matches key ModelKey{qualifiedModelName=ModelName{namespace='java.lang', name='Void'}, viewDiscriminator=null, validationGroupDiscriminators=[], isResponse=true}
+[INFO ] 2022-07-22 21:55:02.452 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-07-22 21:55:02.456 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[INFO ] 2022-07-22 21:55:02.552 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.book.BookRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 21:55:02.555 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.link.LinkRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 21:55:02.561 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.member.MemberRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 21:55:02.563 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.todo.TodoRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 21:55:02.564 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 0 JDBC repository interfaces.
+[INFO ] 2022-07-22 21:55:02.593 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-07-22 21:55:02.599 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-07-22 21:55:02.665 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 4 JPA repository interfaces.
+[INFO ] 2022-07-22 21:55:04.301 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-07-22 21:55:04.408 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.4.27.Final
+[INFO ] 2022-07-22 21:55:04.580 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-07-22 21:55:04.759 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[INFO ] 2022-07-22 21:55:05.750 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-07-22 21:55:05.759 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2022-07-22 21:55:07.147 : o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-07-22 21:55:07.884 : o.s.b.a.e.w.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[INFO ] 2022-07-22 21:55:08.296 : o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2022-07-22 21:55:08.962 : o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2022-07-22 21:55:08.963 : o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2022-07-22 21:55:08.965 : o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+[INFO ] 2022-07-22 21:55:10.503 : o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2022-07-22 21:55:10.518 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-07-22 21:55:10.521 : o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[INFO ] 2022-07-22 22:07:18.558 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-07-22 22:07:18.562 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[INFO ] 2022-07-22 22:07:18.649 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.book.BookRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 22:07:18.652 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.link.LinkRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 22:07:18.656 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.member.MemberRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 22:07:18.660 : o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface me.kdshim.kdd_j.todo.TodoRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[INFO ] 2022-07-22 22:07:18.661 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 0 JDBC repository interfaces.
+[INFO ] 2022-07-22 22:07:18.688 : o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[INFO ] 2022-07-22 22:07:18.693 : o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-07-22 22:07:18.756 : o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+[INFO ] 2022-07-22 22:07:20.369 :            o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-07-22 22:07:20.425 :                    o.h.Version - HHH000412: Hibernate ORM core version 5.4.27.Final
+[INFO ] 2022-07-22 22:07:20.581 :                o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-07-22 22:07:20.712 :                  o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[INFO ] 2022-07-22 22:07:21.727 : o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-07-22 22:07:21.736 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2022-07-22 22:07:23.156 : o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-07-22 22:07:23.887 : o.s.b.a.e.w.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+[INFO ] 2022-07-22 22:07:24.297 : o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2022-07-22 22:07:24.926 : o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2022-07-22 22:07:24.927 : o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2022-07-22 22:07:24.930 : o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+[INFO ] 2022-07-22 22:07:26.507 : o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2022-07-22 22:07:26.521 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-07-22 22:07:26.522 : o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
