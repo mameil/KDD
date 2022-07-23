@@ -13,23 +13,23 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * UNDONE todo 리스트 조회
+ * todo 리스트 조회
  */
-@ApiModel(description = "UNDONE todo 리스트 조회")
+@ApiModel(description = "todo 리스트 조회")
 @Validated
 
 
-public class GetUndoneTodoDtoList   {
+public class GetTodoDtoList   {
   @JsonProperty("dtoList")
   @Valid
   private List<GetTODODto> dtoList = null;
 
-  public GetUndoneTodoDtoList dtoList(List<GetTODODto> dtoList) {
+  public GetTodoDtoList dtoList(List<GetTODODto> dtoList) {
     this.dtoList = dtoList;
     return this;
   }
 
-  public GetUndoneTodoDtoList addDtoListItem(GetTODODto dtoListItem) {
+  public GetTodoDtoList addDtoListItem(GetTODODto dtoListItem) {
     if (this.dtoList == null) {
       this.dtoList = new ArrayList<>();
     }
@@ -60,8 +60,8 @@ public class GetUndoneTodoDtoList   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetUndoneTodoDtoList getUndoneTodoDtoList = (GetUndoneTodoDtoList) o;
-    return Objects.equals(this.dtoList, getUndoneTodoDtoList.dtoList);
+    GetTodoDtoList getTodoDtoList = (GetTodoDtoList) o;
+    return Objects.equals(this.dtoList, getTodoDtoList.dtoList);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class GetUndoneTodoDtoList   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetUndoneTodoDtoList {\n");
+    sb.append("class GetTodoDtoList {\n");
     
     sb.append("    dtoList: ").append(toIndentedString(dtoList)).append("\n");
     sb.append("}");

@@ -4,7 +4,8 @@ import org.springframework.http.HttpStatus;
 
 public enum KDDError {
     LINK_NOT_FOUND("KDD_000_001", "링크를 찾지 못했습니다", 400),
-    MEMBER_NOT_FOUND("KDD_000_0002", "해당하는 아이디의 유저를 찾지 못했습니다", 400)
+    MEMBER_NOT_FOUND("KDD_000_0002", "해당하는 아이디의 유저를 찾지 못했습니다", 400),
+    UNDONE_TODO_NOT_FOUND("KDD_000_0003", "미완료된 TODO가 없습니다", 400)
     ;
 
     private final String code;
@@ -29,7 +30,7 @@ public enum KDDError {
 //        throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, msg);
 //    }
 
-    public CoreException doThrow(){
+    public CoreException getThrow(){
         throw new CoreException(new CoreExceptionData(code, msg, HttpStatus.BAD_REQUEST));
     }
 }

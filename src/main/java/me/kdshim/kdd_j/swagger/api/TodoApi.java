@@ -7,7 +7,7 @@ package me.kdshim.kdd_j.swagger.api;
 
 import me.kdshim.kdd_j.swagger.model.ErrorResponseDto;
 import me.kdshim.kdd_j.swagger.model.GetTODODto;
-import me.kdshim.kdd_j.swagger.model.GetUndoneTodoDtoList;
+import me.kdshim.kdd_j.swagger.model.GetTodoDtoList;
 import me.kdshim.kdd_j.swagger.model.PostTODODto;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -33,13 +33,25 @@ public interface TodoApi {
 
     TodoApiDelegate getDelegate();
 
-    @ApiOperation(value = "Get UNDONE TODO", nickname = "getUndoneTodo", notes = "상태가 UNDONE인 TODO를 모두 가져온다", response = GetUndoneTodoDtoList.class, tags={ "TODO", })
+    @ApiOperation(value = "모든 TODO 조회", nickname = "getAllTodo", notes = "모든 TODO 조회", response = GetTodoDtoList.class, tags={ "TODO", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "성공", response = GetUndoneTodoDtoList.class) })
+        @ApiResponse(code = 200, message = "성공", response = GetTodoDtoList.class),
+        @ApiResponse(code = 400, message = "실패", response = ErrorResponseDto.class) })
+    @RequestMapping(value = "/todo/all",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    default ResponseEntity<GetTodoDtoList> getAllTodo() {
+        return getDelegate().getAllTodo();
+    }
+
+
+    @ApiOperation(value = "Get UNDONE TODO", nickname = "getUndoneTodo", notes = "상태가 UNDONE인 TODO를 모두 가져온다", response = GetTodoDtoList.class, tags={ "TODO", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "성공", response = GetTodoDtoList.class) })
     @RequestMapping(value = "/todo/undone",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    default ResponseEntity<GetUndoneTodoDtoList> getUndoneTodo() {
+    default ResponseEntity<GetTodoDtoList> getUndoneTodo() {
         return getDelegate().getUndoneTodo();
     }
 

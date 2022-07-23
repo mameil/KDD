@@ -2,7 +2,7 @@ package me.kdshim.kdd_j.swagger.api;
 
 import me.kdshim.kdd_j.swagger.model.ErrorResponseDto;
 import me.kdshim.kdd_j.swagger.model.GetTODODto;
-import me.kdshim.kdd_j.swagger.model.GetUndoneTodoDtoList;
+import me.kdshim.kdd_j.swagger.model.GetTodoDtoList;
 import me.kdshim.kdd_j.swagger.model.PostTODODto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
@@ -39,13 +39,32 @@ public interface TodoApiDelegate {
     }
 
     /**
-     * @see TodoApi#getUndoneTodo
+     * @see TodoApi#getAllTodo
      */
-    default ResponseEntity<GetUndoneTodoDtoList> getUndoneTodo() {
+    default ResponseEntity<GetTodoDtoList> getAllTodo() {
         if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
             if (getAcceptHeader().get().contains("application/json")) {
                 try {
-                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"dtoList\" : [ {\n    \"todo\" : \"DO SOMETHING!\",\n    \"endDate\" : \"20220721\",\n    \"created\" : \"20220721200908\",\n    \"id\" : 1,\n    \"updated\" : \"20220721200908\",\n    \"status\" : \"TODO\"\n  }, {\n    \"todo\" : \"DO SOMETHING!\",\n    \"endDate\" : \"20220721\",\n    \"created\" : \"20220721200908\",\n    \"id\" : 1,\n    \"updated\" : \"20220721200908\",\n    \"status\" : \"TODO\"\n  } ]\n}", GetUndoneTodoDtoList.class), HttpStatus.NOT_IMPLEMENTED);
+                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"dtoList\" : [ {\n    \"todo\" : \"DO SOMETHING!\",\n    \"endDate\" : \"20220721\",\n    \"created\" : \"20220721200908\",\n    \"id\" : 1,\n    \"updated\" : \"20220721200908\",\n    \"status\" : \"TODO\"\n  }, {\n    \"todo\" : \"DO SOMETHING!\",\n    \"endDate\" : \"20220721\",\n    \"created\" : \"20220721200908\",\n    \"id\" : 1,\n    \"updated\" : \"20220721200908\",\n    \"status\" : \"TODO\"\n  } ]\n}", GetTodoDtoList.class), HttpStatus.NOT_IMPLEMENTED);
+                } catch (IOException e) {
+                    log.error("Couldn't serialize response for content type application/json", e);
+                    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+                }
+            }
+        } else {
+            log.warn("ObjectMapper or HttpServletRequest not configured in default TodoApi interface so no example is generated");
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
+    /**
+     * @see TodoApi#getUndoneTodo
+     */
+    default ResponseEntity<GetTodoDtoList> getUndoneTodo() {
+        if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+            if (getAcceptHeader().get().contains("application/json")) {
+                try {
+                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"dtoList\" : [ {\n    \"todo\" : \"DO SOMETHING!\",\n    \"endDate\" : \"20220721\",\n    \"created\" : \"20220721200908\",\n    \"id\" : 1,\n    \"updated\" : \"20220721200908\",\n    \"status\" : \"TODO\"\n  }, {\n    \"todo\" : \"DO SOMETHING!\",\n    \"endDate\" : \"20220721\",\n    \"created\" : \"20220721200908\",\n    \"id\" : 1,\n    \"updated\" : \"20220721200908\",\n    \"status\" : \"TODO\"\n  } ]\n}", GetTodoDtoList.class), HttpStatus.NOT_IMPLEMENTED);
                 } catch (IOException e) {
                     log.error("Couldn't serialize response for content type application/json", e);
                     return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

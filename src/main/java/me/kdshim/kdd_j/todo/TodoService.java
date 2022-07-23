@@ -2,6 +2,7 @@ package me.kdshim.kdd_j.todo;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import me.kdshim.kdd_j.config.KDDError;
 import me.kdshim.kdd_j.swagger.model.GetTODODto;
 import me.kdshim.kdd_j.swagger.model.PostTODODto;
 import me.kdshim.kdd_j.todo.entity.Todo;
@@ -17,8 +18,8 @@ import java.util.List;
 public class TodoService {
     private final TodoRepository todoRepository;
 
-    public GetTODODto postTodo(PostTODODto dto){
 
+    public GetTODODto postTodo(PostTODODto dto){
         Todo todo = Todo.fromDto(dto);
         log.info(todo.toString());
         Todo saved = todoRepository.save(todo);
@@ -33,6 +34,18 @@ public class TodoService {
                     list.add(Todo.toDto(todo));
                 }
         );
+
+        if (list.isEmpty()){
+            KDDError.UNDONE_TODO_NOT_FOUND.getThrow();
+        }
+
+        return list;
+    }
+
+    public List<GetTODODto> getAllTodo(){
+        List<GetTODODto> list = new ArrayList<>();
+        todoRepository.findAll().forEach(todo -> list.add(Todo.toDto(todo)));
+
         return list;
     }
 }
