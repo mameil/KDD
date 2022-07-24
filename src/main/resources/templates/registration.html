@@ -83,9 +83,9 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" style="background: #9fcdff">
+						<a class="login100-form-btn" onclick="register()" style="background: #9fcdff">
 							Register
-						</button>
+						</a>
 					</div>
 					<div class="container-login100-form-btn">
 						<a class="login100-form-btn" onclick="location.href='/login'" style="background: #6c757d">
@@ -101,21 +101,53 @@
 
 	
 <!--===============================================================================================-->	
-	<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="../static/vendor/bootstrap/js/popper.js"></script>
-	<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="../static/vendor/select2/select2.min.js"></script>
+	<script src="/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="../static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script src="/vendor/tilt/tilt.jquery.min.js"></script>
 	<script >
 		$('.js-tilt').tilt({
 			scale: 1.1
 		})
+
+		function register(){
+			const obj = new Object();
+			obj.loginId = document.getElementById("loginId").value
+			obj.password = document.getElementById("password").value
+			obj.email = document.getElementById("email").value
+			obj.name = document.getElementById("name").value
+			obj.birthDateYYYYMMDD = document.getElementById("birthDateYYYYMMDD").value
+			obj.married = document.querySelector('input[name="married"]:checked').value
+			const jsonString = JSON.stringify(obj);
+			console.log(jsonString)
+
+			$.ajax({
+				type: "post",
+				url: "/user/registration",
+				contentType: 'application/json; charset=utf-8',
+				data: jsonString,
+				success: function(data, statusText, jqXHR){
+					console.log(data)
+					if(data.statusCode == 200){
+						alert("KDD Member 등록에 성공했습니다")
+						window.location.href = "/login"
+					}else if(data.statusCode == 400){
+						alert(data.reason)
+					}
+
+				},
+				fail: function(data, statusText, jqXHR){
+					console.log(data.toString())
+				}
+			})
+		}
 	</script>
 <!--===============================================================================================-->
-	<script src="../static/js/main.js"></script>
+	<script src="=/js/main.js"></script>
 
 </body>
 </html>

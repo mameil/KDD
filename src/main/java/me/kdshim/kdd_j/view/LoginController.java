@@ -1,23 +1,25 @@
 package me.kdshim.kdd_j.view;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
 import me.kdshim.kdd_j.member.Member;
 import me.kdshim.kdd_j.member.MemberRepository;
 import me.kdshim.kdd_j.member.MemberService;
 import me.kdshim.kdd_j.member.ROLE;
 import me.kdshim.kdd_j.view.dto.LoginDto;
+import me.kdshim.kdd_j.view.dto.ResponseDto;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
 public class LoginController {
 
     private final MemberService memberService;
-    private final MemberRepository memberRepository;
+    private final ObjectMapper objectMapper;
 
     @GetMapping("/login")
     public String loginController(){
@@ -39,10 +41,18 @@ public class LoginController {
     }
 
     @PostMapping("/user/registration")
-    public String userRegistration(@ModelAttribute Member member){
+    @ResponseBody
+    public ResponseDto userRegistration(@RequestBody Member member) {
         member.setRole(ROLE.USER);
-        memberRepository.save(member);
-        return "login";
+        ResponseDto responseDto;
+        try{
+            responseDto = memberService.userRegistration(member);
+
+        }
+        catch (RuntimeException e){
+            return ResponseDto.builder().statusCode(400).reason(e.getMessage()).build();
+        }
+        return responseDto;
     }
 
     @GetMapping("/main")
