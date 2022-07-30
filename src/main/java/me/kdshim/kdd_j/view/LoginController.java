@@ -48,6 +48,7 @@ public class LoginController {
         try{
             responseDto = memberService.userRegistration(member);
 
+            //TEST
         }
         catch (RuntimeException e){
             return ResponseDto.builder().statusCode(400).reason(e.getMessage()).build();
