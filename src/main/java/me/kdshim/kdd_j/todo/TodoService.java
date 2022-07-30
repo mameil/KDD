@@ -36,7 +36,7 @@ public class TodoService {
         );
 
         if (list.isEmpty()){
-            KDDError.UNDONE_TODO_NOT_FOUND.getThrow();
+            KDDError.UNDONE_TODO_NOT_FOUND.doThrow();
         }
 
         return list;

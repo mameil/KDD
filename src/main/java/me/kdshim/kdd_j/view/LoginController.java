@@ -56,6 +56,11 @@ public class LoginController {
         return responseDto;
     }
 
+    @GetMapping("/forget")
+    public String forget(){return "forget";}
+
+
+
     @GetMapping("/main")
     public String mainController(){
         return "main";

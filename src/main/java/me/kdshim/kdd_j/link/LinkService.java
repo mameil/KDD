@@ -17,7 +17,7 @@ public class LinkService {
     private final LinkRepository linkRepository;
 
     public Link findSingleLink(String url) {
-        return linkRepository.findByUrl(url).orElseThrow(KDDError.LINK_NOT_FOUND::getThrow);
+        return linkRepository.findByUrl(url).orElseThrow(KDDError.LINK_NOT_FOUND::doThrow);
     }
 
     public List<Link> findAllLinksLikeKeyword(String keyword){

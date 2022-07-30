@@ -32,11 +32,11 @@ public enum KDDError {
         return msg;
     }
 
-//    public HttpClientErrorException doThrow(){
+//    public HttpClientErrorException getThrow(){
 //        throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, msg);
 //    }
 
-    public CoreException getThrow(){
+    public CoreException doThrow(){
         throw new CoreException(new CoreExceptionData(code, msg, HttpStatus.BAD_REQUEST));
     }
 }

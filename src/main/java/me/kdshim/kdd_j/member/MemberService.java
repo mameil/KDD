@@ -2,13 +2,10 @@ package me.kdshim.kdd_j.member;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import me.kdshim.kdd_j.config.CoreException;
 import me.kdshim.kdd_j.config.KDDError;
 import me.kdshim.kdd_j.view.dto.LoginDto;
 import me.kdshim.kdd_j.view.dto.ResponseDto;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Log4j2
 @Service
@@ -22,7 +19,7 @@ public class MemberService {
     public LoginDto loginValidation(LoginDto dto) {
         log.info(dto.toString());
 
-        Member member = memberRepository.findById(dto.getId()).orElseThrow(KDDError.MEMBER_NOT_FOUND::getThrow);
+        Member member = memberRepository.findById(dto.getId()).orElseThrow(KDDError.MEMBER_NOT_FOUND::doThrow);
 
 //        LoginDto resp = modelMapper.map(member, LoginDto.class);
         LoginDto resp = LoginDto.builder().id(member.getLoginId()).password(member.getPassword()).role(member.getRole()).success(false).build();
@@ -41,7 +38,7 @@ public class MemberService {
         log.info(recv.toString());
         memberRepository.findAll().forEach(member -> {
             if(member.getLoginId().equals(recv.getLoginId()))
-                KDDError.LOGIN_ID_EXISTS.getThrow();
+                KDDError.LOGIN_ID_EXISTS.doThrow();
         });
 
         memberRepository.save(recv);
