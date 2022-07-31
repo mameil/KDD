@@ -26,29 +26,31 @@ public class LoginController {
         return "login";
     }
 
-    @PostMapping("/login/validation")
-    public String loginValidation(@ModelAttribute LoginDto loginDto){
-        LoginDto resp = memberService.loginValidation(loginDto);
+//    @PostMapping("/login/validation")
+    public String loginValidation(LoginDto loginDto){
+//        LoginDto resp = memberService.loginValidation(loginDto);
+        LoginDto resp = (LoginDto) memberService.loadUserByUsername(loginDto.getUsername());
+        System.out.println("==============================================");
+        System.out.println(resp.toString());
+        System.out.println("==============================================");
         if(resp.isSuccess() && resp.getRole() == ROLE.ADMIN)
             return "redirect:/admin";
 
         return resp.isSuccess() ? "redirect:/main" : "redirect:/login";
     }
 
-    @GetMapping("/home/registration")
+    @GetMapping("/login/registration")
     public String registration(){
         return "registration";
     }
 
-    @PostMapping("/home/user/registration")
+    @PostMapping("/login/user/registration")
     @ResponseBody
     public ResponseDto userRegistration(@RequestBody Member member) {
         member.setRole(ROLE.USER);
         ResponseDto responseDto;
         try{
             responseDto = memberService.userRegistration(member);
-
-            //TEST
         }
         catch (RuntimeException e){
             return ResponseDto.builder().statusCode(400).reason(e.getMessage()).build();
@@ -56,17 +58,17 @@ public class LoginController {
         return responseDto;
     }
 
-    @GetMapping("/home/forget")
+    @GetMapping("/login/forget")
     public String forget(){return "forget";}
 
 
 
-    @GetMapping("/home/main")
+    @GetMapping("/main")
     public String mainController(){
         return "main";
     }
 
-    @GetMapping("/home/admin")
+    @GetMapping("/admin")
     public String adminController(){
         return "adminPage";
     }
