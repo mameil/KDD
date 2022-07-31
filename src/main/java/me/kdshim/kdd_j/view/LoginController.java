@@ -35,12 +35,12 @@ public class LoginController {
         return resp.isSuccess() ? "redirect:/main" : "redirect:/login";
     }
 
-    @GetMapping("/registration")
+    @GetMapping("/home/registration")
     public String registration(){
         return "registration";
     }
 
-    @PostMapping("/user/registration")
+    @PostMapping("/home/user/registration")
     @ResponseBody
     public ResponseDto userRegistration(@RequestBody Member member) {
         member.setRole(ROLE.USER);
@@ -56,17 +56,17 @@ public class LoginController {
         return responseDto;
     }
 
-    @GetMapping("/forget")
+    @GetMapping("/home/forget")
     public String forget(){return "forget";}
 
 
 
-    @GetMapping("/main")
+    @GetMapping("/home/main")
     public String mainController(){
         return "main";
     }
 
-    @GetMapping("/admin")
+    @GetMapping("/home/admin")
     public String adminController(){
         return "adminPage";
     }

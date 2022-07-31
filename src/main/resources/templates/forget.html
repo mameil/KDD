@@ -26,7 +26,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100" style="">
-				<form method="post" action="/user/forget" style="width: 100%; ">
+				<form method="post" action="/home/user/forget" style="width: 100%; ">
 					<h3> Find PW </h3>
 					<br><br><br>
 					<input>
@@ -71,7 +71,7 @@
 
 			$.ajax({
 				type: "post",
-				url: "/user/registration",
+				url: "/home/user/registration",
 				contentType: 'application/json; charset=utf-8',
 				data: jsonString,
 				success: function(data, statusText, jqXHR){

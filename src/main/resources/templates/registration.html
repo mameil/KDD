@@ -26,7 +26,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100" style="">
-				<form method="post" action="/user/registration" style="width: 100%; ">
+				<form method="post" action="/home/user/registration" style="width: 100%; ">
 					<h3> Welcome To KDD Member! </h3>
 					<br><br><br>
 
@@ -127,14 +127,14 @@
 
 			$.ajax({
 				type: "post",
-				url: "/user/registration",
+				url: "/home/user/registration",
 				contentType: 'application/json; charset=utf-8',
 				data: jsonString,
 				success: function(data, statusText, jqXHR){
 					console.log(data)
 					if(data.statusCode == 200){
 						alert("KDD Member 등록에 성공했습니다")
-						window.location.href = "/login"
+						window.location.href = "/home/login"
 					}else if(data.statusCode == 400){
 						alert(data.reason)
 					}
