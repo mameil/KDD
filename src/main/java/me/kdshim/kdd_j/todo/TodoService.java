@@ -2,7 +2,7 @@ package me.kdshim.kdd_j.todo;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import me.kdshim.kdd_j.config.KDDError;
+import me.kdshim.kdd_j.common.KDDError;
 import me.kdshim.kdd_j.swagger.model.GetTODODto;
 import me.kdshim.kdd_j.swagger.model.PostTODODto;
 import me.kdshim.kdd_j.todo.entity.Todo;

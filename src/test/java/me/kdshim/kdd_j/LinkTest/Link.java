@@ -1,18 +1,14 @@
 package me.kdshim.kdd_j.LinkTest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import me.kdshim.kdd_j.config.KDDError;
+import me.kdshim.kdd_j.common.KDDError;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.config.MyMockMvc;
 import me.kdshim.kdd_j.swagger.model.GetLinkDto;
-import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.assertj.core.api.Assertions.assertThat;

@@ -2,7 +2,7 @@ package me.kdshim.kdd_j.link;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import me.kdshim.kdd_j.config.KDDError;
+import me.kdshim.kdd_j.common.KDDError;
 import me.kdshim.kdd_j.link.entity.Link;
 import me.kdshim.kdd_j.swagger.model.PostLinkDto;
 import org.springframework.stereotype.Service;

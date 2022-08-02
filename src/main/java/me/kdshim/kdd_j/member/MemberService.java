@@ -2,7 +2,7 @@ package me.kdshim.kdd_j.member;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import me.kdshim.kdd_j.config.KDDError;
+import me.kdshim.kdd_j.common.KDDError;
 import me.kdshim.kdd_j.view.dto.LoginDto;
 import me.kdshim.kdd_j.view.dto.ResponseDto;
 import org.springframework.security.core.userdetails.UserDetails;

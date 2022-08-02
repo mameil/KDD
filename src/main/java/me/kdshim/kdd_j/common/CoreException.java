@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j.config;
+package me.kdshim.kdd_j.common;
 
 public class CoreException extends RuntimeException{
 

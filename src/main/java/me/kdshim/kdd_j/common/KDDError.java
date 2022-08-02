@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j.config;
+package me.kdshim.kdd_j.common;
 
 import org.springframework.http.HttpStatus;
 

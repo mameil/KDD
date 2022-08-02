@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j.config;
+package me.kdshim.kdd_j.common;
 
 import lombok.extern.slf4j.Slf4j;
 import me.kdshim.kdd_j.swagger.model.ErrorResponseDto;
