@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-@Service
 public class MenuService {
 
     public void menuTest(){

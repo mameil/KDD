@@ -50,6 +50,9 @@ dependencies {
     implementation 'org.modelmapper:modelmapper:3.1.0'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    implementation 'com.google.guava:guava:11.0.2'
+
     //actuator
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
