@@ -1,10 +1,8 @@
-package me.kdshim.kdd_j.checking;
+package me.kdshim.kdd_j.kona;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class GuavaTest {
 

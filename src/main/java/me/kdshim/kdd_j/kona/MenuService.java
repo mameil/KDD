@@ -1,9 +1,8 @@
-package me.kdshim.kdd_j.checking;
-
-import org.springframework.stereotype.Service;
+package me.kdshim.kdd_j.kona;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.List;
 
 public class MenuService {
 
@@ -29,6 +28,11 @@ public class MenuService {
                 }
             }
         }
+
+    }
+
+
+    public void saveModifiedDongTip(List<TipExtraDong> beforeDong, List<TipExtraDong> afterDong){
 
     }
 }
