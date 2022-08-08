@@ -1,6 +1,8 @@
-package me.kdshim.kdd_j.kona;
+package me.kdshim.kdd_j.kona.tip;
 
 import com.google.common.collect.Sets;
+import me.kdshim.kdd_j.kona.Mouth;
+import me.kdshim.kdd_j.kona.Teeth;
 
 import java.util.*;
 

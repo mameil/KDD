@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j.kona;
+package me.kdshim.kdd_j.kona.menu.model;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,9 +7,7 @@ import java.lang.reflect.Method;
 
 @Data
 @Builder
-public class Menu {
-    String placeId;
-    String id;
+public class MenuDto {
     int priority;
     boolean isMainMenu;
     String description;

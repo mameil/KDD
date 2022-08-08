@@ -1,4 +1,8 @@
-package me.kdshim.kdd_j.kona;
+package me.kdshim.kdd_j.kona.menu;
+
+import me.kdshim.kdd_j.kona.menu.model.Menu;
+import me.kdshim.kdd_j.kona.menu.model.MenuDto;
+import me.kdshim.kdd_j.kona.tip.model.TipExtraDong;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

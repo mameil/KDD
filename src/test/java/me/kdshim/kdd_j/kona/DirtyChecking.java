@@ -3,6 +3,7 @@ package me.kdshim.kdd_j.kona;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.config.MyMockMvc;
+import me.kdshim.kdd_j.kona.tip.model.PlaceSetDelivery;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class DirtyChecking extends MyMockMvc {
@@ -15,5 +16,7 @@ public class DirtyChecking extends MyMockMvc {
 
         PlaceSetDelivery placeSetDelivery = objectMapper.readValue(req, PlaceSetDelivery.class);
         System.out.println(placeSetDelivery.toString());
+
+
     }
 }

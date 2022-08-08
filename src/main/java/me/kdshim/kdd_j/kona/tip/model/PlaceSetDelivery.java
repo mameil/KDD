@@ -1,9 +1,10 @@
-package me.kdshim.kdd_j.kona;
+package me.kdshim.kdd_j.kona.tip.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import me.kdshim.kdd_j.kona.tip.model.Tip;
 
 @Data
 @Builder

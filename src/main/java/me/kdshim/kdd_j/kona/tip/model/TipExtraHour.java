@@ -1,4 +1,6 @@
-package me.kdshim.kdd_j.kona;
+package me.kdshim.kdd_j.kona.tip.model;
+
+import me.kdshim.kdd_j.kona.tip.model.Day;
 
 import java.util.List;
 

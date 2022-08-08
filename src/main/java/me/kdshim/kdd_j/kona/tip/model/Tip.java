@@ -1,4 +1,4 @@
-package me.kdshim.kdd_j.kona;
+package me.kdshim.kdd_j.kona.tip.model;
 
 import lombok.Data;
 
