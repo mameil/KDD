@@ -27,11 +27,26 @@
 		<div class="container-login100">
 			<div class="wrap-login100" style="">
 				<form method="post" action="/home/user/forget" style="width: 100%; ">
-					<h3> Find PW </h3>
+					<h3> Find Your Password </h3>
 					<br><br><br>
-					<input>
+					<h6>User name </h6>
+					<div class="wrap-input100 validate-input" style="margin-top: 5px">
+						<input class="input100" type="text" id="userName" name="userName">
+						<span class="focus-input100"></span>
+					</div>
+
+					<h6>birthDate (yyyymmdd) </h6>
+					<div class="wrap-input100 validate-input" style="margin-top: 5px">
+						<input class="input100" type="text" id="birthDateYYYYMMDD" name="birthDateYYYYMMDD">
+						<span class="focus-input100"></span>
+					</div>
 
 					<div class="container-login100-form-btn" style="width: auto">
+						<a class="login100-form-btn" onclick="location.href='/login/forget'" style="background: #6c757d">
+							Search
+						</a>
+					</div>
+					<div class="container-login100-form-btn">
 						<a class="login100-form-btn" onclick="location.href='/login'" style="background: #6c757d">
 							back to login
 						</a>
@@ -60,18 +75,14 @@
 
 		function register(){
 			const obj = new Object();
-			obj.loginId = document.getElementById("loginId").value
-			obj.password = document.getElementById("password").value
-			obj.email = document.getElementById("email").value
-			obj.name = document.getElementById("name").value
+			obj.userName = document.getElementById("userName").value
 			obj.birthDateYYYYMMDD = document.getElementById("birthDateYYYYMMDD").value
-			obj.married = document.querySelector('input[name="married"]:checked').value
 			const jsonString = JSON.stringify(obj);
 			console.log(jsonString)
 
 			$.ajax({
 				type: "post",
-				url: "/home/user/registration",
+				url: "/login/forget",
 				contentType: 'application/json; charset=utf-8',
 				data: jsonString,
 				success: function(data, statusText, jqXHR){

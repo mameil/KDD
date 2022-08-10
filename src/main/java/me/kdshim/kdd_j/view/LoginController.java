@@ -1,18 +1,19 @@
 package me.kdshim.kdd_j.view;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
-import lombok.extern.log4j.Log4j2;
 import me.kdshim.kdd_j.member.Member;
-import me.kdshim.kdd_j.member.MemberRepository;
 import me.kdshim.kdd_j.member.MemberService;
 import me.kdshim.kdd_j.member.ROLE;
+import me.kdshim.kdd_j.view.dto.ForgetDto;
 import me.kdshim.kdd_j.view.dto.LoginDto;
 import me.kdshim.kdd_j.view.dto.ResponseDto;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequiredArgsConstructor
@@ -60,6 +61,20 @@ public class LoginController {
 
     @GetMapping("/login/forget")
     public String forget(){return "forget";}
+
+    @PostMapping("/login/forget")
+    public ResponseDto userForget(@RequestBody ForgetDto forgetDto){
+        System.out.println("==============================================");
+        System.out.println(forgetDto.toString());
+        System.out.println("==============================================");
+        ResponseDto responseDto;
+
+        Member singleMemberByUsername = memberService.findSingleMemberByUsername(forgetDto.getUserName());
+        if(singleMemberByUsername.getBirthDateYYYYMMDD().equals(forgetDto.getBirthDateYYYYMMDD()))
+            return ResponseDto.builder().statusCode(200).build();
+
+        return ResponseDto.builder().statusCode(400).reason("올바른 BirthDate을 입력하세요!").build();
+    }
 
 
 
