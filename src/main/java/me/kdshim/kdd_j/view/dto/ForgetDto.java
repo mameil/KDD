@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class ForgetDto {
-    String id;
     String userName;
     String birthDateYYYYMMDD;
 }
