@@ -18,6 +18,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //기본적으로 spring security에서는 기본적으로 csrf 을 체크하기 떄문에 post가 이루어지지 않는다! 아래로
+        http.csrf().disable();
+
         http
                 .authorizeRequests()
                 .antMatchers("/login/**").permitAll()
@@ -26,10 +29,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/swagger-ui").permitAll()
 
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/main")
-                .permitAll()
+                    .formLogin()
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/main")
+                    .permitAll()
         ;
     }
 

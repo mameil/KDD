@@ -19,8 +19,8 @@ public class MemberService implements UserDetailsService {
     //TODO model mapper 적용 왜안되는걸까...
 //    private final ModelMapper modelMapper;
 
-    public Member findSingleMemberByUsername(String userName){
-        return memberRepository.findById(userName).orElseThrow(KDDError.MEMBER_NOT_FOUND::doThrow);
+    public Member findFirstMemberByUsername(String userName){
+        return memberRepository.findAllByName(userName).stream().findFirst().orElseThrow(KDDError.MEMBER_NOT_FOUND::doThrow);
     }
 
     public LoginDto loginValidation(LoginDto dto) {

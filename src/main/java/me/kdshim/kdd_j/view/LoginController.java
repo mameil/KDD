@@ -8,7 +8,6 @@ import me.kdshim.kdd_j.member.ROLE;
 import me.kdshim.kdd_j.view.dto.ForgetDto;
 import me.kdshim.kdd_j.view.dto.LoginDto;
 import me.kdshim.kdd_j.view.dto.ResponseDto;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -62,18 +61,16 @@ public class LoginController {
     @GetMapping("/login/forget")
     public String forget(){return "forget";}
 
-    @PostMapping("/login/forget")
-    public ResponseDto userForget(@RequestBody ForgetDto forgetDto){
-        System.out.println("==============================================");
-        System.out.println(forgetDto.toString());
-        System.out.println("==============================================");
-        ResponseDto responseDto;
+    @PostMapping("/login/find/member")
+    @ResponseBody
+    public Member userForget(@RequestBody ForgetDto forgetDto){
+        Member singleMemberByUsername = memberService.findFirstMemberByUsername(forgetDto.getUserName());
 
-        Member singleMemberByUsername = memberService.findSingleMemberByUsername(forgetDto.getUserName());
-        if(singleMemberByUsername.getBirthDateYYYYMMDD().equals(forgetDto.getBirthDateYYYYMMDD()))
-            return ResponseDto.builder().statusCode(200).build();
+//        if(!singleMemberByUsername.getBirthDateYYYYMMDD().equals(forgetDto.getBirthDateYYYYMMDD())){
+//
+//        }
 
-        return ResponseDto.builder().statusCode(400).reason("올바른 BirthDate을 입력하세요!").build();
+        return singleMemberByUsername;
     }
 
 

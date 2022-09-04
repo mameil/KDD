@@ -26,7 +26,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100" style="">
-				<form method="post" action="/home/user/forget" style="width: 100%; ">
+				<form method="post" action="/login/find/member" style="width: 100%; ">
 					<h3> Find Your Password </h3>
 					<br><br><br>
 					<h6>User name </h6>
@@ -41,9 +41,9 @@
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="container-login100-form-btn" style="width: auto">
-						<a class="login100-form-btn" onclick="location.href='/login/forget'" style="background: #6c757d">
-							Search
+					<div class="container-login100-form-btn">
+						<a class="login100-form-btn" onclick="find()" style="background: #9fcdff">
+							Find Member Info
 						</a>
 					</div>
 					<div class="container-login100-form-btn">
@@ -55,7 +55,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	
 
 	
@@ -73,36 +73,40 @@
 			scale: 1.1
 		})
 
-		function register(){
+		function find(){
 			const obj = new Object();
 			obj.userName = document.getElementById("userName").value
 			obj.birthDateYYYYMMDD = document.getElementById("birthDateYYYYMMDD").value
 			const jsonString = JSON.stringify(obj);
-			console.log(jsonString)
 
 			$.ajax({
 				type: "post",
-				url: "/login/forget",
+				url: "/login/find/member",
 				contentType: 'application/json; charset=utf-8',
 				data: jsonString,
 				success: function(data, statusText, jqXHR){
-					console.log(data)
-					if(data.statusCode == 200){
-						alert("KDD Member 등록에 성공했습니다")
-						window.location.href = "/login"
-					}else if(data.statusCode == 400){
-						alert(data.reason)
-					}
-
+					console.log(data.loginId)
+					console.log(data.password)
+					alert(
+							"===확인되는 계정의 정보는 이하와 같습니다=== \n" +
+							"아이디 : " + data.loginId + "\n" +
+							"비밀번호 : " + data.password + "\n" +
+							"사용자이름 : " + data.name + "\n" +
+							"생년월일 : " + data.birthDateYYYYMMDD + "\n" +
+							"결혼 유무 : " + data.married + "\n" +
+							"이메일 : " + data.email + "\n" +
+							"주소 : " + data.address.addr + " " + data.address.addrDetail + "\n"
+					)
+					window.location.href = "/login"
 				},
 				fail: function(data, statusText, jqXHR){
+					alert("서버에 에러가 발생했습니다!")
 					console.log(data.toString())
 				}
 			})
 		}
 	</script>
 <!--===============================================================================================-->
-	<script src="=/js/main.js"></script>
 
 </body>
 </html>
