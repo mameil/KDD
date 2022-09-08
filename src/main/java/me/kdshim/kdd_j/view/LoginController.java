@@ -26,13 +26,9 @@ public class LoginController {
         return "login";
     }
 
-//    @PostMapping("/login/validation")
+    @PostMapping("/login/validation")
     public String loginValidation(LoginDto loginDto){
-//        LoginDto resp = memberService.loginValidation(loginDto);
-        LoginDto resp = (LoginDto) memberService.loadUserByUsername(loginDto.getUsername());
-        System.out.println("==============================================");
-        System.out.println(resp.toString());
-        System.out.println("==============================================");
+        LoginDto resp = (LoginDto) memberService.loadUserByUsername(loginDto.getUsername(), loginDto.getPassword());
         if(resp.isSuccess() && resp.getRole() == ROLE.ADMIN)
             return "redirect:/admin";
 
