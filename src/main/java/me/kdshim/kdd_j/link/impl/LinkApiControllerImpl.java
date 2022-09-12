@@ -17,7 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LinkApiControllerImpl implements LinkApiDelegate {
     private final LinkService linkService;
-    private final GithubSender githubSender;
 
     @Override
     public ResponseEntity<GetLinkDto> saveSingleLink(PostLinkDto body) {
@@ -28,7 +27,6 @@ public class LinkApiControllerImpl implements LinkApiDelegate {
 
     @Override
     public ResponseEntity<List<GetLinkDto>> findLinksLikeUrl(String keyword) {
-        githubSender.getCommitList();
         List<Link> linkList = linkService.findAllLinksLikeKeyword(keyword);
         List<GetLinkDto> dtoList = new ArrayList<>();
         linkList.forEach(link -> dtoList.add(link.toGetDto(link)));
