@@ -43,34 +43,6 @@ public class MemberService implements UserDetailsService {
         return resp;
     }
 
-    public UserDetails loadUserByUsername(String id, String password) throws UsernameNotFoundException {
-        Optional<Member> member = memberRepository.findById(id);
-        LoginDto resp = null;
-        if(member.isPresent()){
-            if(member.get().getPassword().equals(password)){
-                resp = LoginDto.builder()
-                        .id(member.get().getLoginId())
-                        .password(member.get().getPassword())
-                        .role(member.get().getRole())
-                        .success(true)
-                        .build();
-            }
-            else{
-                resp = LoginDto.builder()
-                        .id(member.get().getLoginId())
-                        .password(member.get().getPassword())
-                        .role(member.get().getRole())
-                        .success(false)
-                        .build();
-            }
-        }
-
-
-        log.info("로그인 시도 : {}", resp);
-
-        return resp;
-    }
-
     public ResponseDto userRegistration(Member recv){
         log.info(recv.toString());
         memberRepository.findAll().forEach(member -> {
@@ -83,8 +55,38 @@ public class MemberService implements UserDetailsService {
         return ResponseDto.builder().statusCode(200).reason("Success").build();
     }
 
+    public UserDetails loadUserByUsername(String id, String password) throws UsernameNotFoundException {
+        Member member = memberRepository.findById(id).orElseThrow(KDDError.MEMBER_NOT_FOUND::doThrow);
+        LoginDto resp = null;
+        if(member.getPassword().equals(password)){
+            resp = LoginDto.builder()
+                    .id(member.getLoginId())
+                    .password(member.getPassword())
+                    .role(member.getRole())
+                    .success(true)
+                    .build();
+        }
+        else{
+            resp = LoginDto.builder()
+                    .id(member.getLoginId())
+                    .password(member.getPassword())
+                    .role(member.getRole())
+                    .success(false)
+                    .build();
+        }
+
+        log.info("로그인 시도 : {}", resp);
+        if(resp == null){
+            throw KDDError.PASSWORD_MATCHED_ERROR.doThrow();
+        }
+
+        return resp;
+    }
+
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+//        Member member = memberRepository.findFirstByName(s).orElseThrow(KDDError.MEMBER_NOT_FOUND::doThrow);
+//        return member;
         return null;
     }
 }

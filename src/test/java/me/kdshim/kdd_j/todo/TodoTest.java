@@ -8,6 +8,7 @@ import me.kdshim.kdd_j.member.MemberRepository;
 import me.kdshim.kdd_j.swagger.model.GetMemberDto;
 import me.kdshim.kdd_j.todo.entity.Todo;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -15,6 +16,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+@Disabled
 public class TodoTest extends MyMockMvc {
 
     @Autowired
