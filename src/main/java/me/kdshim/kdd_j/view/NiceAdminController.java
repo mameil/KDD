@@ -11,7 +11,7 @@ public class NiceAdminController {
         return "index";
     }
 
-    @GetMapping("/charts-apex.html")
+    @GetMapping("/charts-apexcharts.html")
     public String ChartApexChart(){
         return "charts-apexcharts";
     }
@@ -24,6 +24,11 @@ public class NiceAdminController {
     @GetMapping("/charts-echarts.html")
     public String ChartEchart(){
         return "charts-echarts";
+    }
+
+    @GetMapping("/components-alerts.html")
+    public String ComponentAlert(){
+        return "components-alerts";
     }
 
     @GetMapping("/components-accordion.html")
@@ -124,6 +129,11 @@ public class NiceAdminController {
     @GetMapping("/icons-remix.html")
     public String IconsRemix(){
         return "icons-remix";
+    }
+
+    @GetMapping("/pages-faq.html")
+    public String PagesFaq(){
+        return "pages-faq";
     }
 
     @GetMapping("/pages-blank.html")
