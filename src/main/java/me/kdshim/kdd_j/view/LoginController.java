@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import me.kdshim.kdd_j.member.Member;
 import me.kdshim.kdd_j.member.MemberService;
 import me.kdshim.kdd_j.member.ROLE;
-import me.kdshim.kdd_j.sender.dto.GetCommitDto;
 import me.kdshim.kdd_j.view.dto.ForgetDto;
 import me.kdshim.kdd_j.view.dto.LoginDto;
 import me.kdshim.kdd_j.view.dto.ResponseDto;
