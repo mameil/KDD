@@ -32,7 +32,7 @@ public class LoginController {
         if(resp.isSuccess() && resp.getRole() == ROLE.ADMIN)
             return "redirect:/admin";
 
-        return resp.isSuccess() ? "redirect:/main" : "redirect:/login";
+        return resp.isSuccess() ? "redirect:/index.html" : "redirect:/login";
     }
 
     @GetMapping("/login/registration")
