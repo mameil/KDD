@@ -842,3 +842,11 @@
 [INFO ] 2022-10-10 20:29:28.368 :                    i.u.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
 [INFO ] 2022-10-10 20:29:28.372 :      o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 [INFO ] 2022-10-10 20:29:28.379 :      o.s.w.s.DispatcherServlet - Completed initialization in 5 ms
+[INFO ] 2022-10-10 20:34:05.359 :  o.s.b.w.e.u.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+[INFO ] 2022-10-10 20:34:05.362 :  o.s.b.w.e.u.UndertowWebServer - Graceful shutdown complete
+[INFO ] 2022-10-10 20:34:05.364 :                     i.undertow - stopping server: Undertow - 2.2.3.Final
+[INFO ] 2022-10-10 20:34:05.371 :                    i.u.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[INFO ] 2022-10-10 20:34:05.377 : o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2022-10-10 20:34:05.386 : o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[TRACE] 2022-10-10 20:34:05.387 : o.h.t.s.TypeConfiguration$Scope - Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@5bc498c8] for TypeConfiguration
+[DEBUG] 2022-10-10 20:34:05.387 : o.h.t.s.TypeConfiguration$Scope - Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@31c44bdd] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@5bc498c8]
