@@ -33,6 +33,7 @@ public class GithubSender {
     private String libraryCommitsUrl;
 
     public List<GetCommitDto> getCommitList(){
+        //todo 페이지네이션 갯수에 대한 고민 필요 > https://docs.github.com/en/rest/commits/commits 에서 확인 필요함
         HttpHeaders headers = new HttpHeaders();
         headers.set("Accept", accept);
         headers.set("Authorization", authorization);
