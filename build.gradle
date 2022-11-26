@@ -82,8 +82,13 @@ dependencies {
     testImplementation 'org.testcontainers:testcontainers:1.16.2'
     testImplementation "org.testcontainers:mysql:1.17.2"
 
+    //kotlin test
+    testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.3.0'
+    testImplementation('io.kotest:kotest-assertions-core:5.5.4')
 
-
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
 //SwaggerSource Setting
@@ -125,6 +130,10 @@ jacocoTestCoverageVerification {
             }
         }
     }
+}
+
+task test_ver2(type: Test){
+    finalizedBy "test"
 }
 
 //define fullTest Task
