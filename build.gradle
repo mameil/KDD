@@ -14,11 +14,7 @@ group = 'me.kdshim'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
+
 
 repositories {
     mavenCentral()
@@ -34,11 +30,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-undertow'
     implementation 'javax.validation:validation-api:2.0.1.Final'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-    testCompileOnly 'org.projectlombok:lombok:1.18.12'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     //view
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -85,10 +81,11 @@ dependencies {
     //kotlin test
     testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.3.0'
     testImplementation('io.kotest:kotest-assertions-core:5.5.4')
-
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+
 }
 
 //SwaggerSource Setting
@@ -132,10 +129,6 @@ jacocoTestCoverageVerification {
     }
 }
 
-task test_ver2(type: Test){
-    finalizedBy "test"
-}
-
 //define fullTest Task
 task fullTest(type: Test){
     finalizedBy "test"
@@ -155,7 +148,35 @@ sourceSets{
             srcDir file('src/test/java')
         }
     }
+    integrationTest {
+        java.srcDir "$projectDir/src/integrationTest/java"
+        resources.srcDir "$projectDir/src/integrationTest/resources"
+        compileClasspath += main.output + test.output
+        runtimeClasspath += main.output + test.output
+    }
 }
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    integrationTestImplementation.extendsFrom implementation
+    integrationTestImplementation.extendsFrom testImplementation
+    integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
+    integrationTestCompileOnly.extendsFrom compileOnly
+    integrationTestCompileOnly.extendsFrom testCompileOnly
+}
+
+task integrationTest(type: Test) {
+    description = "new Test Module made of pure Kotlin"
+    group = '0.myaction'
+
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    useJUnitPlatform()
+}
+
+check.dependsOn integrationTest
 
 test{
     useJUnitPlatform()
