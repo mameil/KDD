@@ -43,9 +43,9 @@ public class GithubSender {
         ResponseEntity<List<GetCommitDto>> response = restTemplate.exchange
                 (githubBase + libraryCommitsUrl, HttpMethod.GET, req, new ParameterizedTypeReference<List<GetCommitDto>>() {
         });
-        System.out.println("==============================================");
-        System.out.println(response.getBody().toString());
-        System.out.println("==============================================");
+//        System.out.println("==============================================");
+//        System.out.println(response.getBody().toString());
+//        System.out.println("==============================================");
 
         return response.getBody();
     }
