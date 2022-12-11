@@ -137,20 +137,20 @@ task fullTest(type: Test){
 sourceSets{
     fullTest{
         java{
-            srcDir file('src/test/java')
+            srcDir file("src/test/java/")
         }
         resources{
-            srcDir file('src/test/resources')
+            srcDir file("src/test/resources")
         }
     }
     test{
         java{
-            srcDir file('src/test/java')
+            srcDir file("src/test/java/")
         }
     }
     integrationTest {
-        java.srcDir "$projectDir/src/integrationTest/kotlin"
-        resources.srcDir "$projectDir/src/integrationTest/resources"
+        java.srcDir "src/integrationTest/kotlin"
+        resources.srcDir "src/integrationTest/resources"
         compileClasspath += main.output + test.output
         runtimeClasspath += main.output + test.output
     }
@@ -163,24 +163,18 @@ configurations {
     integrationTestImplementation.extendsFrom implementation
     integrationTestImplementation.extendsFrom testImplementation
     integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
-    integrationTestCompileOnly.extendsFrom compileOnly
-    integrationTestCompileOnly.extendsFrom testCompileOnly
 }
 
 task integrationTest(type: Test) {
-    description = "new Test Module made of pure Kotlin"
-    group = '0.myaction'
-
     testClassesDirs = sourceSets.integrationTest.output.classesDirs
     classpath = sourceSets.integrationTest.runtimeClasspath
     useJUnitPlatform()
 }
 
-check.dependsOn integrationTest
-
 test{
     useJUnitPlatform()
 }
+
 
 //grouping
 def groupName = "0.myaction"
@@ -189,4 +183,4 @@ generateSwaggerCode.group = groupName
 build.group = groupName
 clean.group = groupName
 fullTest.group = groupName
-
+integrationTest.group = groupName
