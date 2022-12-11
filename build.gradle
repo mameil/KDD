@@ -132,6 +132,7 @@ jacocoTestCoverageVerification {
 //define fullTest Task
 task fullTest(type: Test){
     finalizedBy "test"
+    fullTest.finalizedBy('integrationTest')
 }
 
 sourceSets{
@@ -174,6 +175,18 @@ task integrationTest(type: Test) {
 test{
     useJUnitPlatform()
 }
+
+
+//task doTest(type: Test){
+//    group = "0.myaction"
+//    useJUnitPlatform()
+//
+//    fullTest.finalizedBy('integrationTest')
+//    integrationTest.dependsOn('fullTest')
+//    doLast {
+//        integrationTest.executeTests()
+//    }
+//}
 
 
 //grouping
