@@ -3,6 +3,7 @@ package me.kdshim.kdd_j.sender;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import me.kdshim.kdd_j.sender.dto.GetCommitDto;
+import me.kdshim.kdd_j.sender.dto.GetRespDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -32,6 +33,10 @@ public class GithubSender {
     @Value("${github.library.getCommits}")
     private String libraryCommitsUrl;
 
+//    @Value("${github.library.getRepo}")
+//    private String libraryRepoUrl;
+
+
     public List<GetCommitDto> getCommitList(){
         //todo 페이지네이션 갯수에 대한 고민 필요 > https://docs.github.com/en/rest/commits/commits 에서 확인 필요함
         HttpHeaders headers = new HttpHeaders();
@@ -49,4 +54,23 @@ public class GithubSender {
 
         return response.getBody();
     }
+
+//    public GetRespDto getRepo(){
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.set("Accept", accept);
+//        headers.set("Authorization", authorization);
+//        HttpEntity req = new HttpEntity(headers);
+//
+//        ResponseEntity<GetRespDto> response = restTemplate.exchange(
+//                githubBase + libraryRepoUrl, HttpMethod.GET, req, new ParameterizedTypeReference<GetRespDto>() {
+//
+//                });
+//
+//        System.out.println("==============================================");
+//        System.out.println(response.getBody().toString());
+//        System.out.println("==============================================");
+//
+//        return response.getBody();
+//    }
+
 }
