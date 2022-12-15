@@ -34,4 +34,22 @@ public class Commit extends MyMockMvc {
 
     }
 
+    @KDTest
+    public void getKyu9CommitsWithWrongRepo() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/github/kyu9/library/commits"))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.commitList[0].author").value("kyu9"));
+    }
+
+    @KDTest
+    public void getKyu9CommitsWithWrongRepo2() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/github/kyu9/library/commits"))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.commitList[0].author").value("kyu9"));
+    }
+
+
+
 }
