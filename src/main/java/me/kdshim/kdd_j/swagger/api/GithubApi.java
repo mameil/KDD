@@ -7,6 +7,7 @@ package me.kdshim.kdd_j.swagger.api;
 
 import me.kdshim.kdd_j.swagger.model.ErrorResponseDto;
 import me.kdshim.kdd_j.swagger.model.GetSimpleCommitsDto;
+import me.kdshim.kdd_j.swagger.model.GetSimpleRepoInfoDto;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -40,6 +41,18 @@ public interface GithubApi {
         method = RequestMethod.GET)
     default ResponseEntity<GetSimpleCommitsDto> getKyuLibraryCommits() {
         return getDelegate().getKyuLibraryCommits();
+    }
+
+
+    @ApiOperation(value = "kyu9's 도서관 Repo 정보 조회", nickname = "getKyuLibraryRepoInfo", notes = "kyu9's 도서관 Repo 정보 조회", response = GetSimpleRepoInfoDto.class, tags={ "Github", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "SUCCESS", response = GetSimpleRepoInfoDto.class),
+        @ApiResponse(code = 400, message = "FAIL", response = ErrorResponseDto.class) })
+    @RequestMapping(value = "/github/kyu9/library/info",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    default ResponseEntity<GetSimpleRepoInfoDto> getKyuLibraryRepoInfo() {
+        return getDelegate().getKyuLibraryRepoInfo();
     }
 
 }

@@ -50,6 +50,18 @@ public class Commit extends MyMockMvc {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.commitList[0].author").value("kyu9"));
     }
 
+    @KDTest
+    public void getKyu9RepoInfo() throws Exception{
+        mvc.perform(MockMvcRequestBuilders.get("/github/kyu9/library/info"))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.repoName").value("My-Library"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.repoFullName").isEmpty())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.repoUrl").value("https://github.com/kyu9/My-Library"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.repoDescription").value("내 도서관"))
+        ;
+    }
+
 
 
 }

@@ -2,6 +2,7 @@ package me.kdshim.kdd_j.swagger.api;
 
 import me.kdshim.kdd_j.swagger.model.ErrorResponseDto;
 import me.kdshim.kdd_j.swagger.model.GetSimpleCommitsDto;
+import me.kdshim.kdd_j.swagger.model.GetSimpleRepoInfoDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -44,6 +45,25 @@ public interface GithubApiDelegate {
             if (getAcceptHeader().get().contains("application/json")) {
                 try {
                     return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"commitList\" : [ {\n    \"commitYYYYMMDD\" : \"2022-11-19\",\n    \"commitMsg\" : \"아무튼 커밋 메세지입니다\",\n    \"author\" : \"kyu9\"\n  }, {\n    \"commitYYYYMMDD\" : \"2022-11-19\",\n    \"commitMsg\" : \"아무튼 커밋 메세지입니다\",\n    \"author\" : \"kyu9\"\n  } ]\n}", GetSimpleCommitsDto.class), HttpStatus.NOT_IMPLEMENTED);
+                } catch (IOException e) {
+                    log.error("Couldn't serialize response for content type application/json", e);
+                    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+                }
+            }
+        } else {
+            log.warn("ObjectMapper or HttpServletRequest not configured in default GithubApi interface so no example is generated");
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
+    /**
+     * @see GithubApi#getKyuLibraryRepoInfo
+     */
+    default ResponseEntity<GetSimpleRepoInfoDto> getKyuLibraryRepoInfo() {
+        if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+            if (getAcceptHeader().get().contains("application/json")) {
+                try {
+                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"repoUrl\" : \"https://github.com/kyu9/My-Library\",\n  \"repoDescription\" : \"레포에 적어둔 설명\",\n  \"repoName\" : \"My-Library\",\n  \"repoUpdated\" : \"2021-11-19T00:00:00Z\",\n  \"repoFullName\" : \"kyu9/My-Library\",\n  \"repoCreated\" : \"2021-11-19T00:00:00Z\"\n}", GetSimpleRepoInfoDto.class), HttpStatus.NOT_IMPLEMENTED);
                 } catch (IOException e) {
                     log.error("Couldn't serialize response for content type application/json", e);
                     return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

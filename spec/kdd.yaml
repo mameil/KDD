@@ -283,6 +283,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponseDto'
 
+  /github/kyu9/library/info:
+    get:
+      tags:
+        - "Github"
+      summary: kyu9's 도서관 Repo 정보 조회
+      description: kyu9's 도서관 Repo 정보 조회
+      operationId: getKyuLibraryRepoInfo
+      responses:
+        200:
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetSimpleRepoInfoDto'
+        400:
+          description: FAIL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+
 
 components:
   schemas:
@@ -534,6 +555,36 @@ components:
           type: string
           description: 해당 커밋 YYYY-MM-DD
           example: 2022-11-19
+
+    GetSimpleRepoInfoDto:
+      type: object
+      properties:
+        repoName:
+          type: string
+          description: 해당 레포 이름
+          example: My-Library
+        repoFullName:
+          type: string
+          description: 해당 레포 전체 이름
+          example: kyu9/My-Library
+        repoUrl:
+          type: string
+          description: 해당 레포 url
+          example: https://github.com/kyu9/My-Library
+        repoDescription:
+          type: string
+          description: 해당 레포 설명
+          example: 레포에 적어둔 설명
+        repoCreated:
+          type: string
+          format: date-time
+          description: 해당 레포 생성일
+          example: 2021-11-19T00:00:00.000Z
+        repoUpdated:
+          type: string
+          format: date-time
+          description: 해당 레포 수정일
+          example: 2021-11-19T00:00:00.000Z
 
     ErrorResponseDto:
       type: object

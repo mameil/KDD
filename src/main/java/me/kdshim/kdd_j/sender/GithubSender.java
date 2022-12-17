@@ -33,8 +33,8 @@ public class GithubSender {
     @Value("${github.library.getCommits}")
     private String libraryCommitsUrl;
 
-//    @Value("${github.library.getRepo}")
-//    private String libraryRepoUrl;
+    @Value("${github.library.getRepo}")
+    private String libraryRepoUrl;
 
 
     public List<GetCommitDto> getCommitList(){
@@ -55,22 +55,22 @@ public class GithubSender {
         return response.getBody();
     }
 
-//    public GetRespDto getRepo(){
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.set("Accept", accept);
-//        headers.set("Authorization", authorization);
-//        HttpEntity req = new HttpEntity(headers);
-//
-//        ResponseEntity<GetRespDto> response = restTemplate.exchange(
-//                githubBase + libraryRepoUrl, HttpMethod.GET, req, new ParameterizedTypeReference<GetRespDto>() {
-//
-//                });
-//
-//        System.out.println("==============================================");
-//        System.out.println(response.getBody().toString());
-//        System.out.println("==============================================");
-//
-//        return response.getBody();
-//    }
+    public GetRespDto getRepo(){
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Accept", accept);
+        headers.set("Authorization", authorization);
+        HttpEntity req = new HttpEntity(headers);
+
+        ResponseEntity<GetRespDto> response = restTemplate.exchange(
+                githubBase + libraryRepoUrl, HttpMethod.GET, req, new ParameterizedTypeReference<GetRespDto>() {
+
+                });
+
+        System.out.println("==============================================");
+        System.out.println(response.getBody().toString());
+        System.out.println("==============================================");
+
+        return response.getBody();
+    }
 
 }

@@ -7,6 +7,7 @@ import me.kdshim.kdd_j.sender.dto.GetCommitDto;
 import me.kdshim.kdd_j.swagger.api.GithubApiDelegate;
 import me.kdshim.kdd_j.swagger.model.GetSimpleCommitDto;
 import me.kdshim.kdd_j.swagger.model.GetSimpleCommitsDto;
+import me.kdshim.kdd_j.swagger.model.GetSimpleRepoInfoDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,10 @@ public class GithubApiDelegateImpl implements GithubApiDelegate {
         dto.setCommitList(githubService.getCommitList());
 
         return ResponseEntity.ok(dto);
+    }
+
+    @Override
+    public ResponseEntity<GetSimpleRepoInfoDto> getKyuLibraryRepoInfo() {
+        return ResponseEntity.ok(githubService.getRepoInfo());
     }
 }
