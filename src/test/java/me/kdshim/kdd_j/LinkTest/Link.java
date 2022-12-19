@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import me.kdshim.kdd_j.common.KDDError;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.config.MyMockMvc;
+import me.kdshim.kdd_j.link.LinkService;
 import me.kdshim.kdd_j.swagger.model.GetLinkDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class Link extends MyMockMvc {
     ModelMapper modelMapper = new ModelMapper();
     @Autowired
     ObjectMapper objectMapper;
+
+    @Autowired
+    LinkService linkService;
 
     @KDTest
     void linkPostGet() throws Exception {
@@ -140,6 +144,11 @@ public class Link extends MyMockMvc {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[?(@.name=='qqq')].url").value("qwer"))
                 ;
 
+    }
+
+    @KDTest
+    public void queryDslSimpleTest(){
+        linkService.getQLink();
     }
 
 }
