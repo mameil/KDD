@@ -17,8 +17,42 @@ tags:
     description: "해야할 일 관리"
   - name: "Github"
     description: "Github OpenAPI Data"
+  - name: "Util"
+    description: "Utility API"
 
 paths:
+  /utils/jsonify:
+    post:
+      tags:
+        - "Util"
+      summary: "Lombok @toString to json format"
+      description: "Lombok @toString to json format"
+      operationId: toStringToJSON
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StringDto'
+      responses:
+        200:
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringDto'
+        400:
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+        500:
+          description: "Internal Server Error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
+
   /todo:
     post:
       tags:
@@ -585,6 +619,14 @@ components:
           format: date-time
           description: 해당 레포 수정일
           example: 2021-11-19T00:00:00.000Z
+
+    StringDto:
+      type: object
+      properties:
+          plainString:
+            type: string
+            description: 문자열
+            example: 문자열
 
     ErrorResponseDto:
       type: object
