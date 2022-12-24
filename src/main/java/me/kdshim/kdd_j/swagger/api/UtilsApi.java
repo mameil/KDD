@@ -31,16 +31,16 @@ public interface UtilsApi {
 
     UtilsApiDelegate getDelegate();
 
-    @ApiOperation(value = "Lombok @toString to json format", nickname = "toStringToJSON", notes = "Lombok @toString to json format", response = StringDto.class, tags={ "Util", })
+    @ApiOperation(value = "Lombok @toString to json format", nickname = "toStringToJSON", notes = "Lombok @toString to json format", response = String.class, tags={ "Util", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Success", response = StringDto.class),
+        @ApiResponse(code = 200, message = "Success", response = String.class),
         @ApiResponse(code = 400, message = "Bad Request", response = ErrorResponseDto.class),
         @ApiResponse(code = 500, message = "Internal Server Error", response = ErrorResponseDto.class) })
     @RequestMapping(value = "/utils/jsonify",
         produces = { "application/json" }, 
         consumes = { "application/json" }, 
         method = RequestMethod.POST)
-    default ResponseEntity<StringDto> toStringToJSON(@ApiParam(value = "" ) @Valid @RequestBody StringDto body) {
+    default ResponseEntity<String> toStringToJSON(@ApiParam(value = "" ) @Valid @RequestBody StringDto body) {
         return getDelegate().toStringToJSON(body);
     }
 

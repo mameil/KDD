@@ -39,11 +39,11 @@ public interface UtilsApiDelegate {
     /**
      * @see UtilsApi#toStringToJSON
      */
-    default ResponseEntity<StringDto> toStringToJSON( StringDto  body) {
+    default ResponseEntity<String> toStringToJSON( StringDto  body) {
         if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
             if (getAcceptHeader().get().contains("application/json")) {
                 try {
-                    return new ResponseEntity<>(getObjectMapper().get().readValue("{\n  \"plainString\" : \"문자열\"\n}", StringDto.class), HttpStatus.NOT_IMPLEMENTED);
+                    return new ResponseEntity<>(getObjectMapper().get().readValue("\"{key: value}\"", String.class), HttpStatus.NOT_IMPLEMENTED);
                 } catch (IOException e) {
                     log.error("Couldn't serialize response for content type application/json", e);
                     return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

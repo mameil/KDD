@@ -18,7 +18,7 @@ public class jsonParserTest extends MyMockMvc {
     public void jsonParser(){
         ObjectMapper mapper = new ObjectMapper();
 
-        String lomboks = "Link(url=localhost, category=JAVA, name=test link, memo=this is test only link)";
+        String lomboks = "Member(loginId=kdshim, password=rbeh!234, role=ADMIN, name=심규도, birthDateYYYYMMDD=19970329, married=false, email=kyudo97@naver.com, address=Address(oldAddr=경기도 고양시 일산서구 강선길 42, addr=경기도 고양시 일산서구 강선로 30, addrDetail=1501동, zipCode=10365))";
         StringDto req = new StringDto();
         req.setPlainString(lomboks);
 

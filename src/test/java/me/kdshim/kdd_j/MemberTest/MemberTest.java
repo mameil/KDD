@@ -59,6 +59,9 @@ public class MemberTest extends MyMockMvc {
 
         Member testM = getObjectMapper().readValue(plainString, Member.class);
         Member dbM = memberRepository.findById("kdshim").get();
+        System.out.println("==============================================");
+        System.out.println(dbM.toString());
+        System.out.println("==============================================");
 
         Assertions.assertEquals(testM.getLoginId(), dbM.getLoginId());
     }

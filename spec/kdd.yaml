@@ -39,7 +39,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StringDto'
+                type: string
+                description: 파싱한 json
+                example: "{key: value}"
         400:
           description: "Bad Request"
           content:
