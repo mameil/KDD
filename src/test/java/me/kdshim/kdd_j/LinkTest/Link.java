@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import me.kdshim.kdd_j.common.KDDError;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.config.MyMockMvc;
+import me.kdshim.kdd_j.link.LinkRepository;
 import me.kdshim.kdd_j.link.LinkService;
 import me.kdshim.kdd_j.swagger.model.GetLinkDto;
 import org.modelmapper.ModelMapper;
@@ -22,6 +23,9 @@ public class Link extends MyMockMvc {
 
     @Autowired
     LinkService linkService;
+
+    @Autowired
+    LinkRepository linkRepository;
 
     @KDTest
     void linkPostGet() throws Exception {
@@ -54,6 +58,10 @@ public class Link extends MyMockMvc {
         System.out.println(response);
         GetLinkDto link = objectMapper.readValue(response, GetLinkDto.class);
         System.out.println(link);
+
+        System.out.println("==============================================");
+        System.out.println(linkRepository.findByUrl("localhost").get());
+        System.out.println("==============================================");
 
         assertThat(link.getName())
                 .isEqualTo("test link")
