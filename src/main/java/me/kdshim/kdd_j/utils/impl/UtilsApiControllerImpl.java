@@ -15,6 +15,6 @@ public class UtilsApiControllerImpl implements UtilsApiDelegate {
 
     @Override
     public ResponseEntity<String> toStringToJSON(StringDto body) {
-        return ResponseEntity.ok(utilsService.ToJson(body.getPlainString()));
+        return ResponseEntity.ok(utilsService.toStringToJSON(body.getPlainString()));
     }
 }
