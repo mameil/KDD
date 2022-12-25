@@ -1,5 +1,6 @@
 package me.kdshim.kdd_j.member;
 
+import com.google.gson.Gson;
 import lombok.*;
 import me.kdshim.kdd_j.common.BaseEntity;
 import me.kdshim.kdd_j.swagger.model.GetMemberDto;
@@ -35,6 +36,10 @@ public class Member extends BaseEntity implements Serializable {
 
     @Embedded
     private Address address;
+
+    public String toString(){
+        return new Gson().toJson(this);
+    }
 
     public static Member fromDto(PostMemberDto dto){
         return Member.builder()
