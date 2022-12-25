@@ -1,5 +1,6 @@
 package me.kdshim.kdd_j.book.entity;
 
+import com.google.gson.Gson;
 import lombok.*;
 import me.kdshim.kdd_j.common.BaseEntity;
 import me.kdshim.kdd_j.link.entity.Link;
@@ -26,4 +27,7 @@ public class Book extends BaseEntity {
     @JoinColumn(name = "link_id")
     private Link link;
 
+    public String toString(){
+        return new Gson().toJson(this);
+    }
 }

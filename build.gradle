@@ -47,6 +47,9 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.24'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.7'
+
     //view
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 

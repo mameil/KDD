@@ -5,6 +5,8 @@ import me.kdshim.kdd_j.config.BaseSupport;
 import me.kdshim.kdd_j.config.KDTest;
 import me.kdshim.kdd_j.book.BookService;
 import me.kdshim.kdd_j.link.LinkRepository;
+import me.kdshim.kdd_j.link.entity.CATEGORY;
+import me.kdshim.kdd_j.link.entity.Link;
 import me.kdshim.kdd_j.todo.MockTestService;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mock;
@@ -51,6 +53,12 @@ public class MockStudy1 extends BaseSupport {
         Book checkDif = Book.builder().name("secondBook").url("testURL").build();
         Assertions.assertEquals(checkDif, bookService.findSingleBookById("DIFF"));
         Assertions.assertEquals(null, bookService.findSingleBookById("DIFF"));
+
+        Book found = new Book(123L, "testName", "testURL", "testRecommender", new Link("url", "title", "description", CATEGORY.JAVA));
+        System.out.println("==============================================");
+        System.out.println(found.toString());
+        System.out.println("==============================================");
+
 
         //Mock 객체를 확인하는 방법
 //        verify(linkRepositroy, times(0)).notify();
