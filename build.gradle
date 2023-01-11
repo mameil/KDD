@@ -100,12 +100,15 @@ dependencies {
     testImplementation "org.testcontainers:mysql:1.17.2"
 
     //kotlin test
-    testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.3.0'
-    testImplementation('io.kotest:kotest-assertions-core:5.5.4')
+
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
+    //kotest
+    testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.3.0'
+    testImplementation('io.kotest:kotest-assertions-core:5.5.4')
+    testImplementation('io.kotest:kotest-extension-spring:5.5.4')
 
 }
 
