@@ -108,7 +108,7 @@ dependencies {
     //kotest
     testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.3.0'
     testImplementation('io.kotest:kotest-assertions-core:5.5.4')
-    testImplementation('io.kotest:kotest-extension-spring:5.5.4')
+//    testImplementation('io.kotest:kotest-extension-spring:5.5.4')
 
 }
 

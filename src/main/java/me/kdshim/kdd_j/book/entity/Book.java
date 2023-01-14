@@ -27,7 +27,8 @@ public class Book extends BaseEntity {
     @JoinColumn(name = "link_id")
     private Link link;
 
-    public String toString(){
-        return new Gson().toJson(this);
-    }
+    //gson parser to json
+//    public String toString(){
+//        return new Gson().toJson(this);
+//    }
 }
