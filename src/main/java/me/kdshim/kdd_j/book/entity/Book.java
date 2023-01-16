@@ -28,7 +28,7 @@ public class Book extends BaseEntity {
     private Link link;
 
     //gson parser to json
-//    public String toString(){
-//        return new Gson().toJson(this);
-//    }
+    public String toJson(){
+        return new Gson().toJson(this);
+    }
 }
