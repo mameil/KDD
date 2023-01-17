@@ -20,7 +20,10 @@ public class UtilsApiControllerImpl implements UtilsApiDelegate {
     @Override
     public ResponseEntity<String> toStringToJSON(StringDto body) {
 //        return ResponseEntity.ok(utilsService.toStringToJSON(body.getPlainString()));
-        return ResponseEntity.ok(utilsService2.toStringToJSON(body.getPlainString()));
+//        return ResponseEntity.ok(utilsService2.toStringToJSON(body.getPlainString()));
 //        return ResponseEntity.ok(utilsService3.toStringToJSON(body.getPlainString()));
+
+
+        return ResponseEntity.ok(utilsService3.toJson(body.getPlainString()));
     }
 }

@@ -86,13 +86,6 @@ public class UtilsService3 {
                 //여기 breakpoint
                 String substring = str.substring(0, idx);
                 String substring1 = str.substring(start, str.length());
-                System.out.println("==============================================");
-                System.out.println(substring);
-                System.out.println(substring.substring(substring.length() - 10, substring.length()));
-                System.out.println("==============================================");
-                System.out.println(substring1);
-                System.out.println(substring1.substring(0, 10));
-                System.out.println("==============================================");
                 str = substring + substring1;
             }
         }
@@ -105,6 +98,53 @@ public class UtilsService3 {
 
     public String wrapper(String str) {
         return "\"" + str + "\"";
+    }
+
+    public String removeNull(String str){
+        while(str.contains("=null")){
+            int valStart = str.indexOf("=null");
+            int valEnd = valStart + "=null".length();
+            char c = str.charAt(valEnd);
+
+            int index = valStart;
+            boolean nullStart = false;
+            while(str.charAt(index) != ',' && str.charAt(index) != '('){
+                if(str.charAt(index) == '(') {
+                    nullStart = true;
+                }
+                index--;
+            }
+
+            int keyIdx = nullStart ? index : index+1;
+            String substring = str.substring(0, keyIdx);
+            String substring1 = str.substring(valEnd+1, str.length());
+
+            str = substring + substring1;
+        }
+
+        if(str.charAt(str.length()-1) == ','){
+            str = str.substring(0, str.length()-1);
+        }
+
+        if(str.charAt(str.length()-1) != ')'){
+            str += ")";
+        }
+        log.info("last string : [}", str);
+
+        return str;
+    }
+
+    public String removeSuper(String str){
+        return str;
+    }
+
+    public String toJson(String str){
+        log.info("received : {}", str);
+        //=null 인 값 key=value, 제거
+        str = removeNull(str);
+        str = removeSuper(str);
+
+        return str;
     }
 
 }
