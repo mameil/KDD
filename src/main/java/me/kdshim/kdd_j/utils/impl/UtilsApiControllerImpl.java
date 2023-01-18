@@ -15,6 +15,7 @@ public class UtilsApiControllerImpl implements UtilsApiDelegate {
     private final UtilsService utilsService;
     private final UtilsService2 utilsService2;
     private final UtilsService3 utilsService3;
+    private final JsonParser jsonParser;
 
 
     @Override
@@ -23,7 +24,6 @@ public class UtilsApiControllerImpl implements UtilsApiDelegate {
 //        return ResponseEntity.ok(utilsService2.toStringToJSON(body.getPlainString()));
 //        return ResponseEntity.ok(utilsService3.toStringToJSON(body.getPlainString()));
 
-
-        return ResponseEntity.ok(utilsService3.toJson(body.getPlainString()));
+        return ResponseEntity.ok(jsonParser.toJson(body.getPlainString()));
     }
 }
