@@ -76,19 +76,26 @@ public class UtilsService3 {
             list.add(index);
         }
 
-        for (Integer idx : list) {
-            if(idx != -1) {
-                //여기 breakpoint
-                int start = idx;
-                while (str.charAt(idx - 1) != ':' && str.charAt(idx - 1) != '[') {
-                    idx--;
-                }
-                //여기 breakpoint
-                String substring = str.substring(0, idx);
-                String substring1 = str.substring(start, str.length());
-                str = substring + substring1;
-            }
-        }
+//        for (Integer idx : list) {
+//            if(idx != -1) {
+//                //여기 breakpoint
+//                int start = idx;
+//                while (str.charAt(idx - 1) != ':' && str.charAt(idx - 1) != '[') {
+//                    idx--;
+//                }
+//                //여기 breakpoint
+//                String substring = str.substring(0, idx);
+//                String substring1 = str.substring(start, str.length());
+//                System.out.println("==============================================");
+//                System.out.println(substring);
+//                System.out.println(substring.substring(substring.length() - 10, substring.length()));
+//                System.out.println("==============================================");
+//                System.out.println(substring1);
+//                System.out.println(substring1.substring(0, 10));
+//                System.out.println("==============================================");
+//                str = substring + substring1;
+//            }
+//        }
 
         log.info("parsed STR : {}", str);
 
