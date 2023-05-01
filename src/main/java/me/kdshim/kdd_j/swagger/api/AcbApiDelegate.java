@@ -1,8 +1,8 @@
 package me.kdshim.kdd_j.swagger.api;
 
 import me.kdshim.kdd_j.swagger.model.ErrorResponseDto;
+import me.kdshim.kdd_j.swagger.model.PostTranRequestDto;
 import me.kdshim.kdd_j.swagger.model.PostTransResponseDto;
-import me.kdshim.kdd_j.swagger.model.StringDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -18,12 +18,12 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * A delegate to be called by the {@link UtilsApiController}}.
+ * A delegate to be called by the {@link AcbApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-public interface UtilsApiDelegate {
+public interface AcbApiDelegate {
 
-    Logger log = LoggerFactory.getLogger(UtilsApi.class);
+    Logger log = LoggerFactory.getLogger(AcbApi.class);
 
     default Optional<ObjectMapper> getObjectMapper(){
         return Optional.empty();
@@ -38,9 +38,9 @@ public interface UtilsApiDelegate {
     }
 
     /**
-     * @see UtilsApi#postTransaction
+     * @see AcbApi#postTransaction
      */
-    default ResponseEntity<PostTransResponseDto> postTransaction() {
+    default ResponseEntity<PostTransResponseDto> postTransaction( PostTranRequestDto  body) {
         if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
             if (getAcceptHeader().get().contains("application/json")) {
                 try {
@@ -51,26 +51,7 @@ public interface UtilsApiDelegate {
                 }
             }
         } else {
-            log.warn("ObjectMapper or HttpServletRequest not configured in default UtilsApi interface so no example is generated");
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-    }
-
-    /**
-     * @see UtilsApi#toStringToJSON
-     */
-    default ResponseEntity<String> toStringToJSON( StringDto  body) {
-        if(getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-            if (getAcceptHeader().get().contains("application/json")) {
-                try {
-                    return new ResponseEntity<>(getObjectMapper().get().readValue("\"{key: value}\"", String.class), HttpStatus.NOT_IMPLEMENTED);
-                } catch (IOException e) {
-                    log.error("Couldn't serialize response for content type application/json", e);
-                    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-                }
-            }
-        } else {
-            log.warn("ObjectMapper or HttpServletRequest not configured in default UtilsApi interface so no example is generated");
+            log.warn("ObjectMapper or HttpServletRequest not configured in default AcbApi interface so no example is generated");
         }
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }

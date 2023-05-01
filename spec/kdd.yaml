@@ -54,6 +54,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponseDto'
+  /utils/acb/transaction:
+    post:
+      tags:
+        - "Util"
+      summary: "가계부로 transaction 등록 - for test"
+      description: "가계부로 transaction 등록 - for test"
+      operationId: postTransaction
+#      requestBody:
+#        description: "post transaction request body"
+#        required: true
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/PostTranRequestDto'
+      responses:
+        200:
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostTransResponseDto'
+        400:
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponseDto'
 
   /todo:
     post:
@@ -621,6 +648,48 @@ components:
           format: date-time
           description: 해당 레포 수정일
           example: 2021-11-19T00:00:00.000Z
+
+    PostTranRequestDto:
+      type: object
+      properties:
+        amount:
+          type: integer
+          nullable: false
+          description: "usage amount"
+          example: 2800
+        userId:
+          type: string
+          description: "user id"
+          example: "kdshim"
+        registeredAt:
+          type: string
+          description: "transaction registered yyyyMMdd HH24:mm:si"
+        registeredAtYyyymmdd:
+          type: string
+          description: "transaction registered yyyyMMdd"
+        title:
+          type: string
+          description: "main purpose for the transaction"
+        content:
+          type: string
+          description: "additional memo for the transaction"
+        tagId:
+          type: integer
+          nullable: false
+          description: "tag of the transaction"
+        moneyType:
+          type: string
+          nullable: false
+          enum:
+            - FREE
+            - MINE
+
+    PostTransResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "unique transaction id"
 
     StringDto:
       type: object

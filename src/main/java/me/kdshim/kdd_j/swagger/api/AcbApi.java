@@ -6,8 +6,8 @@
 package me.kdshim.kdd_j.swagger.api;
 
 import me.kdshim.kdd_j.swagger.model.ErrorResponseDto;
+import me.kdshim.kdd_j.swagger.model.PostTranRequestDto;
 import me.kdshim.kdd_j.swagger.model.PostTransResponseDto;
-import me.kdshim.kdd_j.swagger.model.StringDto;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -27,34 +27,21 @@ import java.util.List;
 import java.util.Map;
 
 @Validated
-@Api(value = "utils", description = "the utils API")
-public interface UtilsApi {
+@Api(value = "acb", description = "the acb API")
+public interface AcbApi {
 
-    UtilsApiDelegate getDelegate();
+    AcbApiDelegate getDelegate();
 
-    @ApiOperation(value = "가계부로 transaction 등록 - for test", nickname = "postTransaction", notes = "가계부로 transaction 등록 - for test", response = PostTransResponseDto.class, tags={ "Util", })
+    @ApiOperation(value = "가계부로 transaction 등록", nickname = "postTransaction", notes = "가계부로 transaction 등록", response = PostTransResponseDto.class, tags={ "Util", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success", response = PostTransResponseDto.class),
         @ApiResponse(code = 400, message = "Bad Request", response = ErrorResponseDto.class) })
-    @RequestMapping(value = "/utils/acb/transaction",
-        produces = { "application/json" }, 
-        method = RequestMethod.POST)
-    default ResponseEntity<PostTransResponseDto> postTransaction() {
-        return getDelegate().postTransaction();
-    }
-
-
-    @ApiOperation(value = "Lombok @toString to json format", nickname = "toStringToJSON", notes = "Lombok @toString to json format", response = String.class, tags={ "Util", })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Success", response = String.class),
-        @ApiResponse(code = 400, message = "Bad Request", response = ErrorResponseDto.class),
-        @ApiResponse(code = 500, message = "Internal Server Error", response = ErrorResponseDto.class) })
-    @RequestMapping(value = "/utils/jsonify",
+    @RequestMapping(value = "/acb/transaction",
         produces = { "application/json" }, 
         consumes = { "application/json" }, 
         method = RequestMethod.POST)
-    default ResponseEntity<String> toStringToJSON(@ApiParam(value = "" ) @Valid @RequestBody StringDto body) {
-        return getDelegate().toStringToJSON(body);
+    default ResponseEntity<PostTransResponseDto> postTransaction(@ApiParam(value = "post transaction request body", required=true ) @Valid @RequestBody PostTranRequestDto body) {
+        return getDelegate().postTransaction(body);
     }
 
 }
