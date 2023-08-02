@@ -26,5 +26,7 @@ public class arr_map_7785{
             System.out.println(list.get(i));
         }
 
+        
+
     }
 }
