@@ -33,7 +33,7 @@ public class ErrorResponseDto   {
    **/
   @ApiModelProperty(value = "")
   
-    public String getCode() {
+  @Size(max=6)   public String getCode() {
     return code;
   }
 

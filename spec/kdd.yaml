@@ -160,6 +160,7 @@ paths:
           required: true
           schema:
             type: string
+            maxLength: 255
       responses:
         200:
           description: SUCCESS
@@ -704,5 +705,6 @@ components:
       properties:
         code:
           type: string
+          maxLength: 6
         message:
           type: string

@@ -51,7 +51,7 @@ public interface LinkApi {
     @RequestMapping(value = "/link/{url}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    default ResponseEntity<GetLinkDto> findSingleLink(@ApiParam(value = "저장해둔 링크를 URL으로 조회", required=true) @PathVariable("url") String url) {
+    default ResponseEntity<GetLinkDto> findSingleLink(@Size(max=255) @ApiParam(value = "저장해둔 링크를 URL으로 조회", required=true) @PathVariable("url") String url) {
         return getDelegate().findSingleLink(url);
     }
 
